@@ -263,7 +263,7 @@ class SoundTestState extends MusicBeatState
 				case 'What U Need is Remix':
 					composer = 'Hideki Naganuma';
 				case 'Blue Underground Lake':
-					composer = 'Morimento (Remix)';
+					composer = 'Corvus Bebop (Remix)';
 				case 'Will' | 'Psycho Soldier (Funky Remix)' | "True Love we Makin'" | 'Stormy Saxophone Two' | 'Bloody' | 'Soy Sauce for Geese' | 'Joker' | 'Inner Shade' | 'Toasty Buns' | 'Viridian City' | 'FC Field':
 					composer = 'K-Man (Remix)';
 				default:
@@ -274,6 +274,8 @@ class SoundTestState extends MusicBeatState
 					songOrigin = 'Psycho Soldier (1987)';
 				case 'Will' | 'Inner Shade':
 					songOrigin = 'KOF 2000 (2000)';
+				case 'Ripple Star Select':
+					songOrigin = 'Kirby 64: The Crystal Shards (2000)'
 				case 'Forest World':
 					songOrigin = 'Athena (1986)';
 				case 'Toasty Buns':
