@@ -119,14 +119,8 @@ class StageSelectState extends MusicBeatState
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
-			if (characters.contains(songs[i].songCharacter)) {
-				encoreicon = new HealthIcon(songs[i].songCharacter, false, true);
-				icon = new HealthIcon(songs[i].songCharacter, false, false);
-			} else 
-			{
-				encoreicon = new HealthIcon('dad', false, true);
-				icon = new HealthIcon('dad', false, false);
-			}
+			encoreicon = new HealthIcon(songs[i].songCharacter, false, true);
+			icon = new HealthIcon(songs[i].songCharacter, false, false);
 			
 			//var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
 			//var encoreicon:HealthIcon = new HealthIcon(songs[i].songCharacter);

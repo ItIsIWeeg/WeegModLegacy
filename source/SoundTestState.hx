@@ -249,8 +249,8 @@ class SoundTestState extends MusicBeatState
 			DiscordClient.changePresence(detailsText, soundTestSong);
 			switch (soundTestSong) {
 				case 'Coffee Date' | 'Electromace' | 'Macy-Breeze' | 'Short Circuit':
-					composer = 'Morimento';
-				case 'Gigavolt' | 'Night Sky':
+					composer = 'Corvus Bebop';
+				case 'Gigavolt' | 'Night Sky' | 'I Love You':
 					composer = 'K-Man';
 				case 'Monster' | 'Winter-Horrorland':
 					composer = 'Bassetfilms';
@@ -296,7 +296,7 @@ class SoundTestState extends MusicBeatState
 					songOrigin = "KOF 11 (2005)";
 				case 'Smash':
 					songOrigin = 'Super Smash Bros. Melee (2001)';
-				case 'Coffee Date' | 'Electromace' | 'Gigavolt' | 'Macy-Breeze' | 'Short Circuit' | 'Night Sky':
+				case 'Coffee Date' | 'Electromace' | 'Gigavolt' | 'Macy-Breeze' | 'Short Circuit' | 'Night Sky' | 'I Love You':
 					songOrigin = 'The Weeg Mod (2021)';
 				case 'Cocoa' | 'Eggnog' | 'Winter-Horrorland' | 'Lunchbox' | 'Senpai' | 'Roses' | 'Lunchbox (Scary)' | 'Thorns' | 'Game Over Pixel' | 'Ugh' | 'Guns' | 'Stress':
 					songOrigin = "Friday Night Funkin' (2021)";

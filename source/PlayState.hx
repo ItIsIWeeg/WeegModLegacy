@@ -340,6 +340,8 @@ class PlayState extends MusicBeatState
 			dialogueChar = 'mom';
 		case 'senpai-angry':
 			dialogueChar = 'senpai';
+		case 'monster-christmas':
+			dialogueChar = 'monster';
 		}
 		
 		switch (SONG.song.toLowerCase())
@@ -1265,7 +1267,6 @@ class PlayState extends MusicBeatState
 				case 'roses':
 					FlxG.sound.play(Paths.sound('ANGRY'));
 					schoolIntro(doof);
-					schoolIntro(doof);
 				case 'psycho soldier theme':
 					schoolIntro(doof);
 				default:
@@ -1364,7 +1365,7 @@ class PlayState extends MusicBeatState
 									remove(red);
 									FlxG.camera.fade(FlxColor.WHITE, 0.01, true, function()
 									{
-										if (hasDialogue)
+										if (hasDialogue == true)
 											add(dialogueBox);
 										else
 											startCountdown();

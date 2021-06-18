@@ -346,9 +346,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'Monster left note', 24, false);
 				animation.addByPrefix('singRIGHT', 'Monster Right note', 24, false);
 
+				addOffset('idle');
+				
 				if (isPlayer)
 				{
-					addOffset('idle');
 					addOffset("singUP", -20, 50);
 					addOffset("singRIGHT", 29);
 					addOffset("singLEFT", -30);
@@ -356,7 +357,6 @@ class Character extends FlxSprite
 				}
 				else
 				{
-					addOffset('idle');
 					addOffset("singUP", -20, 50);
 					addOffset("singRIGHT", -51);
 					addOffset("singLEFT", -30);
