@@ -1,0 +1,10 @@
+stage:dad
+spooky:spooky
+philly:pico
+limo:mom
+mall:parents-christmas
+mallEvil:monster-christmas
+school:senpai
+schoolEvil:spirit
+grand-central:macy
+concert:athena

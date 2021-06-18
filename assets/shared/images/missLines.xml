@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="missLines.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="miss thing0000" x="0" y="0" width="70" height="145"/>
+	<SubTexture name="miss thing0001" x="0" y="0" width="70" height="145"/>
+	<SubTexture name="miss thing0002" x="71" y="0" width="70" height="144" frameX="0" frameY="-1" frameWidth="70" frameHeight="145"/>
+	<SubTexture name="miss thing0003" x="71" y="0" width="70" height="144" frameX="0" frameY="-1" frameWidth="70" frameHeight="145"/>
+</TextureAtlas>
