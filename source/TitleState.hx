@@ -473,7 +473,7 @@ class TitleState extends MusicBeatState
 			case 6:
 				addMoreText('Ash');
 			case 7:
-				addMoreText('Morimento');
+				addMoreText('Corvus Bebop');
 				addMoreText('present');
 			case 8:
 				deleteCoolText();
