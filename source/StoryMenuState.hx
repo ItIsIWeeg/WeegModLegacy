@@ -29,10 +29,10 @@ class StoryMenuState extends MusicBeatState
 		['Spookeez', 'South', "Monster"],
 		['Pico', 'Philly', "Blammed"],
 		['Satin-Panties', "High", "Milf"],
-		['Cocoa', 'Eggnog', 'Winter Horrorland'],
+		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
 		['Coffee Date', 'Electromace', 'GIGAVOLT'],
-		['Psycho Soldier Theme', 'Will', 'Kizudarake no BLUEMOON']
+		['Psycho Soldier Theme']
 	];
 
 	var weekDisp:Array<Dynamic> = [
@@ -44,7 +44,7 @@ class StoryMenuState extends MusicBeatState
 		['Cocoa', 'Eggnog', 'Winter Wonderland'],
 		['Senpai', 'Roses', 'Thorns'],
 		['Coffee Date', 'Electromace', 'GIGAVOLT'],
-		['Psycho Soldier', 'Will', 'Wounded BLUEMOON']
+		['Psycho Soldier', 'Will (WIP)', 'Wounded BLUEMOON (WIP)']
 	];
 
 	private var bgColors:Array<String> = [
@@ -61,7 +61,7 @@ class StoryMenuState extends MusicBeatState
 
 	var curDifficulty:Int = 1;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, false];
+	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true];
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
@@ -111,8 +111,6 @@ class StoryMenuState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Story Mode Menu", null);
 		#end
-
-		FlxG.save.data.storyBalls = 0;
 
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
@@ -429,8 +427,6 @@ class StoryMenuState extends MusicBeatState
 
 		for (i in stringThing)
 			txtTracklist.text += "\n" + i;
-
-		txtTracklist.text = txtTracklist.text.toUpperCase();
 
 		txtTracklist.screenCenter(X);
 		txtTracklist.x -= FlxG.width * 0.35;

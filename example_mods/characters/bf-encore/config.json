@@ -1,0 +1,146 @@
+{
+	"isPixel": false, //If true, turns off antialiasing (useful for pixel characters)
+	"dadVar": 4, //This controls how long their singing animation lasts? Dad uses 6.1, everyone else uses 4.
+	"danceIdle": false, //If true, instead of 'idle' being used as their idle, 'danceLeft' and 'danceRight' are used (like skid n pump)
+	"scale": 1, //The character's sprites' scale
+	"flipX": true, //Determines if a character's sprite sheet is flipped or not
+	"color": "FF8833", //Determine's the character's healthbar / menu color.
+	"dialogueChar": "bf", //What the character's dialogue should be titled as (char.txt and char-end.txt)
+
+	"animations":
+	[
+		{
+			"anim": "idle",
+			"name": "BF idle dance",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singUP",
+			"name": "BF NOTE UP0",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singLEFT",
+			"name": "BF NOTE LEFT0",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singRIGHT",
+			"name": "BF NOTE RIGHT0",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singDOWN",
+			"name": "BF NOTE DOWN0",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singUPmiss",
+			"name": "BF NOTE UP MISS",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singLEFTmiss",
+			"name": "BF NOTE LEFT MISS",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singRIGHTmiss",
+			"name": "BF NOTE RIGHT MISS",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "singDOWNmiss",
+			"name": "BF NOTE DOWN MISS",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "hey",
+			"name": "BF HEY",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		},
+		{
+			"anim": "scared",
+			"name": "BF idle shaking",
+			"fps": 24,
+			"loop": true,
+			"indices": []
+		}
+	],
+
+	"animations_offsets":
+	[
+		{
+			"anim": "idle",
+			"player1": [0, 5],
+			"player2": [0, 5]
+		},
+		{
+			"anim": "hey",
+			"player1": [2, 12],
+			"player2": [6, 12]
+		},
+		{
+			"anim": "singUP",
+			"player1": [-27, 39],
+			"player2": [0, 33]
+		},
+		{
+			"anim": "singRIGHT",
+			"player1": [-40, 0],
+			"player2": [-34, 0]
+		},
+		{
+			"anim": "singDOWN",
+			"player1": [-10, -40],
+			"player2": [-18, -40]
+		},
+		{
+			"anim": "singLEFT",
+			"player1": [12, 0],
+			"player2": [38, 0]
+		},
+		{
+			"anim": "singUPmiss",
+			"player1": [-27, 39],
+			"player2": [0, 33]
+		},
+		{
+			"anim": "singDOWNmiss",
+			"player1": [-26, -15],
+			"player2": [-11, -15]
+		},
+		{
+			"anim": "singLEFTmiss",
+			"player1": [12, 24],
+			"player2": [48, 24]
+		},
+		{
+		    "anim": "singRIGHTmiss",
+			"player1": [-40, 24],
+			"player2": [-34, 24]
+		}
+	],
+
+	"stageOffset": [0, 0, 0, 350] //Determines the offsets of each character, going: bf.x, bf.y, dad.x, dad.y
+}

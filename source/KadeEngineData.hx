@@ -5,12 +5,25 @@ class KadeEngineData
 {
     public static function initSave()
     {
+    	if (FlxG.save.data.storyBalls == null)
+    		FlxG.save.data.storyBalls = 0;
 
-    	if (FlxG.save.data.unlockedZuki == null)
-    		FlxG.save.data.unlockedZuki = false;
+    	if (FlxG.save.data.songsBeaten == null)
+    		FlxG.save.data.songsBeaten = 0;
+
+    	if (FlxG.save.data.scoreScreen == null)
+			FlxG.save.data.scoreScreen = true;
+
+    	FlxG.save.data.unlockedZuki = true;
+
+    	if (FlxG.save.data.unlockedSonic == null)
+    		FlxG.save.data.unlockedSonic = false;
     	
     	if (FlxG.save.data.unlockingChar == null)
     		FlxG.save.data.unlockingChar = 'bf';
+
+    	if (FlxG.save.data.showCombo == null)
+    		FlxG.save.data.showCombo = true;
 
     	if (FlxG.save.data.ghost == null)
 			FlxG.save.data.ghost = true;

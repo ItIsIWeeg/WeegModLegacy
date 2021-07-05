@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="macy.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="default" x="0" y="430" width="299" height="370"/>
+	<SubTexture name="angry" x="0" y="0" width="299" height="370"/>
+	<SubTexture name="confused" x="300" y="0" width="299" height="370"/>
+	<SubTexture name="content" x="600" y="0" width="299" height="370"/>
+	<SubTexture name="happy" x="300" y="430" width="299" height="370"/>
+</TextureAtlas>

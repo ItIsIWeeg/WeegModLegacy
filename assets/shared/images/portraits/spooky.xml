@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spooky.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="default" x="0" y="0" width="380" height="402"/>
+	<SubTexture name="senpai-angryPortrait.png" x="381" y="0" width="54" height="58"/>
+	<SubTexture name="senpaiPortrait.png" x="436" y="0" width="51" height="57"/>
+</TextureAtlas>

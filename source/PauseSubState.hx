@@ -180,6 +180,8 @@ class PauseSubState extends MusicBeatSubstate
 				case "Resume":
 					close();
 				case "Restart Song":
+					PlayState.SONG.player1 = PlayState.playerOne;
+					PlayState.SONG.player2 = PlayState.playerTwo;
 					FlxG.resetState();
 				case "Exit to menu":
 					if(PlayState.loadRep)

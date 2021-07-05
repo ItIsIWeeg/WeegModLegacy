@@ -41,17 +41,15 @@ class OutdatedSubState extends MusicBeatState
 		kadeLogo.y -= 180;
 		kadeLogo.alpha = 0.8;
 		add(kadeLogo);
-
-		//THIS CODE GOES UNUSED FOR NOW, THANKS CESAR FOR DEBUTING THIS YOU'RE SO RAD
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
 			"Hey Cesar and chat!\nThanks for checking out the special"
-			+ "\nFever timed exclusive demo of Weeg Mod!"
+			+ "\nFever exclusive demo of Weeg Mod!"
 			+ "\n\nMe and the team are workin' pretty hard on this,\nbut I felt like a little sneak peek wouldn't\nhurt! Be sure to check out"
 			+ "the Options menu\n(I added a bit more stuff there.) \nFreeplay has a few more options too. And custom song support!"
 			+ "\nCheck the readme in the mods folder!\n\nOh, and if you want the cool new content, Press I in\nthe main menu, or beat Week A without getting blueballed."
-			+ "\n\nPersonally I'd prefer if you did the latter. But that's bugged\nand always triggers.\n\nPress Space to continue!"
-			+ "\n\nOr T for something special ;)"
+			+ "\n\nPersonally I'd prefer if you did the latter.\n\nPress Space to continue!"
+			+ "\nOr T for something special ;)"
 			+ "\n\n(This is the part where I plug my twitter @ItIsIWeeg to chat\nso they can keep up with my shit)",
 			32);
 		

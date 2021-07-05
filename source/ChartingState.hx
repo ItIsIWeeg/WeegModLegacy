@@ -39,6 +39,8 @@ import openfl.utils.ByteArray;
 
 using StringTools;
 
+//THIS IS REALLY FUCKIN LAGGY FOR SOME REASON, DONT KNOW WHY
+
 class ChartingState extends MusicBeatState
 {
 	var _file:FileReference;

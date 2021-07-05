@@ -59,6 +59,18 @@ class SoundTestState extends MusicBeatState
 			songs.push(new FreeplayState.SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
+		if (FlxG.save.data.unlockedZuki == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('I Love You', 0, 'kazuki'));
+		}
+		if (FlxG.save.data.unlockedSonic == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('Sonic Heroes', 0, 'sonic'));
+		}
+
+		songs.push(new FreeplayState.SongMetadata('Ridge', 0, 'macy'));
+		songs.push(new FreeplayState.SongMetadata('Smash', 0, 'dad'));
+
 		/* 
 			if (FlxG.sound.music != null)
 			{
@@ -250,7 +262,7 @@ class SoundTestState extends MusicBeatState
 			switch (soundTestSong) {
 				case 'Coffee Date' | 'Electromace' | 'Macy-Breeze' | 'Short Circuit':
 					composer = 'Corvus Bebop';
-				case 'Gigavolt' | 'Night Sky' | 'I Love You':
+				case 'GIGAVOLT' | 'Night Sky' | 'Choose Your Character':
 					composer = 'K-Man';
 				case 'Monster' | 'Winter-Horrorland':
 					composer = 'Bassetfilms';
@@ -258,24 +270,24 @@ class SoundTestState extends MusicBeatState
 					composer = 'Namco';
 				case 'Smash' | 'Ripple Star Select':
 					composer = 'Nintendo';
-				case 'Psycho-Soldier-Theme' | 'Kizudarake-no-BLUEMOON':
+				case 'Psycho Soldier Theme' | 'Kizudarake no BLUEMOON' | 'Forest World':
 					composer = 'SNK PLAYMORE';
 				case 'What U Need is Remix':
 					composer = 'Hideki Naganuma';
 				case 'Blue Underground Lake':
 					composer = 'Corvus Bebop (Remix)';
-				case 'Will' | 'Psycho Soldier (Funky Remix)' | "True Love we Makin'" | 'Stormy Saxophone Two' | 'Bloody' | 'Soy Sauce for Geese' | 'Joker' | 'Inner Shade' | 'Toasty Buns' | 'Viridian City' | 'FC Field':
+				case 'Will' | 'Psycho Soldier (Funky Remix)' | "True Love we Makin'" | 'Stormy Saxophone Two' | 'Bloody' | 'Soy Sauce for Geese' | 'Joker' | 'Inner Shade' | 'Toasty Buns' | 'Viridian City' | 'FC Field' | 'Sonic Heroes':
 					composer = 'K-Man (Remix)';
 				default:
 					composer = 'kawaisprite';
 			}
 			switch (soundTestSong) {
-				case 'Psycho-Soldier-Theme' | 'Blue Underground Lake' | 'Kizudarake-no-BLUEMOON':
+				case 'Psycho Soldier Theme' | 'Blue Underground Lake' | 'Kizudarake no BLUEMOON' | 'Psycho Soldier (Funky Remix)':
 					songOrigin = 'Psycho Soldier (1987)';
 				case 'Will' | 'Inner Shade':
 					songOrigin = 'KOF 2000 (2000)';
-				case 'Ripple Star Select':
-					songOrigin = 'Kirby 64: The Crystal Shards (2000)'
+				case 'Sonic Heroes':
+					songOrigin = 'Sonic Heroes (2003)';
 				case 'Forest World':
 					songOrigin = 'Athena (1986)';
 				case 'Toasty Buns':
@@ -294,11 +306,13 @@ class SoundTestState extends MusicBeatState
 					songOrigin = "Pokemon Red and Blue (1996)";
 				case 'FC Field':
 					songOrigin = 'Yume Nikki (2004)';
+				case 'Ripple Star Select':
+					songOrigin = 'Kirby 64 (2000)';
 				case 'Joker':
 					songOrigin = "KOF 11 (2005)";
 				case 'Smash':
 					songOrigin = 'Super Smash Bros. Melee (2001)';
-				case 'Coffee Date' | 'Electromace' | 'Gigavolt' | 'Macy-Breeze' | 'Short Circuit' | 'Night Sky' | 'I Love You':
+				case 'Coffee Date' | 'Electromace' | 'Gigavolt' | 'Macy-Breeze' | 'Short Circuit' | 'Night Sky' | 'I Love You' | 'Choose Your Character':
 					songOrigin = 'The Weeg Mod (2021)';
 				case 'Cocoa' | 'Eggnog' | 'Winter-Horrorland' | 'Lunchbox' | 'Senpai' | 'Roses' | 'Lunchbox (Scary)' | 'Thorns' | 'Game Over Pixel' | 'Ugh' | 'Guns' | 'Stress':
 					songOrigin = "Friday Night Funkin' (2021)";
@@ -331,6 +345,7 @@ class SoundTestState extends MusicBeatState
 		if (FlxG.sound.music.time < songLength) {
 			//lengthText.text = timeMinutes + ":"  + realTimeSeconds + " / " + lengthMinutes + ":" + realLengthSeconds;
 			lengthText.text = "Song Length: " + lengthMinutes + ":" + realLengthSeconds;
+			remove(lengthText);
 		}
 	}
 

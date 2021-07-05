@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="senpai-angry.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="default" x="0" y="0" width="54" height="58"/>
+	<SubTexture name="calm" x="55" y="0" width="51" height="57"/>
+</TextureAtlas>

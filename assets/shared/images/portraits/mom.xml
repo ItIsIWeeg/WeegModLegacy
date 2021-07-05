@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mom.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="default" x="0" y="0" width="387" height="421"/>
+	<SubTexture name="macyANGRYPortrait.png" x="388" y="0" width="299" height="429"/>
+	<SubTexture name="macyCONFUSEDPortrait.png" x="688" y="0" width="299" height="429"/>
+	<SubTexture name="macyCONTENTPortrait.png" x="0" y="430" width="299" height="429"/>
+	<SubTexture name="macyHAPPYPortrait.png" x="300" y="430" width="299" height="429"/>
+	<SubTexture name="macyPortrait.png" x="600" y="430" width="299" height="429"/>
+</TextureAtlas>

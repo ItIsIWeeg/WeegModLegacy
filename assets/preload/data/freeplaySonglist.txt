@@ -20,3 +20,4 @@ Thorns:spirit:6
 Coffee Date:macy:7
 Electromace:macy:7
 Gigavolt:macy:7
+Psycho Soldier Theme:athena:8

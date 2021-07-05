@@ -15,6 +15,7 @@ import lime.utils.Assets;
 import flixel.graphics.frames.FlxFrame;
 import lime.system.System;
 import flixel.system.FlxAssets.FlxSoundAsset;
+import flixel.tweens.FlxTween;
 #if sys
 import sys.io.File;
 import sys.FileSystem;
@@ -34,31 +35,38 @@ class DialogueBox extends FlxSpriteGroup
 	var box:FlxSprite;
 
 	var curCharacter:String = '';
+	var curAnim:String = 'default';
+	var curDialogue:String = '';
 
 	var dialogue:Alphabet;
 	var dialogueList:Array<String> = [];
 
+	var player1:String = 'bf';
+	var player2:String = 'senpai';
+
 	// SECOND DIALOGUE FOR THE PIXEL SHIT INSTEAD???
 	var swagDialogue:FlxTypeText;
-
+	var portraitLeftOffset:Float = 0;
+	var portraitRightOffset:Float = 0;
+	var defaultLeftHeight:Float;
+	var defaultRightHeight:Float;
+	var rightAnchor:Float;
 	var dropText:FlxText;
+
+	var leftSize:Float = 1;
+	var rightSize:Float = 1;
 
 	public var finishThing:Void->Void;
 
 	var portraitLeft:FlxSprite;
 	var portraitRight:FlxSprite;
-	var portraitANGRY:FlxSprite;
-	var portraitCONFUSED:FlxSprite;
-	var portraitCONTENT:FlxSprite;
-	var portraitHAPPY:FlxSprite;
-	var portraitSENPAI:FlxSprite;
 
 	var canControl:Bool = true;
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
 	var forestBlack:FlxSprite;
-	var isPixel:Array<Bool> = [true,true,true,true,true,true];
+	var isPixel:Array<Bool> = [false, false];
 	var rightHanded:Array<Bool> = [true, false];
 	var sided:Bool = false;
 	var newInput:String = "";
@@ -107,6 +115,30 @@ class DialogueBox extends FlxSpriteGroup
 
 		box = new FlxSprite(-20, 45);
 		box.alpha = 1;
+
+		switch (PlayState.SONG.player1)
+		{
+			case 'bf-spooky' | 'bf-car':
+				player1 = 'bf';
+			case 'mom-car':
+				player1 = 'mom';
+			case 'spirit':
+				player1 = 'senpai';
+			default:
+				player1 = PlayState.SONG.player1;
+
+		}
+		switch (PlayState.SONG.player2)
+		{
+			case 'bf-spooky' | 'bf-car':
+				player2 = 'bf';
+			case 'mom-car':
+				player2 = 'mom';
+			case 'spirit':
+				player2 = 'senpai';
+			default:
+				player2 = PlayState.SONG.player2;
+		}
 		
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
@@ -145,9 +177,18 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 			case 'thorns':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-evil');
-				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
-				box.animation.addByIndices('normal', 'Spirit Textbox spawn', [11], "", 24);
+				if (PlayState.SONG.player1 != 'macy')
+				{
+					box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-evil');
+					box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
+					box.animation.addByIndices('normal', 'Spirit Textbox spawn', [11], "", 24);
+				}
+				else
+				{
+					box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-pixel');
+					box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
+					box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
+				}
 			case 'coffee date':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
@@ -170,65 +211,31 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
 		}
 
+
 		this.dialogueList = dialogueList;
 		
 		if (!hasDialog)
 			return;
 		
-			portraitLeft = new FlxSprite(-20, 40);
+			portraitLeft = new FlxSprite(0, 0);
 			portraitLeft.alpha = 1;
+			if (sys.FileSystem.exists('assets/shared/images/portraits/' + player2 + '.png'))
+		{
+			portraitLeft.frames = Paths.getSparrowAtlas('portraits/' + player2, 'shared');
+		}
+		else
+		{
+			portraitLeft.frames = Paths.getSparrowAtlas('portraits/bf', 'shared');
+		}
 		switch (PlayState.SONG.player2)
 		{
-			case 'bf' | 'bf-car':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-				isPixel[1] = false;
-			case 'bf-christmas':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/bfPortraitXmas', 'shared');
-				isPixel[1] = false;
-			case 'pico':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/picoPortrait', 'shared');
-				isPixel[1] = false;
-			case 'spooky':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/spookyPortrait', 'shared');
-				isPixel[1] = false;
-			case 'gf':
-				// cursed
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/gfPortrait', 'shared');
-				isPixel[1] = false;
-			case 'dad':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/dadPortrait', 'shared');
-				isPixel[1] = false;
-			case 'mom' | 'mom-car':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/momPortrait', 'shared');
-				isPixel[1] = false;
-			case 'parents-christmas':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/parentsPortrait', 'shared');
-				isPixel[1] = false;
-			case 'monster-christmas':
-				// haha santa hat
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/monsterPortrait', 'shared');
-				isPixel[1] = false;
-			case 'monster':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/monsterPortrait', 'shared');
-				isPixel[1] = false;
-			case 'senpai':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/senpaiPortrait', 'shared');
-			case 'senpai-angry':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/senpai-angryPortrait', 'shared');
-			case 'spirit':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/senpaiPortrait', 'shared');
-			case 'macy':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/macyPortrait', 'shared');
-				isPixel[1] = false;
-			case 'athena-goddess':
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/princessAthenaPortrait', 'shared');
-				isPixel[1] = false;
-			default:
-				portraitLeft.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-			}
+			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit':
+				isPixel[1] = true;
+		}
 
 			if (isPixel[1]) {
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+			leftSize = (PlayState.daPixelZoom * 0.9);
 		} else {
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width * 0.9));
 		}
@@ -238,153 +245,75 @@ class DialogueBox extends FlxSpriteGroup
 		add(portraitLeft);
 		portraitLeft.visible = false;
 
-		if (PlayState.SONG.song.toLowerCase() == 'thorns')
+		if (PlayState.SONG.player2 == 'spirit')
 		{
 			var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
 		}
 
-		portraitANGRY = new FlxSprite(-20, 50);
-		portraitANGRY.frames = Paths.getSparrowAtlas('portraits/macyANGRYPortrait', 'shared');
-		portraitANGRY.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitANGRY.setGraphicSize(Std.int(portraitANGRY.width * 0.9));
-		portraitANGRY.updateHitbox();
-		portraitANGRY.scrollFactor.set();
-		add(portraitANGRY);
-		portraitANGRY.visible = false;
-
-		portraitSENPAI = new FlxSprite(-20, 40);
-		portraitSENPAI.frames = Paths.getSparrowAtlas('portraits/senpaiPortrait', 'shared');
-		portraitSENPAI.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitSENPAI.setGraphicSize(Std.int(portraitSENPAI.width * PlayState.daPixelZoom * 0.9));
-		portraitSENPAI.updateHitbox();
-		portraitSENPAI.scrollFactor.set();
-		add(portraitSENPAI);
-		portraitSENPAI.visible = false;
-
-		portraitCONFUSED = new FlxSprite(-20, 50);
-		portraitCONFUSED.frames = Paths.getSparrowAtlas('portraits/macyCONFUSEDPortrait', 'shared');
-		portraitCONFUSED.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitCONFUSED.setGraphicSize(Std.int(portraitCONFUSED.width * 0.9));
-		portraitCONFUSED.updateHitbox();
-		portraitCONFUSED.scrollFactor.set();
-		add(portraitCONFUSED);
-		portraitCONFUSED.visible = false;
-
-		portraitCONTENT = new FlxSprite(-20, 50);
-		portraitCONTENT.frames = Paths.getSparrowAtlas('portraits/macyCONTENTPortrait', 'shared');
-		portraitCONTENT.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitCONTENT.setGraphicSize(Std.int(portraitCONTENT.width * 0.9));
-		portraitCONTENT.updateHitbox();
-		portraitCONTENT.scrollFactor.set();
-		add(portraitCONTENT);
-		portraitCONTENT.visible = false;
-
-		portraitHAPPY = new FlxSprite(-20, 50);
-		portraitHAPPY.frames = Paths.getSparrowAtlas('portraits/macyHAPPYPortrait', 'shared');
-		portraitHAPPY.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitHAPPY.setGraphicSize(Std.int(portraitHAPPY.width * 0.9));
-		portraitHAPPY.updateHitbox();
-		portraitHAPPY.scrollFactor.set();
-		add(portraitHAPPY);
-		portraitHAPPY.visible = false;
-
-		portraitRight = new FlxSprite(0, 40);
+		portraitRight = new FlxSprite(0, 0);
 		portraitRight.alpha = 1;
-		switch (PlayState.SONG.player1) {
-			case 'bf' | 'bf-car':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-				isPixel[0] = false;
-			case 'bf-christmas':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortraitXmas', 'shared');
-				isPixel[0] = false;
-			case 'pico': 
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/picoPortrait', 'shared');
-				isPixel[0] = false;
-			case 'spooky':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/spookyPortrait', 'shared');
-				isPixel[0] = false;
-			case 'gf':
-				// is this even possible? lmao weeeeee
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/gfPortrait', 'shared');
-				isPixel[0] = false;
-			case 'dad':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/dadPortrait', 'shared');
-				isPixel[0] = false;
-			case 'mom' | 'mom-car':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/momPortrait', 'shared');
-				isPixel[0] = false;
-			case 'parents-christmas':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/parentsPortrait', 'shared');
-				isPixel[0] = false;
-			case 'monster-christmas':
-				// haha santa hat 
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/monsterXmasPortrait', 'shared');
-				isPixel[0] = false;
-			case 'monster':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/monsterPortrait', 'shared');
-				isPixel[0] = false;
-			case 'senpai':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/senpaiPortrait', 'shared');
-			case 'senpai-angry':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/senpai-angryPortrait', 'shared');
-			case 'spirit':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/senpaiPortrait', 'shared');
-			case 'macy':
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/macyPortrait', 'shared');
-				isPixel[0] = false;
-			default:
-				portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPixelPortrait', 'shared');
-			}
+		if (sys.FileSystem.exists('assets/shared/images/portraits/' + player1 + '.png'))
+		{
+			portraitRight.frames = Paths.getSparrowAtlas('portraits/' + player1, 'shared');
+		}
+		else
+		{
+			portraitRight.frames = Paths.getSparrowAtlas('portraits/bf', 'shared');
+		}
+		portraitRight.flipX = true;
+		switch (PlayState.SONG.player1)
+		{
+			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit':
+				isPixel[0] = true;
+		}
 
 			if (isPixel[0]) {
 			portraitRight.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+			rightSize = (PlayState.daPixelZoom * 0.9);
 		} else {
 			portraitRight.setGraphicSize(Std.int(portraitLeft.width * 0.9));
-		}
-
-		var gameingFrames:Array<FlxFrame> = [];
-		var leftFrames:Array<FlxFrame> = [];
-		trace('gay');
-		for (frame in portraitRight.frames.frames)
-		{
-			if (frame.name != null && StringTools.startsWith(frame.name, 'Boyfriend portrait enter'))
-			{
-				gameingFrames.push(frame);
-			}
-		}
-		for (frame in portraitLeft.frames.frames)
-		{
-			if (frame.name != null && StringTools.startsWith(frame.name, 'Boyfriend portrait enter'))
-			{
-				leftFrames.push(frame);
-			}
-		}
-		if (gameingFrames.length == 0) {
-			rightHanded[0] = false;
-		}
-		if (leftFrames.length > 0) {
-			rightHanded[1] = true;
-		}
-		trace(rightHanded[0] + ' ' + rightHanded[1]);
-		if (rightHanded[0]) {
-			portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		} else {
-			portraitRight.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-			portraitRight.flipX = true;
-		}
-		if (!rightHanded[1]) {
-			portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		} else {
-			portraitLeft.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-			portraitLeft.flipX = true;
 		}
 
 		if (isPixel[0]) {
 			portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
 		} else {
 			portraitRight.setGraphicSize(Std.int(portraitRight.width * 0.9));
+		}
+
+		for (frame in portraitRight.frames.frames)
+		{
+			if (frame.name != null)
+			{
+				portraitRight.animation.addByPrefix(frame.name, frame.name, 1, false);
+			}
+			if (frame.name == 'default')
+			{
+				defaultRightHeight = frame.frame.height;
+				portraitRightOffset = 0;
+			}
+			else
+			{
+				portraitRightOffset = ((frame.frame.height - defaultRightHeight) * rightSize);
+				rightAnchor = (frame.frame.width * rightSize);
+			}
+		}
+		for (frame in portraitLeft.frames.frames)
+		{
+			if (frame.name != null)
+			{
+				portraitLeft.animation.addByPrefix(frame.name, frame.name, 1, false);
+			}
+			if (frame.name == 'default')
+			{
+				defaultLeftHeight = frame.frame.height;
+				portraitLeftOffset = 0;
+			}
+			else
+			{
+				portraitLeftOffset = ((frame.frame.height - defaultLeftHeight) * leftSize);
+			}
 		}
 
 		portraitRight.updateHitbox();
@@ -407,15 +336,20 @@ class DialogueBox extends FlxSpriteGroup
 		add(box);
 
 		box.screenCenter(X);
-		portraitLeft.screenCenter(X);
-		portraitANGRY.screenCenter(X);
-		portraitCONFUSED.screenCenter(X);
-		portraitCONTENT.screenCenter(X);
-		portraitHAPPY.screenCenter(X);
-		if (!PlayState.curStage.startsWith('school'))
+
+		portraitLeft.y = (box.getGraphicMidpoint().y - portraitLeft.height);
+		portraitRight.y = (box.getGraphicMidpoint().y - portraitRight.height);
+
+		if (PlayState.curStage.startsWith('school'))
 		{
-		portraitLeft.y += 10;
-		portraitRight.y += 10;
+			portraitRight.y += 322;
+			portraitLeft.y += 322;
+		}
+
+		else
+		{
+			portraitRight.y -= 75;
+			portraitLeft.y -= 75;
 		}
 
 
@@ -464,7 +398,7 @@ class DialogueBox extends FlxSpriteGroup
 	override function update(elapsed:Float)
 	{
 		// HARD CODING CUZ IM STUPDI
-		if (PlayState.SONG.song.toLowerCase() == 'thorns')
+		if (PlayState.SONG.song.toLowerCase() == 'thorns' && PlayState.SONG.player1 != 'macy')
 		{
 			portraitLeft.color = FlxColor.BLACK;
 			swagDialogue.color = FlxColor.WHITE;
@@ -505,13 +439,13 @@ class DialogueBox extends FlxSpriteGroup
 		// add(theDialog);
 
 		// swagDialogue.text = ;
-		swagDialogue.resetText(dialogueList[0]);
+		swagDialogue.resetText(curDialogue);
 		swagDialogue.start(0.04, true);
-
 		box.visible = true;
 		box.flipX = false;
 		swagDialogue.visible = true;
 		dropText.visible = true;
+		updateHeight(curAnim);
 
 		if (PlayState.SONG.song.toLowerCase() == 'forest world')
 			PlayState.dad.alpha = 0;
@@ -520,197 +454,91 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			case 'dad':
 				portraitRight.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitHAPPY.visible = false;
-				portraitANGRY.visible = false;
-				portraitSENPAI.visible = false;
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				}
-				if (!portraitLeft.visible)
+				box.flipX = false;
+				if (!portraitLeft.visible || (portraitLeft.animation.curAnim.name != curAnim))
 				{
 					portraitLeft.visible = true;
-					portraitLeft.animation.play('enter');
+					portraitLeft.updateHitbox();
+					portraitLeft.x = -300;
+					portraitLeft.alpha = 0;
+					portraitLeft.animation.play(curAnim);
 					trace(portraitLeft.animation.curAnim);
-				}
-			case 'electromaceAngry':
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitHAPPY.visible = false;
-				portraitRight.visible = false;
-				portraitLeft.visible = false;
-				portraitSENPAI.visible = false;
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				FlxG.sound.music.fadeOut(1.0, 0);
-				}
-				if (!portraitANGRY.visible)
-				{
-					portraitANGRY.visible = true;
-					portraitANGRY.animation.play('enter');
-					trace(portraitANGRY.animation.curAnim);
-				}
-			case 'senpai':
-				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitANGRY.visible = false;
-				portraitHAPPY.visible = false;
-				if (!portraitSENPAI.visible)
-				{
-					portraitSENPAI.visible = true;
-					portraitSENPAI.animation.play('enter');
-					trace(portraitSENPAI.animation.curAnim);
-				}
-			case 'gigavoltInitPiss':
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitHAPPY.visible = false;
-				portraitRight.visible = false;
-				portraitLeft.visible = false;
-				portraitSENPAI.visible = false;
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				FlxG.sound.playMusic(Paths.music('ShortCircuit'), 0.8);
-				}
-				if (!portraitANGRY.visible)
-				{
-					portraitANGRY.visible = true;
-					portraitANGRY.animation.play('enter');
-					trace(portraitANGRY.animation.curAnim);
-				}
-			case 'PISSED':
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitHAPPY.visible = false;
-				portraitRight.visible = false;
-				portraitLeft.visible = false;
-				portraitSENPAI.visible = false;
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				}
-				if (!portraitANGRY.visible)
-				{
-					portraitANGRY.visible = true;
-					portraitANGRY.animation.play('enter');
-					trace(portraitANGRY.animation.curAnim);
-				}
-			case 'notAngy':
-				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitRight.visible = false;
-				portraitANGRY.visible = false;
-				portraitSENPAI.visible = false;
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				}
-				if (!portraitCONTENT.visible)
-				{
-					portraitCONTENT.visible = true;
-					portraitCONTENT.animation.play('enter');
-					trace(portraitCONTENT.animation.curAnim);
-				}
-			case 'confused':
-				portraitLeft.visible = false;
-				portraitCONTENT.visible = false;
-				portraitHAPPY.visible = false;
-				portraitRight.visible = false;
-				portraitANGRY.visible = false;
-				portraitSENPAI.visible = false;
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				}
-				if (!portraitCONFUSED.visible)
-				{
-					portraitCONFUSED.visible = true;
-					portraitCONFUSED.animation.play('enter');
-					trace(portraitCONFUSED.animation.curAnim);
-				}
-			case 'content':
-				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitHAPPY.visible = false;
-				portraitRight.visible = false;
-				portraitANGRY.visible = false;
-				portraitSENPAI.visible = false;
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				}
-				if (!portraitCONTENT.visible)
-				{
-					portraitCONTENT.visible = true;
-					portraitCONTENT.animation.play('enter');
-					trace(portraitCONTENT.animation.curAnim);
-				}
-			case 'happy':
-				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitRight.visible = false;
-				portraitANGRY.visible = false;
-				portraitSENPAI.visible = false;
-				if (!PlayState.curStage.startsWith('school')) {
-					box.flipX = false;
-				}
-				if (!portraitHAPPY.visible)
-				{
-					portraitHAPPY.visible = true;
-					portraitHAPPY.animation.play('enter');
-					trace(portraitHAPPY.animation.curAnim);
+					updateHeight(curAnim);
+					FlxTween.tween(portraitLeft, { x: 250 }, 0.15);
+					FlxTween.tween(portraitLeft, { alpha: 1 }, 0.3);
 				}
 			case 'bf':
 				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitANGRY.visible = false;
-				portraitHAPPY.visible = false;
-				portraitSENPAI.visible = false;
 				// don't need to check for sided bc this changes nothing
 				box.flipX = false;
-				if (!portraitRight.visible)
+				if (!portraitRight.visible || (portraitRight.animation.curAnim.name != curAnim))
 				{
 					portraitRight.visible = true;
-					portraitRight.animation.play('enter');
+					portraitRight.updateHitbox();
+					portraitRight.x = FlxG.width + 300;
+					portraitRight.alpha = 0;
+					portraitRight.animation.play(curAnim);
+					trace(portraitRight.animation.curAnim);
+					updateHeight(curAnim);
+					if (curAnim != 'default')
+						FlxTween.tween(portraitRight, { x: (FlxG.width - 250 - rightAnchor)}, 0.15);
+					else
+						FlxTween.tween(portraitRight, {x: (FlxG.width - 250 - portraitRight.width)}, 0.15);
+					FlxTween.tween(portraitRight, { alpha: 1 }, 0.3);
 				}
 
 			case 'none':
 			{
 				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
 				portraitRight.visible = false;
-				portraitANGRY.visible = false;
-				portraitCONTENT.visible = false;
-				portraitHAPPY.visible = false;
-				portraitSENPAI.visible = false;
 				box.flipX = false;
 			}
-			case 'stinger':
-				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitCONTENT.visible = false;
-				portraitANGRY.visible = false;
-				portraitHAPPY.visible = false;
-				portraitSENPAI.visible = false;
-				// don't need to check for sided bc this changes nothing
-				box.flipX = false;
-				if (!portraitRight.visible)
-				{
-					portraitRight.visible = true;
-					portraitRight.animation.play('enter');
-				}
-				FlxG.sound.music.stop();
-			case 'end':
-				portraitLeft.visible = false;
-				portraitCONFUSED.visible = false;
-				portraitRight.visible = false;
-				portraitANGRY.visible = false;
-				portraitCONTENT.visible = false;
-				portraitHAPPY.visible = false;
-				portraitSENPAI.visible = false;
-				box.flipX = false;
-				FlxG.sound.music.stop();
+		}
+	}
+
+	function updateHeight(anim:String):Void
+	{
+		for (frame in portraitRight.frames.frames)
+		{
+			if (frame.name == 'default' && frame.name == anim)
+			{
+				defaultRightHeight = frame.frame.height;
+				portraitRightOffset = 0;
+			}
+			else if (frame.name == anim && frame.name != 'default')
+			{
+				portraitRightOffset = ((frame.frame.height - defaultRightHeight) * rightSize);
+				trace ('default height: ' + defaultRightHeight);
+				trace (frame.name + ' height: ' + frame.frame.height);
+				trace (frame.name + " - " + portraitRightOffset);
+			}
+		}
+		for (frame in portraitLeft.frames.frames)
+		{
+			if (frame.name == 'default' && frame.name == anim)
+			{
+				defaultLeftHeight = frame.frame.height;
+				portraitLeftOffset = 0;
+			}
+			else if ((frame.name == anim && frame.name != 'default'))
+			{
+				portraitLeftOffset = ((frame.frame.height - defaultLeftHeight) * leftSize);
+			}
+		}
+
+		portraitLeft.y = ((box.getGraphicMidpoint().y - portraitLeft.height) - portraitLeftOffset);
+		portraitRight.y = ((box.getGraphicMidpoint().y - portraitRight.height) - portraitRightOffset);
+
+		if (PlayState.curStage.startsWith('school'))
+		{
+			portraitRight.y += 322;
+			portraitLeft.y += 322;
+		}
+
+		else
+		{
+			portraitRight.y -= 75;
+			portraitLeft.y -= 75;
 		}
 	}
 
@@ -718,7 +546,25 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		var splitName:Array<String> = dialogueList[0].split(":");
 		curCharacter = splitName[1];
-		dialogueList[0] = dialogueList[0].substr(splitName[1].length + 2).trim();
+		curAnim = 'default';
+		if (curAnim != null)
+		{
+			curAnim = splitName[0];
+			switch (splitName[1])
+			{
+				case 'dad':
+					if (portraitLeft.animation.getByName(curAnim) == null)
+						curAnim = 'default';
+				case 'bf':
+					if (portraitRight.animation.getByName(curAnim) == null)
+						curAnim = 'default';
+			}
+		}
+		else
+		{
+			curAnim = 'default';
+		}
+		curDialogue = splitName[2];
 	}
 
 	function advanceDialog():Void
@@ -741,10 +587,6 @@ class DialogueBox extends FlxSpriteGroup
 					box.alpha -= 1 / 5;
 					bgFade.alpha -= 1 / 5 * 0.7;
 					forestBlack.alpha -= 1 / 5;
-					portraitCONFUSED.visible = false;
-					portraitCONTENT.visible = false;
-					portraitHAPPY.visible = false;
-					portraitANGRY.visible = false;
 					portraitLeft.visible = false;
 					portraitRight.visible = false;
 					swagDialogue.alpha -= 1 / 5;

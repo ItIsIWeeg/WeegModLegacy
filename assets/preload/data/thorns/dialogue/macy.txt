@@ -1,4 +1,4 @@
-:dad:WHY WON'T YOU LOVE ME?!
-:bf:Dude. Please. Just quit it.
-:dad:I WILL NOT GIVE IN. YOU'RE AS GOOD AS MINE.
-:bf:Jeez man. Whatever, let's get this done and over with.
+pissed:dad:WHY WON'T YOU LOVE ME?!
+angry:bf:Dude. Please. Just quit it.
+pissed:dad:I WILL NOT GIVE IN. YOU'RE AS GOOD AS MINE.
+content:bf:Jeez man. Whatever, let's get this done and over with.

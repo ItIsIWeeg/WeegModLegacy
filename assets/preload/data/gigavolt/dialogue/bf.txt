@@ -1,7 +1,8 @@
-:content:...
-:bf:...
-:content:Mediocre again, huh?
-:content:You know what? I don't care about anything else anymore.
-:gigavoltInitPiss:I am going to WIN THIS, you hear me, shortie?
-:PISSED:NO MATTER WHAT IT TAKES!
-:bf: Beep badaboobeep
+content:dad:...
+:bf:...beep.
+content:dad:...
+:bf:...Ba beep?
+:dad:...You know what shortie?
+happy:dad:I'm not gonna hold back anymore.
+angry:dad:YOU'RE GOIN' DOWN, YA HEAR ME?
+:bf: Beep badaboobeep!

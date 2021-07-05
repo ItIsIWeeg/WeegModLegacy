@@ -12,6 +12,7 @@ import lime.utils.Assets;
 import sys.FileSystem;
 import flash.media.Sound;
 import sys.io.File;
+import flixel.tweens.FlxTween;
 
 
 #if desktop
@@ -30,6 +31,8 @@ class FreeplayState extends MusicBeatState
 	var curMode:Int = 0;
 	private var icon:HealthIcon;
 	private var encoreicon:HealthIcon;
+
+	var bg:FlxSprite;
 
 	var scoreText:FlxText;
 	var diffText:FlxText;
@@ -57,6 +60,7 @@ class FreeplayState extends MusicBeatState
 
 	private var encoreiconArray:Array<HealthIcon> = [];
 	private var iconArray:Array<HealthIcon> = [];
+	var characterArray:Array<String> = [];
 
 	var characters:Array<String> = [];
 
@@ -84,9 +88,17 @@ class FreeplayState extends MusicBeatState
 			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
+		if (FlxG.save.data.unlockedZuki == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('I Love You', 0, 'kazuki'));
+		}
+		if (FlxG.save.data.unlockedSonic == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('Sonic Heroes', 0, 'sonic'));
+		}
+
 		songs.push(new SongMetadata('Ridge', 0, 'macy'));
 		songs.push(new SongMetadata('Smash', 0, 'dad'));
-		songs.push(new SongMetadata('I Love You', 0, 'kazuki'));
 
 		trace(initCustomSonglist);
 		for (i in 0...initCustomSonglist.length) {
@@ -120,7 +132,8 @@ class FreeplayState extends MusicBeatState
 
 		// LOAD CHARACTERS
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
+		bg = new FlxSprite().loadGraphic(Paths.image('menuMacyDesat'));
+		bg.color = Character.getColor('gf');
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
@@ -451,6 +464,8 @@ class FreeplayState extends MusicBeatState
 		if (curSelected >= songs.length)
 			curSelected = 0;
 
+		FlxTween.color(bg, 0.15, bg.color, Character.getColor(songs[curSelected].songCharacter));
+
 		// selector.y = (70 * curSelected) + 30;
 
 		#if !switch
@@ -459,16 +474,30 @@ class FreeplayState extends MusicBeatState
 		// lerpScore = 0;
 		#end
 		if (songs[curSelected].week == -1) {
-			#if sys
-				FlxG.sound.playMusic(Sound.fromFile("mods/songs/"+ songs[curSelected].songName +"/Inst.ogg"), 0);
+			#if PRELOAD_ALL
+			#if target.threaded
+			if(!FlxG.sound.muted){
+				sys.thread.Thread.create(() -> {
+					FlxG.sound.playMusic(Sound.fromFile("mods/songs/" + songs[curSelected].songName.toLowerCase() + "/Inst.ogg"), 0.6, false);
+				});
+			}
 			#else
-				FlxG.sound.playMusic('mods/songs' + songs[curSelected].songName + "/Inst.ogg" + TitleState.soundExt, 0);
+			FlxG.sound.playMusic(Sound.fromFile("mods/songs/" + songs[curSelected].songName.toLowerCase() + "/Inst.ogg"), 0.6, false);
+			#end
 			#end
 		}
 		else
 		{
-			#if sys
-			FlxG.sound.playMusic(Sound.fromFile("assets/songs/"+ songs[curSelected].songName +"/Inst.ogg"), 0);
+			#if PRELOAD_ALL
+		#if target.threaded
+			if(!FlxG.sound.muted){
+				sys.thread.Thread.create(() -> {
+					FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+				});
+			}
+			#else
+			FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+			#end
 			#end
 		}
 		var bullShit:Int = 0;

@@ -60,7 +60,8 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuBG'));
+		var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuMacyDesat'));
+		bg.color = 0xFF7FFFBF;
 		bg.scrollFactor.x = 0;
 		bg.scrollFactor.y = 0.10;
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
@@ -72,7 +73,7 @@ class MainMenuState extends MusicBeatState
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+		magenta = new FlxSprite(-100).loadGraphic(Paths.image('menuMacyDesat'));
 		magenta.scrollFactor.x = 0;
 		magenta.scrollFactor.y = 0.10;
 		magenta.setGraphicSize(Std.int(magenta.width * 1.1));
@@ -80,7 +81,7 @@ class MainMenuState extends MusicBeatState
 		magenta.screenCenter();
 		magenta.visible = false;
 		magenta.antialiasing = true;
-		magenta.color = 0xFFfd719b;
+		magenta.color = 0xFF01786F;
 		add(magenta);
 		// magenta.scrollFactor.set();
 
@@ -164,7 +165,7 @@ class MainMenuState extends MusicBeatState
 			if (FlxG.keys.pressed.I)
 			{
 				FlxG.sound.music.fadeOut(0.5, 0);
-				FlxG.save.data.unlockingChar = 'kazuki';
+				FlxG.save.data.unlockingChar = 'sonic';
 				FlxG.switchState(new NewCharacterState());
 			}
 

@@ -37,10 +37,10 @@ Lunchbox (Scary):spirit
 Thorns:spirit
 Game Over:bf
 Game Over Pixel:bf-pixel
+Choose Your Character:bf
 Macy-Breeze:macy
 Coffee Date:macy
 Electromace:macy
 Short Circuit:macy
-Gigavolt:macy
-Ridge:macy
-Smash:dad
+GIGAVOLT:macy
+Psycho Soldier Theme:athena

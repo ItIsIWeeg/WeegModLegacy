@@ -1,4 +1,6 @@
 gf
+gf-spooky
 gf-car
 gf-christmas
 gf-pixel
+gf-clock

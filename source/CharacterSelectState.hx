@@ -5,10 +5,12 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.addons.display.FlxBackdrop;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
+import flixel.tweens.FlxTween;
 
 
 #if windows
@@ -20,7 +22,8 @@ using StringTools;
 class CharacterSelectState extends MusicBeatState
 {
 	var songs:Array<FreeplayState.SongMetadata> = [];
-
+	var bg:FlxSprite;
+	var newBG:FlxBackdrop;
 	var selector:FlxText;
 	var curSelected:Int = 0;
 	public static var curDifficulty:Int = 1;
@@ -42,8 +45,6 @@ class CharacterSelectState extends MusicBeatState
 		FlxG.save.data.showedScene = false;
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('characterSelectList'));
 
-		FlxG.save.data.storyBalls = 0;
-
 		for (i in 0...initSonglist.length)
 		{
 			var data:Array<String> = initSonglist[i].split(':');
@@ -54,6 +55,10 @@ class CharacterSelectState extends MusicBeatState
 		{
 			songs.push(new FreeplayState.SongMetadata('kazuki', 0, 'kazuki'));
 		}
+		if (FlxG.save.data.unlockedSonic == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('sonic', 0, 'sonic'));
+		}
 
 		/* 
 			if (FlxG.sound.music != null)
@@ -62,6 +67,8 @@ class CharacterSelectState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			}
 		 */
+
+		 FlxG.sound.playMusic(Paths.inst('choose your character'), 0.6);
 
 		 #if windows
 		 // Updating Discord Rich Presence
@@ -78,22 +85,27 @@ class CharacterSelectState extends MusicBeatState
 
 		// LOAD CHARACTERS
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.color = 0xFF39805C;
+		bg = new FlxSprite().loadGraphic(Paths.image('menuMacyDesat'));
+		bg.color = 0xFFFFFFFF;
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = true;
-		add(bg);
+		//add(bg);
+
+		add(newBG = new FlxBackdrop(Paths.image('cssBG')));
+		newBG.velocity.set(-40, 40);
 
 		switch(PlayState.SONG.song.toLowerCase())
 		{
 			case 'satin-panties' | 'high' | 'milf':
-				curSelected = 1;
-			case 'cocoa' | 'eggnog' | 'winter-horrorland':
 				curSelected = 2;
-			case 'senpai' | 'roses' | 'thorns':
+			case 'cocoa' | 'eggnog' | 'winter-horrorland':
 				curSelected = 3;
+			case 'senpai' | 'roses' | 'thorns':
+				curSelected = 4;
+			case 'spookeez' | 'south' | 'monster':
+				curSelected = 1;
 			default:
 				curSelected = 0;
 		}
@@ -236,9 +248,9 @@ class CharacterSelectState extends MusicBeatState
 			}
 			chosenChar = songs[curSelected].songName.toLowerCase();
 			trace('CUR WEEK' + PlayState.storyWeek);
-			PlayState.SONG.player1 = songs[curSelected].songName.toLowerCase();
 			FlxG.save.data.curChar = songs[curSelected].songName.toLowerCase();
 			PlayState.activatedDebug = false;
+			FlxG.save.data.storyBalls = 0;
 			LoadingState.loadAndSwitchState(new PlayState());
 		}
 	}
@@ -282,6 +294,8 @@ class CharacterSelectState extends MusicBeatState
 			curSelected = songs.length - 1;
 		if (curSelected >= songs.length)
 			curSelected = 0;
+
+		FlxTween.color(newBG, 0.15, newBG.color, Character.getColor(songs[curSelected].songName));
 
 		// selector.y = (70 * curSelected) + 30;
 

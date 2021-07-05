@@ -54,6 +54,8 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (controls.ACCEPT)
 		{
+			PlayState.SONG.player1 = PlayState.playerOne;
+			PlayState.SONG.player2 = PlayState.playerTwo;
 			endBullshit();
 		}
 

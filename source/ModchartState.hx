@@ -334,7 +334,7 @@ class ModchartState
 
     // LUA SHIT
 
-    function new()
+    function new(?swap:Bool = false)
     {
         		trace('opening a lua state (because we are cool :))');
 				lua = LuaL.newstate();
@@ -345,7 +345,15 @@ class ModchartState
 				
 				//shaders = new Array<LuaShader>();
 
-				var result = LuaL.dofile(lua, Paths.lua(PlayState.SONG.song.toLowerCase() + "/modchart")); // execute le file
+				var result:Int;
+				if (swap)
+				{
+					result = LuaL.dofile(lua, Paths.lua('lua/modchart'));
+				}
+				else
+				{
+					result = LuaL.dofile(lua, Paths.lua(PlayState.SONG.song.toLowerCase() + "/modchart")); // execute le file
+				}
 	
 				if (result != 0)
 				{
@@ -829,9 +837,9 @@ class ModchartState
         return Lua.tostring(lua,callLua(name, args));
     }
 
-    public static function createModchartState():ModchartState
+    public static function createModchartState(?swap:Bool = false):ModchartState
     {
-        return new ModchartState();
+        return new ModchartState(swap);
     }
 }
 #end

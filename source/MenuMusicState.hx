@@ -120,8 +120,14 @@ class MenuMusicState extends MusicBeatState
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
-			icon = new HealthIcon(songs[i].songCharacter, false, false);
-			encoreicon = new HealthIcon(songs[i].songCharacter, false, false);
+			if (characters.contains(songs[i].songCharacter)) {
+				encoreicon = new HealthIcon(songs[i].songCharacter, false, true);
+				icon = new HealthIcon(songs[i].songCharacter, false, false);
+			} else 
+			{
+				encoreicon = new HealthIcon('face', false, true);
+				icon = new HealthIcon('face', false, false);
+			}
 			
 			//var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
 			//var encoreicon:HealthIcon = new HealthIcon(songs[i].songCharacter);

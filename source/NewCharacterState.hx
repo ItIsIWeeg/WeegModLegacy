@@ -175,7 +175,7 @@ class NewCharacterState extends MusicBeatState
 
 		switch(FlxG.save.data.unlockingChar)
 		{
-			case 'fkjsghdjgh':
+			case 'sonic':
 				character.y += 210;
 		}
 
@@ -286,11 +286,22 @@ class NewCharacterState extends MusicBeatState
 		trace("Line 165");
 
 		switch(FlxG.save.data.unlockingChar){
+			case 'sonic':
+				unlockSong = 'Sonic Heroes';
 			case 'kazuki':
 				unlockSong = 'I Love You';
+			case 'tankman':
+				unlockSong = 'Ugh';
 		}
 
-		FlxG.sound.playMusic(Paths.music('NewFoe'), 0.8);
+		if (FlxG.save.data.unlockingChar == 'sonic')
+		{
+			FlxG.sound.playMusic(Paths.music('SonicApproaching'), 0.8);
+		}
+		else
+			{
+				FlxG.sound.playMusic(Paths.music('NewFoe'), 0.8);
+			}
 
 		super.create();
 	}
@@ -402,7 +413,7 @@ class NewCharacterState extends MusicBeatState
 			PlayState.campaignScore = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				LoadingState.loadAndSwitchState(new CharacterSelectState(), true);
+				LoadingState.loadAndSwitchState(new PlayState(), true);
 			});
 		}
 	}
