@@ -6,6 +6,5 @@ mall:parents-christmas
 mallEvil:monster-christmas
 school:senpai
 schoolEvil:spirit
-tank:tankman
 grand-central:macy
 concert:athena
