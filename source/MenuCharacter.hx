@@ -30,8 +30,8 @@ class MenuCharacter extends FlxSprite
 		'mom' => new CharacterSetting(-30, 140, 0.85),
 		'parents-christmas' => new CharacterSetting(100, 130, 1.8),
 		'senpai' => new CharacterSetting(-40, -45, 1.4),
-		'macy' => new CharacterSetting(30, 160, 1.2),
-		'athena' => new CharacterSetting(-15, 129, 0.85)
+		'macy' => new CharacterSetting(30, 130, 0.9),
+		'athena' => new CharacterSetting(-15, 109, 0.85)
 	];
 
 	private var flipped:Bool = false;
@@ -54,7 +54,7 @@ class MenuCharacter extends FlxSprite
 		animation.addByPrefix('mom', "Mom Idle BLACK LINES", 24);
 		animation.addByPrefix('parents-christmas', "Parent Christmas Idle", 24);
 		animation.addByPrefix('senpai', "SENPAI idle Black Lines", 24);
-		animation.addByPrefix('macy', "macy idle BLACK LINES", 24);
+		animation.addByPrefix('macy', "macyIdle", 24);
 		animation.addByPrefix('athena', "Athena Idle", 24);
 
 		setGraphicSize(Std.int(width * scale));

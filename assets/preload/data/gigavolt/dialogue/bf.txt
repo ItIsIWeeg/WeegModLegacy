@@ -1,8 +1,8 @@
-content:dad:...
+pensive:dad:...
 :bf:...beep.
-content:dad:...
+pensive:dad:...
 :bf:...Ba beep?
-:dad:...You know what shortie?
-happy:dad:I'm not gonna hold back anymore.
-angry:dad:YOU'RE GOIN' DOWN, YA HEAR ME?
+unamused:dad:...You know what shortie?
+unamused:dad:I'm not gonna hold back anymore.
+pissed:dad:YOU'RE GOIN' DOWN, YA HEAR ME?
 :bf: Beep badaboobeep!

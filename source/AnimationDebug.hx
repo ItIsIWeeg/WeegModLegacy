@@ -39,7 +39,7 @@ class AnimationDebug extends FlxState
 		gridBG.scrollFactor.set(0.5, 0.5);
 		add(gridBG);
 
-		if (daAnim == 'bf')
+		if (daAnim == PlayState.SONG.player1)
 			isDad = false;
 
 		if (isDad)
@@ -54,13 +54,12 @@ class AnimationDebug extends FlxState
 		}
 		else
 		{
-			bf = new Boyfriend(0, 0);
+			bf = new Boyfriend(0, 0, daAnim);
 			bf.screenCenter();
 			bf.debugMode = true;
 			add(bf);
 
 			char = bf;
-			bf.flipX = false;
 		}
 
 		dumbTexts = new FlxTypedGroup<FlxText>();
@@ -147,6 +146,19 @@ class AnimationDebug extends FlxState
 		if (FlxG.keys.justPressed.S)
 		{
 			curAnim += 1;
+		}
+
+		if (FlxG.keys.justPressed.Z)
+		{
+			FlxG.switchState(new AnimationDebug(PlayState.SONG.player1));
+		}
+		if (FlxG.keys.justPressed.X)
+		{
+			FlxG.switchState(new AnimationDebug(PlayState.SONG.player2));
+		}
+		if (FlxG.keys.justPressed.C)
+		{
+			FlxG.switchState(new AnimationDebug(PlayState.gf.curCharacter));
 		}
 
 		if (curAnim < 0)

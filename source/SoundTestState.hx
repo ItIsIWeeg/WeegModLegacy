@@ -59,6 +59,10 @@ class SoundTestState extends MusicBeatState
 			songs.push(new FreeplayState.SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
+		if (FlxG.save.data.unlockedBooba == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('Forest World', 0, 'athena-goddess'));
+		}
 		if (FlxG.save.data.unlockedZuki == true)
 		{
 			songs.push(new FreeplayState.SongMetadata('I Love You', 0, 'kazuki'));
@@ -262,7 +266,7 @@ class SoundTestState extends MusicBeatState
 			switch (soundTestSong) {
 				case 'Coffee Date' | 'Electromace' | 'Macy-Breeze' | 'Short Circuit':
 					composer = 'Corvus Bebop';
-				case 'GIGAVOLT' | 'Night Sky' | 'Choose Your Character':
+				case 'GIGAVOLT' | 'Night Sky' | 'Choose Your Character' | 'I Love You':
 					composer = 'K-Man';
 				case 'Monster' | 'Winter-Horrorland':
 					composer = 'Bassetfilms';
@@ -294,6 +298,8 @@ class SoundTestState extends MusicBeatState
 					songOrigin = 'PaRappa the Rapper 2 (2001)';
 				case 'Soy Sauce for Geese':
 					songOrigin = 'Fatal Fury Special (1993)';
+				case 'Ridge':
+					songOrigin = 'Ridge Racer Type 4 (1998)';
 				case 'Bloody':
 					songOrigin = "KOF '97 (1997)";
 				case "True Love we Makin'":

@@ -29,6 +29,7 @@ class OptionsMenu extends MusicBeatState
 			new DownscrollOption("Change the layout of the strumline."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
+			new CutsceneOption("Change when cutscenes are played."),
 			#if desktop
 			new FPSCapOption("Cap your FPS"),
 			#end
@@ -40,20 +41,24 @@ class OptionsMenu extends MusicBeatState
 		]),
 		new OptionCategory("Appearance", [
 			#if desktop
+			new CensoredBooba("Toggle whether or not you see a bikini or something."),
+			new CustArrows("Toggle between using vanilla arrow colors and custom arrow colors."),
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			new RainbowFPSOption("Make the FPS Counter Rainbow"),
 			new AccuracyOption("Display accuracy information."),
 			new ComboOption("Toggle whether your combo shows up"),
 			new NPSDisplayOption("Shows your current Notes Per Second."),
 			new SongPositionOption("Show the songs current position (as a bar)"),
-			//new CpuStrums("CPU's strumline lights up when a note hits it."),
 			#else
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay.")
 			#end
 		]),
 		new OptionCategory("Sound", [
 			new MenuMusicOption("Change the menu music."),
-			new SoundTestOption("Listen to the entire OST, including upcoming songs!"),
+			new SoundTestOption("Listen to the entire OST, including upcoming songs!")
+		]),
+		
+		new OptionCategory("Title Screen", [
 			new LyricsOption("Change the lyrics that appear on the title screen.")
 		]),
 		

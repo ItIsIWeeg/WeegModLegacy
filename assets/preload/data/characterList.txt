@@ -4,7 +4,6 @@ gf
 bf-spooky
 spooky
 pico
-encore-pico
 mom
 mom-car
 bf-car
@@ -17,10 +16,12 @@ bf-pixel
 senpai
 senpai-angry
 spirit
-tankman
 macy
+macy-old
 athena
 athena-goddess
 bowie
 sonic
 kazuki
+fever
+joshua

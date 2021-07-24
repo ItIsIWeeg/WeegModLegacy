@@ -292,6 +292,8 @@ class NewCharacterState extends MusicBeatState
 				unlockSong = 'I Love You';
 			case 'tankman':
 				unlockSong = 'Ugh';
+			case 'athena-goddess':
+				unlockSong = 'Forest World';
 		}
 
 		if (FlxG.save.data.unlockingChar == 'sonic')

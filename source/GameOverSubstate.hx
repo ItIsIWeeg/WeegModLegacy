@@ -23,6 +23,8 @@ class GameOverSubstate extends MusicBeatSubstate
 			case 'bf-pixel':
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
+			case 'sonic' | 'fever':
+				daBf = PlayState.SONG.player1;
 			default:
 				daBf = 'bf';
 		}

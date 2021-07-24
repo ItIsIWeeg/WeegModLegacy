@@ -327,11 +327,11 @@ class TitleState extends MusicBeatState
 
 				http.onData = function (data:String) {
 					#if debug
-				  		if (!MainMenuState.kadeEngineVer.contains(data.trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
+						FlxG.save.data.censored = null;
+				  		if (FlxG.save.data.censored == null)
 						{
-							trace('outdated lmao! ' + data.trim() + ' != ' + MainMenuState.kadeEngineVer);
-							OutdatedSubState.needVer = data;
-							FlxG.switchState(new MainMenuState());
+							trace('whoops potential boobs');
+							FlxG.switchState(new OutdatedSubState());
 						}
 						else
 						{
@@ -339,7 +339,15 @@ class TitleState extends MusicBeatState
 						}
 					#end
 
-					FlxG.switchState(new MainMenuState());
+					if (FlxG.save.data.censored == null)
+					{
+						trace('whoops potential boobs');
+						FlxG.switchState(new OutdatedSubState());
+					}
+					else
+					{
+						FlxG.switchState(new MainMenuState());
+					}
 				}
 				
 				http.onError = function (error) {
@@ -371,6 +379,27 @@ class TitleState extends MusicBeatState
 			credGroup.add(money);
 			textGroup.add(money);
 		}
+	}
+
+	function createTitleText(textArray:Array<String>)
+	{
+		for (i in 0...textArray.length)
+		{
+			var money:Alphabet = new Alphabet(0, 0, textArray[i], true, false);
+			money.screenCenter(X);
+			money.y += (i * 60) + 60;
+			credGroup.add(money);
+			textGroup.add(money);
+		}
+	}
+
+	function addTitleText(text:String)
+	{
+		var coolText:Alphabet = new Alphabet(0, 0, text, true, false);
+		coolText.screenCenter(X);
+		coolText.y += (textGroup.length * 60) + 60;
+		credGroup.add(coolText);
+		textGroup.add(coolText);
 	}
 
 	function addMoreText(text:String)
@@ -466,28 +495,36 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 4:
-				createCoolText(['ItIsIWeeg']);
+				createCoolText(['Weeg']);
 			// credTextShit.visible = true;
 			case 5:
 				addMoreText('K-Man');
 			case 6:
-				addMoreText('Ash');
+				addMoreText('LovelyMadonna');
 			case 7:
 				addMoreText('Corvus Bebop');
 				addMoreText('present');
 			case 8:
 				deleteCoolText();
-				createCoolText(['With the help of', 'LovelyMadonna']);
+				createTitleText(['With the help of', 'Durr']);
 			case 9:
-				addMoreText('Angie');
+				addTitleText('Angie');
 			case 10:
-				addMoreText('IdyllicIdgit');
+				addTitleText('IdyllicIdgit');
 			case 11:
-				addMoreText('enricooler');
-			case 12 | 16 | 20:
+				addTitleText('Ash');
+			case 12:
+				addTitleText('enricooler');
+			case 13:
+				addTitleText('Ghostbunbun');
+			case 14:
+				addTitleText('JZ');
+			case 15:
+				addTitleText('and CesarFever');
+			case 16 | 20:
 				deleteCoolText();
 				createCoolText([curWacky[0]]);
-			case 14 | 18 | 22:
+			case 18 | 22:
 				addMoreText(curWacky[1]);
 				curWacky = FlxG.random.getObject(getIntroTextShit());
 			case 24:
@@ -497,18 +534,18 @@ class TitleState extends MusicBeatState
 				addMoreText('by K Man');
 			case 28:
 				deleteCoolText();
-				createCoolText(['taking a while']);
+				createCoolText(['about time']);
 			case 30:
-				addMoreText('please be patient');
+				addMoreText('here we go');
 			case 32:
 				deleteCoolText();
-				createCoolText(['Weeg Mod']);
+				createCoolText(['Weeg']);
 			case 33:
-				addMoreText('version two');
+				addMoreText('Mod');
 			case 34:
-				addMoreText('prerelease');
+				addMoreText('Week');
 			case 35:
-				addMoreText('demo');
+				addMoreText('B');
 			case 36:
 				skipIntro();
 		}

@@ -43,14 +43,12 @@ class OutdatedSubState extends MusicBeatState
 		add(kadeLogo);
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Hey Cesar and chat!\nThanks for checking out the special"
-			+ "\nFever exclusive demo of Weeg Mod!"
-			+ "\n\nMe and the team are workin' pretty hard on this,\nbut I felt like a little sneak peek wouldn't\nhurt! Be sure to check out"
-			+ "the Options menu\n(I added a bit more stuff there.) \nFreeplay has a few more options too. And custom song support!"
-			+ "\nCheck the readme in the mods folder!\n\nOh, and if you want the cool new content, Press I in\nthe main menu, or beat Week A without getting blueballed."
-			+ "\n\nPersonally I'd prefer if you did the latter.\n\nPress Space to continue!"
-			+ "\nOr T for something special ;)"
-			+ "\n\n(This is the part where I plug my twitter @ItIsIWeeg to chat\nso they can keep up with my shit)",
+			'"Look out Gordon! Hotted BOOBS up ahead! Tits big ones!"\n'
+			+ "\nWARNING!!"
+			+ "\n\nThis mod's rated T for Teen and all, but there's something (or someone) pretty revealing hidden as an unlockable. And I know that's not PG clean enough for a livestream or something."
+			+ "\n\nIf you want to cover up that stuff, press BACKSPACE now."
+			+ "\n\nOr, if you want to risk it for the biscuit (is that how it goes?), press SPACE instead."
+			+ "\n\nThis option can be changed in the settings later.",
 			32);
 		
 		txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
@@ -88,17 +86,14 @@ class OutdatedSubState extends MusicBeatState
 		if (FlxG.keys.justPressed.SPACE)
 		{
 			leftState = true;
+			FlxG.save.data.censored = false;
 			FlxG.switchState(new MainMenuState());
 		}
-		if (FlxG.keys.justPressed.T)
+		if (FlxG.keys.justPressed.BACKSPACE)
 		{
 			leftState = true;
-			PlayState.SONG = Song.loadFromJson('thorns-hard', 'thorns');
-			PlayState.isStoryMode = false;
-			PlayState.storyDifficulty = 2;
-			PlayState.storyWeek = 6;
-			FlxG.save.data.curChar = 'spirit';
-			LoadingState.loadAndSwitchState(new PlayState());
+			FlxG.save.data.censored = true;
+			FlxG.switchState(new MainMenuState());
 		}
 		super.update(elapsed);
 	}

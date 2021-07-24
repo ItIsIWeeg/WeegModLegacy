@@ -32,7 +32,7 @@ class StoryMenuState extends MusicBeatState
 		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
 		['Coffee Date', 'Electromace', 'GIGAVOLT'],
-		['Psycho Soldier Theme']
+		['Psycho Soldier Theme', 'Will', 'Kizudarake no BLUEMOON']
 	];
 
 	var weekDisp:Array<Dynamic> = [
@@ -44,7 +44,8 @@ class StoryMenuState extends MusicBeatState
 		['Cocoa', 'Eggnog', 'Winter Wonderland'],
 		['Senpai', 'Roses', 'Thorns'],
 		['Coffee Date', 'Electromace', 'GIGAVOLT'],
-		['Psycho Soldier', 'Will (WIP)', 'Wounded BLUEMOON (WIP)']
+		['Psycho Soldier Theme', 'Will', 'Kizudarake no BLUEMOON'],
+		['Monster', 'Winter-Horrorland']
 	];
 
 	private var bgColors:Array<String> = [
@@ -56,7 +57,8 @@ class StoryMenuState extends MusicBeatState
 		'#FFEA80',
 		'#FFAA6F',
 		'#7FFFBF',
-		'#FF91A4'
+		'#FF91A4',
+		'#FFEA80'
 	];
 
 	var curDifficulty:Int = 1;
@@ -79,12 +81,13 @@ class StoryMenuState extends MusicBeatState
 		"",
 		"Daddy Dearest",
 		"Spooky Month",
-		"PICO",
-		"MOMMY MUST MURDER",
-		"RED SNOW",
+		"Pico",
+		"Mommy Must Murder",
+		"Red Snow",
 		"Hating Simulator ft. Moawling",
-		"Macy, Center Stage!",
-		"Athena on Stage (WIP)"
+		"Grand Central Symphony",
+		"Athena on Stage",
+		"The Monster Mash"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -219,7 +222,7 @@ class StoryMenuState extends MusicBeatState
 		add(yellowBG);
 		add(grpWeekCharacters);
 
-		txtTracklist = new FlxText(FlxG.width * 0.05, yellowBG.x + yellowBG.height + 100, 0, "Tracks", 32);
+		txtTracklist = new FlxText(5, yellowBG.x + yellowBG.height + 100, grpWeekText.members[1].x, "Tracks", 32);
 		txtTracklist.alignment = CENTER;
 		txtTracklist.font = rankText.font;
 		txtTracklist.color = 0xFFe55777;
@@ -334,13 +337,21 @@ class StoryMenuState extends MusicBeatState
 			}
 
 			PlayState.storyDifficulty = curDifficulty;
-
+			FlxG.save.data.storyBalls = 0;
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				LoadingState.loadAndSwitchState(new CharacterSelectState(), true);
+				if (Highscore.getWeekScore(curWeek, 0) == 0 && Highscore.getWeekScore(curWeek, 1) == 0 && Highscore.getWeekScore(curWeek, 2) == 0)
+				{
+					FlxG.save.data.curChar = null;
+					LoadingState.loadAndSwitchState(new PlayState());
+				}
+				else
+				{
+					LoadingState.loadAndSwitchState(new CharacterSelectState(), true);
+				}
 			});
 		}
 	}
@@ -397,8 +408,6 @@ class StoryMenuState extends MusicBeatState
 		if (curWeek < 0)
 			curWeek = weekData.length - 1;
 
-		FlxTween.color(yellowBG, 0.25, yellowBG.color, FlxColor.fromString(bgColors[curWeek]));
-
 		var bullShit:Int = 0;
 
 		for (item in grpWeekText.members)
@@ -428,10 +437,9 @@ class StoryMenuState extends MusicBeatState
 		for (i in stringThing)
 			txtTracklist.text += "\n" + i;
 
-		txtTracklist.screenCenter(X);
-		txtTracklist.x -= FlxG.width * 0.35;
-
 		txtTracklist.text += "\n";
+
+		FlxTween.color(yellowBG, 0.25, yellowBG.color, FlxColor.fromString(bgColors[curWeek]));
 
 		#if !switch
 		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);

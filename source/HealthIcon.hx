@@ -1,6 +1,10 @@
 package;
 
 import flixel.FlxSprite;
+import flash.display.BitmapData;
+import openfl.utils.Assets;
+
+using StringTools;
 
 class HealthIcon extends FlxSprite
 {
@@ -16,16 +20,15 @@ class HealthIcon extends FlxSprite
 		if (encore)
 			EncoreMode = 'encore/';
 
-		switch(char)
+		var isCustom:Bool = false;
+
+		var initCharList:Array<String> = CoolUtil.coolTextFile(Paths.txt('characterList'));
+		if (!initCharList.contains(char))
 		{
-			case 'perfect' | 'perfect-break':
-				loadGraphic(Paths.image('perfectIcon'), true, 70, 70);
-				animation.add('perfect', [3, 2, 1, 0], 24, false, isPlayer);
-				animation.add('perfect-break', [4], 0, false, isPlayer);
-			case 'go-for-a-perfect':
-				loadGraphic(Paths.image('goForAPerfect'), true, 270, 54);
-				animation.add('go-for-a-perfect', [0, 1], 2, true, isPlayer);
-			default:
+			isCustom = true;
+		}
+		if (!isCustom)
+		{
 				loadGraphic(Paths.image(EncoreMode + 'iconGrid'), true, 150, 150);
 
 				animation.add('bf', [0, 1, 60], 0, false, isPlayer);
@@ -48,18 +51,53 @@ class HealthIcon extends FlxSprite
 				animation.add('senpai-angry', [70, 71, 68], 0, false, isPlayer);
 				animation.add('spirit', [23, 76, 69], 0, false, isPlayer);
 				animation.add('bf-old', [14, 15, 79], 0, false, isPlayer);
-				animation.add('gf', [16, 62, 63], 0, false, isPlayer);
+				if (!isPlayer)
+				{
+					animation.add('gf', [16, 62, 63], 0, false, isPlayer);
+					animation.add('gf-christmas', [16, 62, 63], 0, false, isPlayer);
+				}
+				else
+				{
+					animation.add('gf', [16, 63, 62], 0, false, isPlayer);
+					animation.add('gf-christmas', [16, 63, 62], 0, false, isPlayer);
+				}
 				animation.add('parents-christmas', [17, 18, 67], 0, false, isPlayer);
 				animation.add('monster', [19, 20, 65], 0, false, isPlayer);
 				animation.add('monster-christmas', [19, 20, 65], 0, false, isPlayer);
 				animation.add('bf-holding-gf', [0, 1, 60], 0, false, isPlayer);
 				animation.add('macy', [30, 31, 73], 0, false, isPlayer);
+				animation.add('macy-old', [30, 31, 73], 0, false, isPlayer);
 				animation.add('athena', [32, 33, 77], 0, false, isPlayer);
 				animation.add('athena-goddess', [36, 37, 82], 0, false, isPlayer);
 				animation.add('bowie', [34, 35, 81], 0, false, isPlayer);
 				animation.add('sonic', [38, 39, 83], 0, false, isPlayer);
 				animation.add('kazuki', [40, 41, 84], 0, false, isPlayer);
+				animation.add('fever', [42, 43, 85], 0, false, isPlayer);
 		}
+		else
+		{
+			if (sys.FileSystem.exists('mods/characters/' + char + "/healthicon.png"))
+			{
+				var rawPic:BitmapData = getBitmapData('mods/characters/' + char + "/healthicon.png");
+				loadGraphic(rawPic, true, 150, 150);
+				if (width <= 300)
+				{
+					animation.add(char, [0, 1, 0], 0, false, isPlayer);
+				}
+				else
+				{
+					animation.add(char, [0, 1, 2], 0, false, isPlayer);
+				}
+			}
+			else
+			{
+				loadGraphic(Paths.image('iconGrid'), true, 150, 150);
+
+				animation.add(char, [10, 11, 80], 0, false, isPlayer);
+			}
+		}
+
+
 		animation.play(char);
 		
 		switch(char){
@@ -90,4 +128,22 @@ class HealthIcon extends FlxSprite
 		if (sprTracker != null)
 			setPosition(sprTracker.x + sprTracker.width + 10, sprTracker.y - 30);
 	}
+
+	public static function getBitmapData(id:String, ?useCache:Bool=true):BitmapData {
+        #if sys
+            // idk if this works lol
+			var path = Assets.exists(id) ? Assets.getPath(id) : null;
+            if (path == null)
+                path = id;
+			else return Assets.getBitmapData(id, useCache);
+			try {
+			return BitmapData.fromFile(path);
+			} catch (e:Any) {
+			throw 'File $path doesn\'t exist or cannot be read.';
+			}
+            
+        #else
+            return Assets.getBitmapData(id, useCache);
+        #end
+    }
 }

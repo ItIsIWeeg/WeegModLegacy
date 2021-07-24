@@ -132,6 +132,8 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			case 'bf-spooky' | 'bf-car':
 				player2 = 'bf';
+			case 'macy-old':
+				player2 = 'macy';
 			case 'mom-car':
 				player2 = 'mom';
 			case 'spirit':
@@ -143,27 +145,6 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'tutorial':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
-			case 'bopeebo':
-				FlxG.sound.play(Paths.sound('ANGRY_TEXT_BOX'));
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
-			case 'fresh':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
-			case 'dadbattle':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
 			case 'senpai':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-pixel');
@@ -189,23 +170,15 @@ class DialogueBox extends FlxSpriteGroup
 					box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
 					box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 				}
-			case 'coffee date':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
-			case 'electromace':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
-			case 'gigavolt':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
-			case 'forest world':
-				hasDialog = true;
+			default:
+				if (PlayState.hasDialogue == false)
+				{
+					hasDialog = PlayState.hasEnding;
+				}
+				else
+				{
+					hasDialog = PlayState.hasDialogue;
+				}
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
 				box.animation.addByPrefix('normal', 'speech bubble normal', 24, true);
@@ -249,6 +222,7 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
+				portraitLeft.color = FlxColor.BLACK;
 				add(face);
 		}
 
@@ -320,6 +294,14 @@ class DialogueBox extends FlxSpriteGroup
 		portraitRight.scrollFactor.set();
 		add(portraitRight);
 		portraitRight.visible = false;
+
+		if (PlayState.SONG.player1 == 'spirit')
+		{
+			var bfFace:FlxSprite = new FlxSprite(960, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
+				bfFace.setGraphicSize(Std.int(bfFace.width * 6));
+				portraitRight.color = FlxColor.BLACK;
+				add(bfFace);
+		}
 		
 		box.animation.play('normalOpen');
 		if (PlayState.curStage.startsWith('school'))

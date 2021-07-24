@@ -2,9 +2,13 @@
 <TextureAtlas imagePath="macy.png">
 	<!-- Created with Adobe Animate version 18.0.1.115 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="default" x="0" y="430" width="299" height="370"/>
-	<SubTexture name="angry" x="0" y="0" width="299" height="370"/>
-	<SubTexture name="confused" x="300" y="0" width="299" height="370"/>
-	<SubTexture name="content" x="600" y="0" width="299" height="370"/>
-	<SubTexture name="happy" x="300" y="430" width="299" height="370"/>
+	<SubTexture name="blush" x="1" y="1" width="304" height="400"/>
+	<SubTexture name="confused" x="306" y="1" width="304" height="400"/>
+	<SubTexture name="default" x="611" y="1" width="304" height="400"/>
+	<SubTexture name="happy" x="1" y="402" width="304" height="400"/>
+	<SubTexture name="lovestruck" x="306" y="402" width="304" height="400"/>
+	<SubTexture name="pensive" x="611" y="402" width="304" height="400"/>
+	<SubTexture name="pissed" x="1" y="803" width="304" height="400"/>
+	<SubTexture name="smug" x="306" y="803" width="304" height="400"/>
+	<SubTexture name="unamused" x="611" y="803" width="304" height="400"/>
 </TextureAtlas>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="newMacy.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="macy DOWN note0000" x="1" y="1" width="385" height="677" frameX="0" frameY="-6" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0001" x="1" y="1" width="385" height="677" frameX="0" frameY="-6" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0002" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0003" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0004" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0005" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0006" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0007" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0008" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0009" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0010" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0011" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0012" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy DOWN note0013" x="387" y="1" width="377" height="683" frameX="-1" frameY="0" frameWidth="385" frameHeight="683"/>
+	<SubTexture name="macy LEFT note0000" x="765" y="1" width="378" height="681" frameX="0" frameY="0" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0001" x="765" y="1" width="378" height="681" frameX="0" frameY="0" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0002" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0003" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0004" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0005" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0006" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0007" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0008" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0009" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0010" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0011" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0012" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy LEFT note0013" x="1144" y="1" width="370" height="675" frameX="-11" frameY="-6" frameWidth="381" frameHeight="681"/>
+	<SubTexture name="macy RIGHT note0000" x="1515" y="1" width="326" height="724" frameX="-25" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0001" x="1515" y="1" width="326" height="724" frameX="-25" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0002" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0003" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0004" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0005" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0006" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0007" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0008" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0009" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0010" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0011" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0012" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy RIGHT note0013" x="1" y="726" width="332" height="724" frameX="0" frameY="0" frameWidth="351" frameHeight="724"/>
+	<SubTexture name="macy UP note0000" x="334" y="726" width="422" height="768"/>
+	<SubTexture name="macy UP note0001" x="334" y="726" width="422" height="768"/>
+	<SubTexture name="macy UP note0002" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0003" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0004" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0005" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0006" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0007" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0008" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0009" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0010" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0011" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0012" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macy UP note0013" x="757" y="726" width="421" height="758" frameX="-1" frameY="-10" frameWidth="422" frameHeight="768"/>
+	<SubTexture name="macyIdle0000" x="1179" y="726" width="381" height="725"/>
+	<SubTexture name="macyIdle0001" x="1561" y="726" width="374" height="723" frameX="-1" frameY="-2" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0002" x="1" y="1495" width="366" height="721" frameX="-1" frameY="-4" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0003" x="368" y="1495" width="354" height="717" frameX="-2" frameY="-8" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0004" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0005" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0006" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0007" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0008" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0009" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0010" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0011" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0012" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+	<SubTexture name="macyIdle0013" x="723" y="1495" width="336" height="712" frameX="-3" frameY="-13" frameWidth="381" frameHeight="725"/>
+</TextureAtlas>

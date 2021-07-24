@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="athenaMyBeloved.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Athena Down0000" x="1" y="1" width="408" height="623" frameX="-1" frameY="-2" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0001" x="1" y="1" width="408" height="623" frameX="-1" frameY="-2" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0002" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0003" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0004" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0005" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0006" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0007" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0008" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0009" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0010" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0011" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0012" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Down0013" x="410" y="1" width="403" height="624" frameX="0" frameY="0" frameWidth="409" frameHeight="625"/>
+	<SubTexture name="Athena Idle0000" x="814" y="1" width="315" height="618" frameX="0" frameY="-15" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0001" x="814" y="1" width="315" height="618" frameX="0" frameY="-15" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0002" x="1130" y="1" width="306" height="618" frameX="-2" frameY="-15" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0003" x="1130" y="1" width="306" height="618" frameX="-2" frameY="-15" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0004" x="1437" y="1" width="301" height="626" frameX="-3" frameY="-8" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0005" x="1437" y="1" width="301" height="626" frameX="-3" frameY="-8" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0006" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0007" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0008" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0009" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0010" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0011" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0012" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Idle0013" x="1739" y="1" width="299" height="633" frameX="-3" frameY="0" frameWidth="315" frameHeight="634"/>
+	<SubTexture name="Athena Left0000" x="1" y="635" width="320" height="638"/>
+	<SubTexture name="Athena Left0001" x="1" y="635" width="320" height="638"/>
+	<SubTexture name="Athena Left0002" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Left0003" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Left0004" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Left0005" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Left0006" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Left0007" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Left0008" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Left0009" x="322" y="635" width="290" height="633" frameX="-30" frameY="-5" frameWidth="320" frameHeight="638"/>
+	<SubTexture name="Athena Right0000" x="613" y="635" width="384" height="625" frameX="-9" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0001" x="613" y="635" width="384" height="625" frameX="-9" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0002" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0003" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0004" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0005" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0006" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0007" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0008" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0009" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0010" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0011" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0012" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Right0013" x="998" y="635" width="372" height="625" frameX="0" frameY="0" frameWidth="393" frameHeight="625"/>
+	<SubTexture name="Athena Up0000" x="1371" y="635" width="323" height="676" frameX="0" frameY="0" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0001" x="1371" y="635" width="323" height="676" frameX="0" frameY="0" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0002" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0003" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0004" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0005" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0006" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0007" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0008" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0009" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0010" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0011" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0012" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+	<SubTexture name="Athena Up0013" x="1695" y="635" width="313" height="659" frameX="-13" frameY="-16" frameWidth="326" frameHeight="676"/>
+</TextureAtlas>

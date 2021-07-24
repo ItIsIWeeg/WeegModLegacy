@@ -1,29 +1,27 @@
 bf  |  doesn't matter what you put in the odd lines
-0xFF7BD6F6
+0xFF02A4D3
 dad |  this has to match "characterList.txt"
 0xFFBC91CF
 gf
 0xFFC32148
 bf-spooky
-0xFF7BD6F6
+0xFF02A4D3
 spooky
 0xFFCCCCCC
 pico
 0xFFDFFF80
-encore-pico
-0xFF222222
 mom
 0xFFFF80B7
 mom-car
 0xFFFF80B7
 bf-car
-0xFF7BD6F6
+0xFF02A4D3
 parents-christmas
 0xFFBC91CF
 monster-christmas
 0xFFFFEA80
 bf-christmas
-0xFF7BD6F6
+0xFF02A4D3
 gf-christmas
 0xFFC32148
 monster
@@ -36,9 +34,9 @@ senpai-angry
 0xFFFFAA6F
 spirit
 0xFFFF3C6E
-tankman
-0xFF222222
 macy
+0xFF7FFFBF
+macy-old
 0xFF7FFFBF
 athena
 0xFFFF91A4
@@ -50,3 +48,7 @@ sonic
 0xFF006AFF
 kazuki
 0xFF7FBFFF
+cesar
+0xFF8359A3
+joshua
+0xFFFFFFFF

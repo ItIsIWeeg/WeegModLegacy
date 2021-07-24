@@ -34,6 +34,9 @@ class FreeplayState extends MusicBeatState
 
 	var bg:FlxSprite;
 
+	var charList:Array<String> = [];
+	var unloadedChars:Array<String> = [];
+
 	var scoreText:FlxText;
 	var diffText:FlxText;
 	var modeText:FlxText;
@@ -47,7 +50,8 @@ class FreeplayState extends MusicBeatState
 
 	var modifierText:FlxText;
 	var goPerfect:FlxText;
-	var practiceMode:FlxText;
+	var bfDieText:FlxText;
+	var invisArrow:FlxText;
 	var doubleNotes:FlxText;
 	var colorlessNotes:FlxText;
 	
@@ -73,6 +77,17 @@ class FreeplayState extends MusicBeatState
 		FlxG.save.data.picoMode = false;
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 		characters = CoolUtil.coolTextFile(Paths.txt('characterList'));
+		var modChars:Array<String> = CoolUtil.coolTextFile('mods/characters/characters.txt');
+		for (i in 0...modChars.length)
+		{
+			characters.push(modChars[i]);
+		}
+		for (i in FileSystem.readDirectory(FileSystem.absolutePath("mods/characters")))
+		{
+			if (i.endsWith(".txt"))
+                continue;
+            characters.push(i);
+		}
 		trace(Paths.txt('freeplaySonglist'));
 		#if sys
 		var initCustomSonglist = CoolUtil.coolTextFile('mods/songs/songlist.txt');
@@ -88,6 +103,10 @@ class FreeplayState extends MusicBeatState
 			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
+		if (FlxG.save.data.unlockedBooba == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('Forest World', 0, 'athena-goddess'));
+		}
 		if (FlxG.save.data.unlockedZuki == true)
 		{
 			songs.push(new FreeplayState.SongMetadata('I Love You', 0, 'kazuki'));
@@ -96,7 +115,7 @@ class FreeplayState extends MusicBeatState
 		{
 			songs.push(new FreeplayState.SongMetadata('Sonic Heroes', 0, 'sonic'));
 		}
-
+		
 		songs.push(new SongMetadata('Ridge', 0, 'macy'));
 		songs.push(new SongMetadata('Smash', 0, 'dad'));
 
@@ -105,6 +124,8 @@ class FreeplayState extends MusicBeatState
 			var data:Array<String> = initCustomSonglist[i].split(':');
 			songs.push(new SongMetadata(data[0], -1, data[1]));
 		}
+
+		songs.push(new FreeplayState.SongMetadata('Random', -2, 'joshua'));
 
 		trace (FlxG.sound.music);
 
@@ -133,7 +154,7 @@ class FreeplayState extends MusicBeatState
 		// LOAD CHARACTERS
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuMacyDesat'));
-		bg.color = Character.getColor('gf');
+		bg.color = FlxColor.fromString(Character.getColor('gf'));
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
@@ -192,7 +213,7 @@ class FreeplayState extends MusicBeatState
 		scoreBG.alpha = 0.6;
 		add(scoreBG);
 
-		var modifierBG:FlxSprite = new FlxSprite(scoreBG.x - 6, 200).makeGraphic(Std.int(FlxG.width * 0.35), 450, 0xFF000000);
+		var modifierBG:FlxSprite = new FlxSprite(scoreBG.x - 6, 500).makeGraphic(Std.int(FlxG.width * 0.35), 450, 0xFF000000);
 		modifierBG.alpha = 0.6;
 		add(modifierBG);
 
@@ -216,23 +237,28 @@ class FreeplayState extends MusicBeatState
 		KCsText = new FlxText(diffText.x, rankingText.y + 28, 0, "", 24);
 		KCsText.font = diffText.font;
 
-		modifierText = new FlxText(modifierBG.x, 205, 0, "MODIFIERS", 32);
+		modifierText = new FlxText(modifierBG.x, 510, (FlxG.width - modifierBG.x), "MODIFIERS (TOGGLE WITH 1-3)", 32);
 		modifierText.font = diffText.font;
+		modifierText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, CENTER);
 
 		goPerfect = new FlxText(rankingText.x, modifierText.y + 40, 0, "Go for a Perfect!: " + FlxG.save.data.goPerfect, 24);
 		goPerfect.font = diffText.font;
 
-		practiceMode = new FlxText(rankingText.x, goPerfect.y + 28, 0, "Practice Mode: " + FlxG.save.data.practiceMode, 24);
-		practiceMode.font = diffText.font;
+		bfDieText = new FlxText(rankingText.x, goPerfect.y + 28, 0, "Opponents Resist: " + FlxG.save.data.bfDie, 24);
+		bfDieText.font = diffText.font;
+
+		invisArrow = new FlxText(rankingText.x, bfDieText.y + 28, 0, "Invisible Arrows: " + FlxG.save.data.invisArrows, 24);
+		invisArrow.font = diffText.font;
 
 		add(rankingText);
 		add(rankText);
 		add(KCsText);
-		add(modeText);
+		//add(modeText);
 		add(scoreText);
 		add (modifierText);
 		add (goPerfect);
-		add (practiceMode);
+		add (bfDieText);
+		add (invisArrow);
 
 		changeSelection();
 		changeDiff();
@@ -309,46 +335,49 @@ class FreeplayState extends MusicBeatState
 		var upP = controls.UP_P;
 		var downP = controls.DOWN_P;
 		var accepted = controls.ACCEPT;
-		
-		intendedRank = Highscore.getRank(songs[curSelected].songName, curDifficulty);
 
-		switch (intendedRank)
+		for (i in 0...(songs.length - 2))
 		{
-			case 1:
-				rankText.text = "STAGE CLEARED";
-				rankText.color = 0xFFFFFFFF;
-				iconArray[curSelected].animation.curAnim.curFrame = 2;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 2;
-			case 2:
-				rankText.text = "BRILLIANT";
-				rankText.color = 0xFF6B3FA0;
-				iconArray[curSelected].animation.curAnim.curFrame = 0;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 0;
-			case 3:
-				rankText.text = "INCREDIBLE";
-				rankText.color = 0xFF79640;
-				iconArray[curSelected].animation.curAnim.curFrame = 0;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 0;
+			var iconStuff:Int = Highscore.getRank(songs[i].songName, curDifficulty);
+			switch (iconStuff)
+			{
+				case 0 | 1:
+					iconArray[i].animation.curAnim.curFrame = 2;
+				case 2 | 3:
+					iconArray[i].animation.curAnim.curFrame = 0;
+				case 4 | 5:
+					iconArray[i].animation.curAnim.curFrame = 1;
+			}
+		}
+		if (songs[curSelected].week != -2)
+		{
+			intendedRank = Highscore.getRank(songs[curSelected].songName, curDifficulty);
 
-			case 4:
-				rankText.text = "KING CRAZY";
-				rankText.color = 0xFFE6BE8A;
-				iconArray[curSelected].animation.curAnim.curFrame = 1;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 1;
-			case 5:
-				rankText.text = "PERFECT";
-				rankText.color = 0xFFFFA6C9;
-				iconArray[curSelected].animation.curAnim.curFrame = 1;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 1;
-			default:
-				rankText.text = "NOT CLEARED";
-				rankText.color = 0xFF777777;
-				iconArray[curSelected].animation.curAnim.curFrame = 2;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 2;
-				
+			switch (intendedRank)
+			{
+				case 1:
+					rankText.text = "STAGE CLEARED";
+					rankText.color = 0xFFFFFFFF;
+				case 2:
+					rankText.text = "BRILLIANT";
+					rankText.color = 0xFF6B3FA0;
+				case 3:
+					rankText.text = "INCREDIBLE";
+					rankText.color = 0xFF79640;
+
+				case 4:
+					rankText.text = "KING CRAZY";
+					rankText.color = 0xFFE6BE8A;
+				case 5:
+					rankText.text = "PERFECT";
+					rankText.color = 0xFFFFA6C9;
+				default:
+					rankText.text = "NOT CLEARED";
+					rankText.color = 0xFF777777;		
+			}
 		}
 
-		KCsText.text = "KING CRAZIES: " + FlxG.save.data.totalKCs + " / " + songs.length * 3;
+		KCsText.text = "KING CRAZIES: " + FlxG.save.data.totalKCs + " / " + ((songs.length - 1) * 3);
 
 		if (upP)
 		{
@@ -381,20 +410,21 @@ class FreeplayState extends MusicBeatState
 			//back a month later, fries were shit but i kinda fixed it
 			FlxG.save.data.goPerfect = !FlxG.save.data.goPerfect;
 			goPerfect.text = "Go for a Perfect!: " + FlxG.save.data.goPerfect;
-			FlxG.save.data.practiceMode = false;
-			practiceMode.text = "Practice Mode: " + FlxG.save.data.practiceMode;
 		}
 
 		if (FlxG.keys.justPressed.TWO)
 		{
-			FlxG.save.data.practiceMode = !FlxG.save.data.practiceMode;
-			practiceMode.text = "Practice Mode: " + FlxG.save.data.practiceMode;
-			if (FlxG.save.data.goPerfect == true && FlxG.save.data.practiceMode == true)
-			FlxG.save.data.goPerfect = false;
-			goPerfect.text = "Go for a Perfect!: " + FlxG.save.data.goPerfect;
+			FlxG.save.data.bfDie = !FlxG.save.data.bfDie;
+			bfDieText.text = "Opponents Resist: " + FlxG.save.data.bfDie;
+		}
+
+		if (FlxG.keys.justPressed.THREE)
+		{
+			FlxG.save.data.invisArrows = !FlxG.save.data.invisArrows;
+			invisArrow.text = "Invisible Arrows: " + FlxG.save.data.invisArrows;
 		}
 	
-		if (accepted)
+		if (accepted && songs[curSelected].week != -2)
 		{
 			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 			var realChar:String;
@@ -417,6 +447,34 @@ class FreeplayState extends MusicBeatState
 			PlayState.storyWeek = songs[curSelected].week;
 			trace('CUR WEEK' + PlayState.storyWeek);
 			if (songs[curSelected].week == -1)
+				LoadingState.loadAndSwitchState(new StageSelectState());
+			else
+				LoadingState.loadAndSwitchState(new CharacterSelectState());
+		}
+		else if (accepted && songs[curSelected].week == -2)
+		{
+			var randSong:Int = FlxG.random.int(0, (songs.length - 2));
+			var poop:String = Highscore.formatSong(songs[randSong].songName.toLowerCase(), curDifficulty);
+			var realChar:String;
+			trace("json name: " + poop);
+			trace("folder: " + songs[randSong].songName.toLowerCase());
+			if (characters.contains(songs[randSong].songCharacter))
+				realChar = songs[randSong].songCharacter;
+			else
+				realChar = "dad";
+			if (songs[randSong].week == -1) {
+				FlxG.save.data.customSong = songs[randSong].songName;
+				PlayState.SONG = Song.loadFromJson(poop, songs[randSong].songName.toLowerCase(), true, realChar);
+			}
+			else
+			{
+				PlayState.SONG = Song.loadFromJson(poop, songs[randSong].songName.toLowerCase());
+			}
+			PlayState.isStoryMode = false;
+			PlayState.storyDifficulty = curDifficulty;
+			PlayState.storyWeek = songs[randSong].week;
+			trace('CUR WEEK' + PlayState.storyWeek);
+			if (songs[randSong].week == -1)
 				LoadingState.loadAndSwitchState(new StageSelectState());
 			else
 				LoadingState.loadAndSwitchState(new CharacterSelectState());
@@ -464,7 +522,22 @@ class FreeplayState extends MusicBeatState
 		if (curSelected >= songs.length)
 			curSelected = 0;
 
-		FlxTween.color(bg, 0.15, bg.color, Character.getColor(songs[curSelected].songCharacter));
+		if (songs[curSelected].week == -2)
+		{
+			rankingText.visible = false;
+			rankText.visible = false;
+			scoreText.visible = false;
+			diffText.visible = false;
+		}
+		else
+		{
+			rankingText.visible = true;
+			rankText.visible = true;
+			scoreText.visible = true;
+			diffText.visible = true;
+		}
+
+		FlxTween.color(bg, 0.15, bg.color, FlxColor.fromString(Character.getColor(songs[curSelected].songCharacter)));
 
 		// selector.y = (70 * curSelected) + 30;
 
@@ -473,32 +546,13 @@ class FreeplayState extends MusicBeatState
 		intendedRank = Highscore.getRank(songs[curSelected].songName, curDifficulty);
 		// lerpScore = 0;
 		#end
-		if (songs[curSelected].week == -1) {
-			#if PRELOAD_ALL
-			#if target.threaded
-			if(!FlxG.sound.muted){
-				sys.thread.Thread.create(() -> {
-					FlxG.sound.playMusic(Sound.fromFile("mods/songs/" + songs[curSelected].songName.toLowerCase() + "/Inst.ogg"), 0.6, false);
-				});
-			}
-			#else
+		if (songs[curSelected].week == -1)
+		{
 			FlxG.sound.playMusic(Sound.fromFile("mods/songs/" + songs[curSelected].songName.toLowerCase() + "/Inst.ogg"), 0.6, false);
-			#end
-			#end
 		}
 		else
 		{
-			#if PRELOAD_ALL
-		#if target.threaded
-			if(!FlxG.sound.muted){
-				sys.thread.Thread.create(() -> {
-					FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
-				});
-			}
-			#else
 			FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
-			#end
-			#end
 		}
 		var bullShit:Int = 0;
 

@@ -3,6 +3,7 @@ package;
 import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
+import sys.FileSystem;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.addons.display.FlxBackdrop;
@@ -11,6 +12,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.tweens.FlxTween;
+import Random;
 
 
 #if windows
@@ -22,6 +24,8 @@ using StringTools;
 class CharacterSelectState extends MusicBeatState
 {
 	var songs:Array<FreeplayState.SongMetadata> = [];
+	var charList:Array<String> = [];
+	var unloadedChars:Array<String> = [];
 	var bg:FlxSprite;
 	var newBG:FlxBackdrop;
 	var selector:FlxText;
@@ -44,21 +48,53 @@ class CharacterSelectState extends MusicBeatState
 	{
 		FlxG.save.data.showedScene = false;
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('characterSelectList'));
+		var custSonglist = CoolUtil.coolTextFile('mods/characters/characters.txt');
 
 		for (i in 0...initSonglist.length)
 		{
 			var data:Array<String> = initSonglist[i].split(':');
-			songs.push(new FreeplayState.SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
+			songs.push(new FreeplayState.SongMetadata(data[0], 0, data[0]));
+			charList.push(data[0]);
 		}
-
+		
+		if (FlxG.save.data.unlockedBooba == true)
+		{
+			songs.push(new FreeplayState.SongMetadata('athena-goddess', 0, 'athena-goddess'));
+			charList.push('athena-goddess');
+		}
 		if (FlxG.save.data.unlockedZuki == true)
 		{
 			songs.push(new FreeplayState.SongMetadata('kazuki', 0, 'kazuki'));
+			charList.push('kazuki');
 		}
 		if (FlxG.save.data.unlockedSonic == true)
 		{
 			songs.push(new FreeplayState.SongMetadata('sonic', 0, 'sonic'));
+			charList.push('sonic');
 		}
+
+		for (i in 0...custSonglist.length)
+		{
+			var data:Array<String> = custSonglist[i].split(':');
+			songs.push(new FreeplayState.SongMetadata(data[0], 0, data[0]));
+			charList.push(data[0]);
+		}
+
+		for (i in FileSystem.readDirectory(FileSystem.absolutePath("mods/characters")))
+		{
+			if (i.endsWith(".txt"))
+                continue;
+            unloadedChars.push(i);
+		}
+
+		for (i in 0...unloadedChars.length)
+		{
+			if (charList.contains(unloadedChars[i]))
+				continue;
+			songs.push(new FreeplayState.SongMetadata(unloadedChars[i], 0, unloadedChars[i]));
+		}
+
+		songs.push(new FreeplayState.SongMetadata('random', 2, 'face'));
 
 		/* 
 			if (FlxG.sound.music != null)
@@ -247,8 +283,14 @@ class CharacterSelectState extends MusicBeatState
 					diffic = '-hard';
 			}
 			chosenChar = songs[curSelected].songName.toLowerCase();
+			if (chosenChar == 'random')
+			{
+				//random time im sorry
+				var randChar:Int = FlxG.random.int(0, (songs.length - 2));
+				chosenChar = songs[randChar].songName.toLowerCase();
+			}
 			trace('CUR WEEK' + PlayState.storyWeek);
-			FlxG.save.data.curChar = songs[curSelected].songName.toLowerCase();
+			FlxG.save.data.curChar = chosenChar;
 			PlayState.activatedDebug = false;
 			FlxG.save.data.storyBalls = 0;
 			LoadingState.loadAndSwitchState(new PlayState());
@@ -295,7 +337,7 @@ class CharacterSelectState extends MusicBeatState
 		if (curSelected >= songs.length)
 			curSelected = 0;
 
-		FlxTween.color(newBG, 0.15, newBG.color, Character.getColor(songs[curSelected].songName));
+		FlxTween.color(newBG, 0.15, newBG.color, FlxColor.fromString(Character.getColor(songs[curSelected].songName)));
 
 		// selector.y = (70 * curSelected) + 30;
 

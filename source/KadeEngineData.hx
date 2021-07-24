@@ -5,8 +5,29 @@ class KadeEngineData
 {
     public static function initSave()
     {
-    	if (FlxG.save.data.storyBalls == null)
-    		FlxG.save.data.storyBalls = 0;
+    	if (FlxG.save.data.blueBalls == null)
+    		FlxG.save.data.blueBalls = 0;
+
+    	if (FlxG.save.data.goPerfect == null)
+    		FlxG.save.data.goPerfect = false;
+
+    	if (FlxG.save.data.unlockedBooba == null)
+    		FlxG.save.data.unlockedBooba = false;
+
+    	if (FlxG.save.data.bfDie == null)
+    		FlxG.save.data.bfDie = false;
+
+    	if (FlxG.save.data.invisArrows == null)
+    		FlxG.save.data.invisArrows = false;
+
+    	if (FlxG.save.data.customArrows == null)
+    		FlxG.save.data.customArrows = true;
+
+    	if (FlxG.save.data.showedScene == null)
+    		FlxG.save.data.showedScene = false;
+
+    	if (FlxG.save.data.alwaysShow == null)
+    		FlxG.save.data.alwaysShow = false;
 
     	if (FlxG.save.data.songsBeaten == null)
     		FlxG.save.data.songsBeaten = 0;
@@ -14,7 +35,8 @@ class KadeEngineData
     	if (FlxG.save.data.scoreScreen == null)
 			FlxG.save.data.scoreScreen = true;
 
-    	FlxG.save.data.unlockedZuki = true;
+    	if (FlxG.save.data.unlockedZuki == null)
+    		FlxG.save.data.unlockedZuki = false;
 
     	if (FlxG.save.data.unlockedSonic == null)
     		FlxG.save.data.unlockedSonic = false;

@@ -96,7 +96,7 @@ class DFJKOption extends Option
 	}
 }
 
-class CpuStrums extends Option
+class CensoredBooba extends Option
 {
 	public function new(desc:String)
 	{
@@ -106,7 +106,7 @@ class CpuStrums extends Option
 
 	public override function press():Bool
 	{
-		FlxG.save.data.cpuStrums = !FlxG.save.data.cpuStrums;
+		FlxG.save.data.censored = !FlxG.save.data.censored;
 		
 		display = updateDisplay();
 		return true;
@@ -114,9 +114,53 @@ class CpuStrums extends Option
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.cpuStrums ? "Light CPU Strums" : "CPU Strums stay static";
+		return  FlxG.save.data.censored ? "Censored Athena" : "Uncensored Athena";
 	}
 
+}
+
+class CustArrows extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.customArrows = !FlxG.save.data.customArrows;
+		
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return  FlxG.save.data.customArrows ? "Custom Arrow Colors" : "Vanilla Arrow Colors";
+	}
+
+}
+
+class CutsceneOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.alwaysShow = !FlxG.save.data.alwaysShow;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.alwaysShow ? "Cutscenes in Freeplay" : "No Freeplay Cutscenes";
+	}
 }
 
 class ComboOption extends Option

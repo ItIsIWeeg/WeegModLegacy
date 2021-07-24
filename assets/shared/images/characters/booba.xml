@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="booba.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Athena Idle0000" x="0" y="0" width="448" height="691" frameX="-5" frameY="-12" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0001" x="0" y="0" width="448" height="691" frameX="-5" frameY="-12" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0002" x="449" y="0" width="454" height="698" frameX="-2" frameY="-6" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0003" x="449" y="0" width="454" height="698" frameX="-2" frameY="-6" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0004" x="904" y="0" width="453" height="702" frameX="-2" frameY="-1" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0005" x="904" y="0" width="453" height="702" frameX="-2" frameY="-1" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0006" x="1358" y="0" width="455" height="703" frameX="0" frameY="0" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0007" x="1358" y="0" width="455" height="703" frameX="0" frameY="0" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0008" x="0" y="704" width="450" height="692" frameX="-3" frameY="-11" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0009" x="0" y="704" width="450" height="692" frameX="-3" frameY="-11" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0010" x="0" y="0" width="448" height="691" frameX="-5" frameY="-12" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0011" x="0" y="0" width="448" height="691" frameX="-5" frameY="-12" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena Idle0012" x="0" y="0" width="448" height="691" frameX="-5" frameY="-12" frameWidth="456" frameHeight="704"/>
+	<SubTexture name="Athena sing DOWN0000" x="451" y="704" width="380" height="610" frameX="0" frameY="-10" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0001" x="451" y="704" width="380" height="610" frameX="0" frameY="-10" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0002" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0003" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0004" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0005" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0006" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0007" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0008" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing DOWN0009" x="832" y="704" width="380" height="621" frameX="-1" frameY="0" frameWidth="381" frameHeight="621"/>
+	<SubTexture name="Athena sing LEFT0000" x="1213" y="704" width="354" height="698" frameX="0" frameY="0" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0001" x="1213" y="704" width="354" height="698" frameX="0" frameY="0" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0002" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0003" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0004" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0005" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0006" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0007" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0008" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0009" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0010" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing LEFT0011" x="1568" y="704" width="350" height="694" frameX="-11" frameY="-3" frameWidth="361" frameHeight="698"/>
+	<SubTexture name="Athena sing RIGHT0000" x="0" y="1403" width="526" height="641" frameX="-5" frameY="-1" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0001" x="0" y="1403" width="526" height="641" frameX="-5" frameY="-1" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0002" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0003" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0004" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0005" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0006" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0007" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0008" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing RIGHT0009" x="527" y="1403" width="515" height="641" frameX="0" frameY="0" frameWidth="531" frameHeight="642"/>
+	<SubTexture name="Athena sing UP0000" x="1043" y="1403" width="341" height="730"/>
+	<SubTexture name="Athena sing UP0001" x="1043" y="1403" width="341" height="730"/>
+	<SubTexture name="Athena sing UP0002" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+	<SubTexture name="Athena sing UP0003" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+	<SubTexture name="Athena sing UP0004" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+	<SubTexture name="Athena sing UP0005" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+	<SubTexture name="Athena sing UP0006" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+	<SubTexture name="Athena sing UP0007" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+	<SubTexture name="Athena sing UP0008" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+	<SubTexture name="Athena sing UP0009" x="1385" y="1403" width="341" height="725" frameX="0" frameY="-5" frameWidth="341" frameHeight="730"/>
+</TextureAtlas>

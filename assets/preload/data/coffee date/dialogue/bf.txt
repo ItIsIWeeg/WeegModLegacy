@@ -1,13 +1,13 @@
 :bf:Beep boop
-confused:dad:Hm?
-:dad:Oh! It's you! Zuki's little rapper cousin dude!
-happy:dadShe's always telling me stories about who you go up against!
+:dad:Hm?
+happy:dad:Oh! It's you! Zuki's little rapper cousin dude!
+happy:dad:She's always telling me stories about who you go up against!
 :dad:Like that Norwegian dude... oh, and my old boxing coach Matt too!
 happy:dad:You know, he called me his best student?
 confused:dad:Wait, I'm getting sidetracked here.
 happy:dad:What's up?
 :bf: Badaboopbeep babup
 confused:dad:...you want ME to be your next opponent?
-confused:dad:Uhh...
+pensive:dad:Uhh...
 happy:dad:Can't say I'm the best but sure, why not! I always like a little competition.
-happy:dad:C'mon, let's do this!
+smug:dad:C'mon, let's do this!

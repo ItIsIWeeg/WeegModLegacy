@@ -70,6 +70,26 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = true;
 		add(bg);
 
+		FlxG.mouse.visible = true;
+
+		var kadeLogo:FlxSprite = new FlxSprite(FlxG.width, 0).loadGraphic(Paths.image('weegModLogo'));
+		kadeLogo.scale.y = 0.3;
+		kadeLogo.scale.x = 0.3;
+		kadeLogo.x -= kadeLogo.frameHeight;
+		kadeLogo.y -= 180;
+		kadeLogo.alpha = 0.8;
+		kadeLogo.scrollFactor.x = 0;
+		kadeLogo.scrollFactor.y = 0;
+		add(kadeLogo);
+
+		FlxTween.angle(kadeLogo, kadeLogo.angle, -10, 2, {ease: FlxEase.quartInOut});
+
+		new FlxTimer().start(2, function(tmr:FlxTimer)
+		{
+			if(kadeLogo.angle == -10) FlxTween.angle(kadeLogo, kadeLogo.angle, 10, 2, {ease: FlxEase.quartInOut});
+			else FlxTween.angle(kadeLogo, kadeLogo.angle, -10, 2, {ease: FlxEase.quartInOut});
+		}, 0);
+
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 

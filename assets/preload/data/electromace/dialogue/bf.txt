@@ -1,10 +1,11 @@
 content:dad:So... uhh...
-happy:dad:...how was that?
+smug:dad:...how was that?
 :bf:Baboopbabeep.
 confused:dad:M-
-angry:dad:MEDIOCRE?
-content:dad:...
-content:dad:(He's only 2 feet tall he can't hurt you.)
+unamused:dad:Mediocre?
+unamused:dad:...
+pensive:dad:(He's only 2 feet tall he can't hurt you.)
 :bf:B)
-content:dad:(...okay, maybe his smug aura can.)
-:dad:Fine then, let's pick up the pace!
+confused:dad:(...okay, maybe his smug aura can.)
+happy:dad:Fine then, let's... pick up the pace! Ahaha...
+unamused:dad:You're so going down.
