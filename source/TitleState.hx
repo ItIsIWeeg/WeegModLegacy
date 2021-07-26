@@ -327,7 +327,6 @@ class TitleState extends MusicBeatState
 
 				http.onData = function (data:String) {
 					#if debug
-						FlxG.save.data.censored = null;
 				  		if (FlxG.save.data.censored == null)
 						{
 							trace('whoops potential boobs');
@@ -506,7 +505,7 @@ class TitleState extends MusicBeatState
 				addMoreText('present');
 			case 8:
 				deleteCoolText();
-				createTitleText(['With the help of', 'Durr']);
+				createTitleText(['With the help of', 'Durrealism']);
 			case 9:
 				addTitleText('Angie');
 			case 10:

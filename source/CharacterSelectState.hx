@@ -104,7 +104,7 @@ class CharacterSelectState extends MusicBeatState
 			}
 		 */
 
-		 FlxG.sound.playMusic(Paths.inst('choose your character'), 0.6);
+		 FlxG.sound.playMusic(Paths.inst("choose your funkin' character"), 0.6);
 
 		 #if windows
 		 // Updating Discord Rich Presence

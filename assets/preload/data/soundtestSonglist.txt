@@ -1,6 +1,7 @@
 Gettin' Freaky:bf
-Psycho Soldier (Funky Remix):athena
 What U Need is Remix:sonic
+Psycho Soldier (Funky Remix):athena
+Blue Underground Lake:athena
 True Love we Makin':athena
 Soy Sauce for Geese:athena
 Inner Shade:athena
@@ -12,34 +13,37 @@ Ripple Star Select:mom
 Viridian City:gf
 Toasty Buns:dad
 FC Field:spooky
+Title:bf
 Breakfast:bf
-Tutorial:gf:1
-Bopeebo:dad:1
-Fresh:dad:1
-Dadbattle:dad:1
-Spookeez:spooky:2
-South:spooky:2
-Monster:monster:2
-Pico:pico:3
-Philly:pico:3
-Blammed:pico:3
-Satin-Panties:mom:4
-High:mom:4
-Milf:mom:4
-Cocoa:parents-christmas:5
-Eggnog:parents-christmas:5
-Winter-Horrorland:monster:5
+Tutorial:gf
+Bopeebo:dad
+Fresh:dad
+Dadbattle:dad
+Spookeez:spooky
+South:spooky
+Monster:monster
+Pico:pico
+Philly:pico
+Blammed:pico
+Satin-Panties:mom
+High:mom
+Milf:mom
+Cocoa:parents-christmas
+Eggnog:parents-christmas
+Winter-Horrorland:monster-christmas
 Lunchbox:senpai
-Senpai:senpai:6
-Roses:senpai-angry:6
+Senpai:senpai
+Roses:senpai-angry
 Lunchbox (Scary):spirit
-Thorns:spirit:6
+Thorns:spirit
+Game Over:bf
+Game Over Pixel:bf-pixel
+Choose Your Funkin' Character:bf
 Macy-Breeze:macy
-Coffee Date:macy:7
-Electromace:macy:7
+Coffee Date:macy
+Electromace:macy
 Short Circuit:macy
-Gigavolt:macy:7
-Psycho Soldier Theme:athena:8
-Will:athena:8
-Kizudarake no BLUEMOON:athena:8
-Blue Underground Lake:athena
+GIGAVOLT:macy
+Psycho Soldier Theme:athena
+Will:athena
+Kizudarake no BLUEMOON:athena

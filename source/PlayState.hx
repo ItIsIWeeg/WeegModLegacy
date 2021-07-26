@@ -285,6 +285,10 @@ class PlayState extends MusicBeatState
 			dialoguePath = 'mods/songs/';
 			playerOne = 'bf';
 		}
+		else
+		{
+			dialoguePath = 'assets/data/';
+		}
 
 		if (FlxG.save.data.invisArrows && !isStoryMode)
 		{

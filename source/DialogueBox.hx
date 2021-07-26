@@ -198,7 +198,7 @@ class DialogueBox extends FlxSpriteGroup
 		}
 		else
 		{
-			portraitLeft.frames = Paths.getSparrowAtlas('portraits/unknown', 'shared');
+			portraitLeft.frames = Paths.getSparrowAtlas('portraits/bf', 'shared');
 		}
 		switch (PlayState.SONG.player2)
 		{
@@ -234,7 +234,7 @@ class DialogueBox extends FlxSpriteGroup
 		}
 		else
 		{
-			portraitRight.frames = Paths.getSparrowAtlas('portraits/unknown', 'shared');
+			portraitRight.frames = Paths.getSparrowAtlas('portraits/bf', 'shared');
 		}
 		portraitRight.flipX = true;
 		switch (PlayState.SONG.player1)
