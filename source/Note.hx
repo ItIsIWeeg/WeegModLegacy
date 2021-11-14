@@ -28,10 +28,14 @@ class Note extends FlxSprite
 	public var isSustainNote:Bool = false;
 	public var altNote:Bool = false;
 	public var evilNote:Bool = false;
+	public var oppMode:Bool = false;
+	public var noteSkin:String  = 'normal';
+	public var swaggerWidth:Float;
+	var daStage:String = PlayState.SONG.noteStyle;
 
 	public var noteScore:Float = 1;
 
-	public var custom:String = "";
+	public var colorSwap:ColorSwap;
 
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var PURP_NOTE:Int = 0;
@@ -41,7 +45,7 @@ class Note extends FlxSprite
 
 	public var rating:String = "shit";
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?altNote:Bool = false, ?evilNote:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?altNote:Bool = false, ?evilNote:Bool = false, ?noteSkin:String = 'normal')
 	{
 		super();
 
@@ -49,9 +53,29 @@ class Note extends FlxSprite
 			prevNote = this;
 
 		this.evilNote = evilNote;
+		this.noteSkin = noteSkin;
 
-		if (FlxG.save.data.customArrows)
-			custom = "CUSTOM_";
+		colorSwap = new ColorSwap();
+
+		oppMode = PlayState.opponentPlayer;
+
+		if (!evilNote)
+		{
+			colorSwap.hue = FlxG.save.data.arrowHSV[noteData % 4][0] / 360;
+			colorSwap.saturation = FlxG.save.data.arrowHSV[noteData % 4][1] / 100;
+			colorSwap.brightness = FlxG.save.data.arrowHSV[noteData % 4][2] / 100;
+
+			shader = colorSwap.shader;
+		}
+		else
+		{
+			colorSwap.hue = 0;
+			colorSwap.saturation = 0;
+			colorSwap.brightness = 0;
+
+			shader = colorSwap.shader;
+		}
+			
 
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
@@ -68,14 +92,40 @@ class Note extends FlxSprite
 
 		this.noteData = noteData;
 
-		var daStage:String = PlayState.curStage;
-
 		if (!evilNote)
 		{
-			switch (daStage)
+			switch (noteSkin)
 			{
-				case 'school' | 'schoolEvil':
-					loadGraphic(Paths.image('weeb/pixelUI/' + custom + 'arrows-pixels'), true, 17, 17);
+				case 'atari':
+					loadGraphic(Paths.image('atari/atariUI/atarinotesheet'), true, 10, 9);
+
+					animation.add('greenScroll', [6]);
+					animation.add('redScroll', [7]);
+					animation.add('blueScroll', [5]);
+					animation.add('purpleScroll', [4]);
+
+					swagWidth = 160 * 0.8;
+
+					if (isSustainNote)
+					{
+						loadGraphic(Paths.image('atari/atariUI/atarinotetrailsheet'), true, 6, 3);
+
+						animation.add('purpleholdend', [4]);
+						animation.add('greenholdend', [6]);
+						animation.add('redholdend', [7]);
+						animation.add('blueholdend', [5]);
+
+						animation.add('purplehold', [0]);
+						animation.add('greenhold', [2]);
+						animation.add('redhold', [3]);
+						animation.add('bluehold', [1]);
+					}
+
+					setGraphicSize(Std.int(width * PlayState.daAtariZoom));
+					updateHitbox();
+
+				case 'pixel':
+					loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels'), true, 17, 17);
 
 					animation.add('greenScroll', [6]);
 					animation.add('redScroll', [7]);
@@ -84,7 +134,7 @@ class Note extends FlxSprite
 
 					if (isSustainNote)
 					{
-						loadGraphic(Paths.image('weeb/pixelUI/' + custom + 'arrowEnds'), true, 7, 6);
+						loadGraphic(Paths.image('weeb/pixelUI/arrowEnds'), true, 7, 6);
 
 						animation.add('purpleholdend', [4]);
 						animation.add('greenholdend', [6]);
@@ -100,7 +150,7 @@ class Note extends FlxSprite
 					setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 					updateHitbox();
 				default:
-					frames = Paths.getSparrowAtlas(custom + 'NOTE_assets');
+					frames = Paths.getSparrowAtlas('NOTE_assets');
 
 					animation.addByPrefix('greenScroll', 'green0');
 					animation.addByPrefix('redScroll', 'red0');
@@ -119,7 +169,7 @@ class Note extends FlxSprite
 
 					setGraphicSize(Std.int(width * 0.7));
 					updateHitbox();
-					antialiasing = true;
+					antialiasing = !FlxG.save.data.lowEnd;
 			}
 		}
 		else
@@ -133,22 +183,30 @@ class Note extends FlxSprite
 
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
-				antialiasing = true;
+				antialiasing = !FlxG.save.data.lowEnd;
+		}
+
+		switch (noteSkin)
+		{
+			case 'atari':
+				swaggerWidth = 128;
+			default:
+				swaggerWidth = 112;
 		}
 
 		switch (noteData)
 		{
 			case 0:
-				x += swagWidth * 0;
+				x += swaggerWidth * 0;
 				animation.play('purpleScroll');
 			case 1:
-				x += swagWidth * 1;
+				x += swaggerWidth * 1;
 				animation.play('blueScroll');
 			case 2:
-				x += swagWidth * 2;
+				x += swaggerWidth * 2;
 				animation.play('greenScroll');
 			case 3:
-				x += swagWidth * 3;
+				x += swaggerWidth * 3;
 				animation.play('redScroll');
 		}
 
@@ -163,9 +221,13 @@ class Note extends FlxSprite
 		if (isSustainNote && prevNote != null)
 		{
 			noteScore * 0.2;
-			alpha = 0.6;
+			if (noteSkin != 'atari')
+			{
+				alpha = 0.6;
+			}
 
 			x += width / 2;
+			
 
 			switch (noteData)
 			{
@@ -181,10 +243,18 @@ class Note extends FlxSprite
 
 			updateHitbox();
 
-			x -= width / 2;
-
-			if (PlayState.curStage.startsWith('school'))
-				x += 30;
+			switch (noteSkin)
+			{
+				case 'normal':
+					x -= width / 2;
+				case 'pixel':
+					x -= width / 2;
+					x += 30;
+				case 'atari':
+					x -= width / 2;
+					x += 24;
+				
+			}
 
 			if (prevNote.isSustainNote)
 			{
@@ -215,7 +285,7 @@ class Note extends FlxSprite
 	{
 		super.update(elapsed);
 
-		if (mustPress)
+		if ((mustPress && !oppMode) || (!mustPress && oppMode))
 		{
 			// ass
 			if (isSustainNote)

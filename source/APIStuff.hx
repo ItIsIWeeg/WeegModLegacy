@@ -2,6 +2,6 @@ package;
 
 class APIStuff
 {
-	public static var API:String = "";
-	public static var EncKey:String = "";
+	public static var gameKey:Int = 643454;
+	public static var privateKey:String = "ada3bd410af430a8efaf24216662453b";
 }

@@ -65,16 +65,16 @@ class KeyBindMenu extends FlxSubState
 
 		persistentUpdate = persistentDraw = true;
 
-        keyTextDisplay = new FlxText(-10, 0, 1280, "", 72);
+        keyTextDisplay = new FlxText(0, 0, FlxG.width, "", 72);
 		keyTextDisplay.scrollFactor.set(0, 0);
 		keyTextDisplay.setFormat("VCR OSD Mono", 42, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		keyTextDisplay.borderSize = 2;
 		keyTextDisplay.borderQuality = 3;
 
-        blackBox = new FlxSprite(0,0).makeGraphic(FlxG.width,FlxG.height,FlxColor.BLACK);
+        blackBox = new FlxSprite(-2000,-2000).makeGraphic(FlxG.width * 5,FlxG.height * 5,FlxColor.BLACK);
         add(blackBox);
 
-        infoText = new FlxText(-10, 580, 1280, "(Escape to save, backspace to leave without saving)", 72);
+        infoText = new FlxText(0, 580, FlxG.width, "(Escape to save, backspace to leave without saving)", 72);
 		infoText.scrollFactor.set(0, 0);
 		infoText.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		infoText.borderSize = 2;
@@ -91,9 +91,11 @@ class KeyBindMenu extends FlxSubState
         FlxTween.tween(infoText, {alpha: 1}, 1.4, {ease: FlxEase.expoInOut});
         FlxTween.tween(blackBox, {alpha: 0.7}, 1, {ease: FlxEase.expoInOut});
 
-        OptionsMenu.instance.acceptInput = false;
+        //OptionsMenu.instance.acceptInput = false;
 
         textUpdate();
+
+        cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
 		super.create();
 	}
@@ -208,8 +210,6 @@ class KeyBindMenu extends FlxSubState
         state = "exiting";
 
         save();
-
-        OptionsMenu.instance.acceptInput = true;
 
         FlxTween.tween(keyTextDisplay, {alpha: 0}, 1, {ease: FlxEase.expoInOut});
         FlxTween.tween(blackBox, {alpha: 0}, 1.1, {ease: FlxEase.expoInOut, onComplete: function(flx:FlxTween){close();}});

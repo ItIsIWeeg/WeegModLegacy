@@ -18,6 +18,22 @@ import flixel.math.FlxRect;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.text.FlxText;
+import Preload.PreloadData;
+import haxe.Json;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.animation.FlxBaseAnimation;
+import flixel.graphics.frames.FlxAtlasFrames;
+import flixel.util.FlxColor;
+import haxe.Json;
+import flash.display.BitmapData;
+import openfl.utils.Assets;
+#if windows
+import Sys;
+import sys.FileSystem;
+import sys.io.File;
+#end
+import Preload.FunnyData;
 
 using StringTools;
 
@@ -95,15 +111,7 @@ class Caching extends MusicBeatState
 
     function cache()
     {
-        var music = [];
         var concert = [];
-
-        trace("caching music...");
-
-        for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
-        {
-            music.push(i);
-        }
 
         trace('caching concert...');
 
@@ -113,9 +121,8 @@ class Caching extends MusicBeatState
                 continue;
             concert.push(i);
         }
-    
 
-        toBeDone = Lambda.count(music) + Lambda.count(concert);
+        toBeDone = Lambda.count(concert);
 
         trace("Now Loading Shit: Exactly " + toBeDone + " Things.");
 
@@ -132,14 +139,6 @@ class Caching extends MusicBeatState
             FlxG.bitmap.add(Paths.image("concert/" + replaced, "shared"));
             trace("cached " + replaced);
             text2.text = ("Loaded " + replaced + ".png");
-            done++;
-        }
-
-        for (i in music)
-        {
-            FlxG.sound.cache(Paths.inst(i));
-            trace("cached " + i + " instrumental");
-            text2.text = ("Loaded " + i + " instrumental");
             done++;
         }
 

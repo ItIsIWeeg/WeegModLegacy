@@ -1,0 +1,20 @@
+event:swapLeft:kazuki-idol
+bored:dad:POWER LEVEL CRITICAL.
+bored:dad:SHUTTING DOWN.
+:bf:...baboopbep?
+event:swapLeft:macy
+happy:dad:Okaaay I'm back ba-
+confused:dad:Oh my god.
+pensive:dad:She...
+:dad:She fell asleep.
+event:swapLeft:kazuki-idol
+asleep:dad:zzzzz....
+event:swapLeft:macy
+event:autoClick
+:dad:WAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+:bf:Bep.
+:dad:Oh, right! Uhhh.
+happy:dad:Gimme a sec, lemme get this one up to bed first then I'll take your order.
+event:autoClick
+event:swapRight:pico
+:bf:OH COME ON

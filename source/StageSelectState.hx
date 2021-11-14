@@ -9,9 +9,11 @@ import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
+#if desktop
 import sys.FileSystem;
-import flash.media.Sound;
 import sys.io.File;
+#end
+import flash.media.Sound;
 
 
 #if desktop
@@ -103,7 +105,7 @@ class StageSelectState extends MusicBeatState
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = true;
+		bg.antialiasing = !FlxG.save.data.lowEnd;
 		add(bg);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
@@ -260,42 +262,6 @@ class StageSelectState extends MusicBeatState
 		var upP = controls.UP_P;
 		var downP = controls.DOWN_P;
 		var accepted = controls.ACCEPT;
-
-		switch (intendedRank)
-		{
-			case 1:
-				rankText.text = "STAGE CLEARED";
-				rankText.color = 0xFFFFFFFF;
-				iconArray[curSelected].animation.curAnim.curFrame = 2;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 2;
-			case 2:
-				rankText.text = "BRILLIANT";
-				rankText.color = 0xFF6B3FA0;
-				iconArray[curSelected].animation.curAnim.curFrame = 2;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 2;
-			case 3:
-				rankText.text = "INCREDIBLE";
-				rankText.color = 0xFF79640;
-				iconArray[curSelected].animation.curAnim.curFrame = 2;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 2;
-
-			case 4:
-				rankText.text = "KING CRAZY";
-				rankText.color = 0xFFE6BE8A;
-				iconArray[curSelected].animation.curAnim.curFrame = 1;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 1;
-			case 5:
-				rankText.text = "PERFECT";
-				rankText.color = 0xFFFFA6C9;
-				iconArray[curSelected].animation.curAnim.curFrame = 1;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 1;
-			default:
-				rankText.text = "NOT CLEARED";
-				rankText.color = 0xFF777777;
-				iconArray[curSelected].animation.curAnim.curFrame = 2;
-				encoreiconArray[curSelected].animation.curAnim.curFrame = 2;
-				
-		}
 
 		KCsText.text = "KING CRAZIES: " + FlxG.save.data.totalKCs + " / " + songs.length * 6;
 

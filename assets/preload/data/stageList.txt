@@ -6,5 +6,7 @@ mall
 mallEvil
 school
 schoolEvil
+school-atari
+schoolEvil-atari
 grand-central
 concert

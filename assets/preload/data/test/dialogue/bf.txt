@@ -1,0 +1,27 @@
+:dad:EVENT TEST.
+event:playMusic:heartbeat, heartbreak
+:dad:PLAY MUSIC.
+event:fadeOut
+:dad:FADE OUT.
+event:fadeIn
+:dad:FADE IN.
+event:playSound:GF_1
+:dad:PLAY SOUND.
+event:addBG:test
+:dad:ADD BACKGROUND.
+event:addBG:duck-test
+:dad:CHANGE BACKGROUND.
+event:addBG:test2
+:dad:ASPECT RATIO TEST.
+event:removeBG
+:dad:REMOVE BACKGROUND.
+event:swapLeft:dad
+:dad:LEFT PORTRAIT SWAP.
+:bf:What.
+event:swapRight:bf-pixel
+:bf:RIGHT PORTRAIT SWAP.
+event:swapLeft:bf
+:dad:the FUCK.
+event:windowGen:You are next.:WINDOW TEST.
+:dad:HOW.
+:bf:TEST COMPLETE. PROCEED WITH SONG.

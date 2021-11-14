@@ -1,77 +1,14 @@
 {
-	"isPixel": false, //If true, turns off antialiasing (useful for pixel characters)
-	"dadVar": 4, //This controls how long their singing animation lasts? Dad uses 6.1, everyone else uses 4.
-	"danceIdle": false, //If true, instead of 'idle' being used as their idle, 'danceLeft' and 'danceRight' are used (like skid n pump)
-	"scale": 1, //The character's sprites' scale
-	"flipX": true, //Determines if a character's sprite sheet is flipped or not
-	"color": "FF8833", //Determine's the character's healthbar / menu color.
-	"dialogueChar": "bf", //What the character's dialogue should be titled as (char.txt and char-end.txt)
+	"clone": "bf", "": "Copies the offsets of a character and a few interactions, disable it by removing this line or leaving it blank. Clones of BF variants that aren't just BF have their left and right animations swapped, so be warned.",
+	"no_antialiasing": false, "": "If set to true, forces antialiasing to be disabled, useful for Pixel characters",
+	"sing_duration": 4, "": "Duration of character sing animation's mult, Dad clones use 6.1 while everyone else uses 4",
+	"dance_idle": false, "": "Makes the character use danceRight/danceLeft animations instead of Idle, useful for Skid & Pump/GF clones",
+	"healthbar_color": "0xFFFF3F00", "": "Changes the healthbar color for the character. ",
+
+	"flip_x": true, "": "Flips X axis from the sprite, useful for Boyfriend and Pico clones",
 
 	"animations":
 	[
-		{
-			"anim": "idle",
-			"name": "BF idle dance",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singUP",
-			"name": "BF NOTE UP0",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singLEFT",
-			"name": "BF NOTE LEFT0",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singRIGHT",
-			"name": "BF NOTE RIGHT0",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singDOWN",
-			"name": "BF NOTE DOWN0",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singUPmiss",
-			"name": "BF NOTE UP MISS",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singLEFTmiss",
-			"name": "BF NOTE LEFT MISS",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singRIGHTmiss",
-			"name": "BF NOTE RIGHT MISS",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
-		{
-			"anim": "singDOWNmiss",
-			"name": "BF NOTE DOWN MISS",
-			"fps": 24,
-			"loop": false,
-			"indices": []
-		},
 		{
 			"anim": "hey",
 			"name": "BF HEY",
@@ -86,7 +23,7 @@
 			"loop": true,
 			"indices": []
 		}
-	],
+	], "": "The idle/sing/miss animations are added automatically with the same values as your clone character's, you just have to add animations to this array if you want to edit something or add new animations to it",
 
 	"animations_offsets":
 	[
@@ -142,5 +79,7 @@
 		}
 	],
 
-	"stageOffset": [0, 0, 0, 350] //Determines the offsets of each character, going: bf.x, bf.y, dad.x, dad.y
+	"common_stage_offset": [0, 0, 0, 0], "": "Your character's offset ingame, represented as Player 1's X and Y values, and the Player 2's",
+
+	"": "This formatting's based on Shadow Mario's (FNF Multiplayer creator) config.json files for FNF Multiplayer, so these files *should* be cross compatible."
 }

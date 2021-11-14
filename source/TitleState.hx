@@ -1,8 +1,13 @@
 package;
 
+import GameJolt.GameJoltLogin;
+import GameJolt.GameJoltAPI;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import haxe.Json;
+import haxe.format.JsonParser;
+import flixel.addons.api.FlxGameJolt;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
@@ -48,11 +53,17 @@ class TitleState extends MusicBeatState
 	var lyricsTSstring:String;
 	var lyricsEN:FlxText;
 	var curWacky:Array<String> = [];
+	public static var saveFileName:String;
 
 	var wackyImage:FlxSprite;
 
 	override public function create():Void
 	{
+		saveFileName = Assets.getText(Paths.txt('savefileName'));
+
+		FlxG.save.bind(saveFileName, 'ItIsIWeeg');
+		
+		SoundTestState.playingSong = false;
 		FlxG.save.data.showedScene = false;
 		
 		#if sys
@@ -61,6 +72,16 @@ class TitleState extends MusicBeatState
 		#end
 		
 		PlayerSettings.init();
+
+		//loading in random pause song list: does this once each time you boot up the game.
+		var pauseJson:String = Assets.getText("assets/data/soundTest.json").trim();
+
+		for (i in 0...Json.parse(pauseJson).categories[0].tracks.length)
+		{
+			PauseSubState.pauseSongList.push(Json.parse(pauseJson).categories[0].tracks[i].name);
+			PauseSubState.pauseIconList.push(Json.parse(pauseJson).categories[0].tracks[i].icon);
+			trace ('added ' + Json.parse(pauseJson).categories[0].tracks[i].name + ' to pause song list.');
+		}
 
 		#if desktop
 		DiscordClient.initialize();
@@ -89,11 +110,17 @@ class TitleState extends MusicBeatState
 		trace('NEWGROUNDS LOL');
 		#end
 
-		FlxG.save.bind('weegMod', 'ItIsIWeeg');
-
 		KadeEngineData.initSave();
+		Highscore.formatSave('Dadbattle', 'Dad Battle');
+		Highscore.formatSave('Philly', 'Philly Nice');
+		Highscore.formatSave('Satin-Panties', 'Satin Panties');
+		Highscore.formatSave('Winter-Horrorland', 'Winter Horrorland');
+		Highscore.formatSave('Gigavolt', 'GIGAVOLT');
 
 		Highscore.load();
+
+		GameJoltAPI.connect();
+		GameJoltAPI.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken);
 
 		if (FlxG.save.data.weekUnlocked != null)
 		{
@@ -148,14 +175,14 @@ class TitleState extends MusicBeatState
 			// music.loadStream(Paths.music('freakyMenu'));
 			// FlxG.sound.list.add(music);
 			// music.play();
-			FlxG.sound.playMusic(Sound.fromFile("assets/songs/psycho soldier (funky remix)/Inst.ogg"), 0);
+			FlxG.sound.playMusic(Paths.inst('psycho soldier (funky remix)'), 0);
 			FlxG.sound.music.fadeIn(1, 0, 0.7);
 
 		Conductor.changeBPM(120);
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		// bg.antialiasing = true;
+		// bg.antialiasing = !FlxG.save.data.lowEnd;
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
 		// bg.updateHitbox();
 		add(bg);
@@ -163,7 +190,7 @@ class TitleState extends MusicBeatState
 		logoBl = new FlxSprite(0, -75);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.setGraphicSize(Std.int(logoBl.width * 0.85));
-		logoBl.antialiasing = true;
+		logoBl.antialiasing = !FlxG.save.data.lowEnd;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
@@ -174,7 +201,7 @@ class TitleState extends MusicBeatState
 		gfDance.frames = Paths.getSparrowAtlas('macyTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		gfDance.antialiasing = true;
+		gfDance.antialiasing = !FlxG.save.data.lowEnd;
 		add(gfDance);
 		add(logoBl);
 
@@ -182,7 +209,7 @@ class TitleState extends MusicBeatState
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
 		titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
 		titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
-		titleText.antialiasing = true;
+		titleText.antialiasing = !FlxG.save.data.lowEnd;
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
@@ -208,7 +235,7 @@ class TitleState extends MusicBeatState
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
-		logo.antialiasing = true;
+		logo.antialiasing = !FlxG.save.data.lowEnd;
 		// add(logo);
 
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
@@ -234,7 +261,7 @@ class TitleState extends MusicBeatState
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
 		ngSpr.updateHitbox();
 		ngSpr.screenCenter(X);
-		ngSpr.antialiasing = true;
+		ngSpr.antialiasing = !FlxG.save.data.lowEnd;
 
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
@@ -298,16 +325,17 @@ class TitleState extends MusicBeatState
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
+			trace(FlxG.save.data.menuSong);
 			#if !switch
-			NGio.unlockMedal(60960);
-			
-			if (FlxG.save.data.menuNum != 4)
+			if (FlxG.save.data.menuSong != 'psycho soldier (funky remix)')
 			{
 				FlxG.sound.music.stop();
 			}
-			// If it's Friday according to da clock
-			if (Date.now().getDay() == 5)
-				NGio.unlockMedal(61034);
+			// If it's Friday night according to da clock
+			if (Date.now().getDay() == 5 && Date.now().getHours() >= 19)
+			{
+				GameJoltAPI.getTrophy(151279);
+			}
 			#end
 
 			titleText.animation.play('press');
@@ -332,6 +360,11 @@ class TitleState extends MusicBeatState
 							trace('whoops potential boobs');
 							FlxG.switchState(new OutdatedSubState());
 						}
+						else if (FlxG.save.data.unlockedZuki && !FlxG.save.data.unlockedMouse)
+						{
+							NewCharacterState.unlockingChar = 'philip';
+							LoadingState.loadAndSwitchState(new NewCharacterState());
+						}
 						else
 						{
 							FlxG.switchState(new MainMenuState());
@@ -343,9 +376,22 @@ class TitleState extends MusicBeatState
 						trace('whoops potential boobs');
 						FlxG.switchState(new OutdatedSubState());
 					}
+					else if (FlxG.save.data.unlockedZuki && !FlxG.save.data.unlockedMouse)
+					{
+						NewCharacterState.unlockingChar = 'philip';
+						LoadingState.loadAndSwitchState(new NewCharacterState());
+					}
 					else
 					{
-						FlxG.switchState(new MainMenuState());
+						if (FlxG.save.data.unlockedZuki && !FlxG.save.data.unlockedMouse)
+						{
+							NewCharacterState.unlockingChar = 'philip';
+							LoadingState.loadAndSwitchState(new NewCharacterState());
+						}
+						else
+						{
+							FlxG.switchState(new MainMenuState());
+						}
 					}
 				}
 				
@@ -499,9 +545,9 @@ class TitleState extends MusicBeatState
 			case 5:
 				addMoreText('K-Man');
 			case 6:
-				addMoreText('LovelyMadonna');
+				addMoreText('Techpack');
 			case 7:
-				addMoreText('Corvus Bebop');
+				addMoreText('bould');
 				addMoreText('present');
 			case 8:
 				deleteCoolText();
@@ -509,17 +555,17 @@ class TitleState extends MusicBeatState
 			case 9:
 				addTitleText('Angie');
 			case 10:
-				addTitleText('IdyllicIdgit');
+				addTitleText('LovelyMadonna');
 			case 11:
-				addTitleText('Ash');
+				addTitleText('Glaciator');
 			case 12:
 				addTitleText('enricooler');
 			case 13:
-				addTitleText('Ghostbunbun');
-			case 14:
 				addTitleText('JZ');
+			case 14:
+				addTitleText('Corvus Bebop');
 			case 15:
-				addTitleText('and CesarFever');
+				addTitleText('and like, 10 other people');
 			case 16 | 20:
 				deleteCoolText();
 				createCoolText([curWacky[0]]);
@@ -530,21 +576,21 @@ class TitleState extends MusicBeatState
 				deleteCoolText();
 				createCoolText(['Psycho Soldier Remix']);
 			case 26:
-				addMoreText('by K Man');
+				addMoreText('by K-Man');
 			case 28:
 				deleteCoolText();
-				createCoolText(['about time']);
+				createCoolText(['spooky, silly,']);
 			case 30:
-				addMoreText('here we go');
+				addMoreText("sweet 'n sexy, it's");
 			case 32:
 				deleteCoolText();
 				createCoolText(['Weeg']);
 			case 33:
 				addMoreText('Mod');
 			case 34:
-				addMoreText('Week');
+				addMoreText('v3');
 			case 35:
-				addMoreText('B');
+				addMoreText('baby!!');
 			case 36:
 				skipIntro();
 		}

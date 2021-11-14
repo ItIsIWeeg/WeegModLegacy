@@ -3,7 +3,9 @@ package;
 import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
+#if desktop
 import sys.FileSystem;
+#end
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.addons.display.FlxBackdrop;
@@ -12,7 +14,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.tweens.FlxTween;
-import Random;
+import flixel.util.FlxTimer;
 
 
 #if windows
@@ -23,19 +25,22 @@ using StringTools;
 
 class CharacterSelectState extends MusicBeatState
 {
-	var songs:Array<FreeplayState.SongMetadata> = [];
+	var songs:Array<CharMetadata> = [];
 	var charList:Array<String> = [];
+	var unlockedList:Array<Bool> = [];
 	var unloadedChars:Array<String> = [];
 	var bg:FlxSprite;
 	var newBG:FlxBackdrop;
 	var selector:FlxText;
 	var curSelected:Int = 0;
 	public static var curDifficulty:Int = 1;
-
+	var reverseBG:FlxTimer;
+	var hiddenColor:ColorSwap = new ColorSwap();
 	var scoreText:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
+	var randChar:Int = 0;
 
 	public static var chosenChar:String = "";
 
@@ -46,37 +51,67 @@ class CharacterSelectState extends MusicBeatState
 
 	override function create()
 	{
+		PlayState.endlessStreak = 0;
 		FlxG.save.data.showedScene = false;
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('characterSelectList'));
 		var custSonglist = CoolUtil.coolTextFile('mods/characters/characters.txt');
 
+		hiddenColor = new ColorSwap();
+
+		hiddenColor.hue = 0;
+		hiddenColor.saturation = -1;
+		hiddenColor.brightness = -1;
+
 		for (i in 0...initSonglist.length)
 		{
 			var data:Array<String> = initSonglist[i].split(':');
-			songs.push(new FreeplayState.SongMetadata(data[0], 0, data[0]));
-			charList.push(data[0]);
+			if (data[0] == 'kazuki-idol')
+			{
+				songs.push(new CharMetadata(data[0], 0, data[0], FlxG.save.data.idolZuki, 'Clear Achievable Fantasy.'));
+				charList.push(data[0]);
+				unlockedList.push(FlxG.save.data.idolZuki);
+			}
+			else
+			{
+				songs.push(new CharMetadata(data[0], 0, data[0]));
+				charList.push(data[0]);
+				unlockedList.push(true);
+			}
 		}
 		
-		if (FlxG.save.data.unlockedBooba == true)
-		{
-			songs.push(new FreeplayState.SongMetadata('athena-goddess', 0, 'athena-goddess'));
-			charList.push('athena-goddess');
-		}
-		if (FlxG.save.data.unlockedZuki == true)
-		{
-			songs.push(new FreeplayState.SongMetadata('kazuki', 0, 'kazuki'));
-			charList.push('kazuki');
-		}
-		if (FlxG.save.data.unlockedSonic == true)
-		{
-			songs.push(new FreeplayState.SongMetadata('sonic', 0, 'sonic'));
-			charList.push('sonic');
-		}
+		songs.push(new CharMetadata('philip', 0, 'philip', FlxG.save.data.unlockedMouse, 'Clear Week A without getting blueballed.'));
+		charList.push('philip');
+		unlockedList.push(FlxG.save.data.unlockedMouse);
 
+		songs.push(new CharMetadata('princess-athena', 0, 'princess-athena', FlxG.save.data.unlockedBooba, 'Clear Week B without getting blueballed.'));
+		charList.push('princess-athena');
+		unlockedList.push(FlxG.save.data.unlockedBooba);
+
+		songs.push(new CharMetadata('weegee', 0, 'weegee', FlxG.save.data.unlockedWeegee, 'Clear Week C without getting blueballed.'));
+		charList.push('weegee');
+		unlockedList.push(FlxG.save.data.unlockedWeegee);
+
+		songs.push(new CharMetadata('adeleine', 0, 'adeleine', FlxG.save.data.unlockedAdo, 'Clear Week D without getting blueballed.'));
+		charList.push('adeleine');
+		unlockedList.push(FlxG.save.data.unlockedAdo);
+
+		songs.push(new CharMetadata('sonic', 0, 'sonic', FlxG.save.data.unlockedSonic, 'Clear 10 songs on any difficulty.'));
+		charList.push('sonic');
+		unlockedList.push(FlxG.save.data.unlockedSonic);
+
+		songs.push(new CharMetadata('kerol', 0, 'kerol', FlxG.save.data.unlockedFrog, 'Score a total of 750 Sicks.'));
+		charList.push('kerol');
+		unlockedList.push(FlxG.save.data.unlockedFrog);
+
+		songs.push(new CharMetadata('gumi', 0, 'gumi', FlxG.save.data.unlockedGumi, 'Listen to a total of 10 unique songs in the Sound Test. Fully.'));
+		charList.push('gumi');
+		unlockedList.push(FlxG.save.data.unlockedGumi);
+
+		#if desktop
 		for (i in 0...custSonglist.length)
 		{
 			var data:Array<String> = custSonglist[i].split(':');
-			songs.push(new FreeplayState.SongMetadata(data[0], 0, data[0]));
+			songs.push(new CharMetadata(data[0], 0, data[0]));
 			charList.push(data[0]);
 		}
 
@@ -86,15 +121,16 @@ class CharacterSelectState extends MusicBeatState
                 continue;
             unloadedChars.push(i);
 		}
+		#end
 
 		for (i in 0...unloadedChars.length)
 		{
 			if (charList.contains(unloadedChars[i]))
 				continue;
-			songs.push(new FreeplayState.SongMetadata(unloadedChars[i], 0, unloadedChars[i]));
+			songs.push(new CharMetadata(unloadedChars[i], 0, unloadedChars[i]));
 		}
 
-		songs.push(new FreeplayState.SongMetadata('random', 2, 'face'));
+		songs.push(new CharMetadata('random', 2, 'face'));
 
 		/* 
 			if (FlxG.sound.music != null)
@@ -104,6 +140,7 @@ class CharacterSelectState extends MusicBeatState
 			}
 		 */
 
+		 FlxG.sound.defaultSoundGroup.pause();
 		 FlxG.sound.playMusic(Paths.inst("choose your funkin' character"), 0.6);
 
 		 #if windows
@@ -126,24 +163,19 @@ class CharacterSelectState extends MusicBeatState
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = true;
+		bg.antialiasing = !FlxG.save.data.lowEnd;
 		//add(bg);
 
 		add(newBG = new FlxBackdrop(Paths.image('cssBG')));
 		newBG.velocity.set(-40, 40);
 
-		switch(PlayState.SONG.song.toLowerCase())
+		if (FlxG.save.data.sideSwap)
 		{
-			case 'satin-panties' | 'high' | 'milf':
-				curSelected = 2;
-			case 'cocoa' | 'eggnog' | 'winter-horrorland':
-				curSelected = 3;
-			case 'senpai' | 'roses' | 'thorns':
-				curSelected = 4;
-			case 'spookeez' | 'south' | 'monster':
-				curSelected = 1;
-			default:
-				curSelected = 0;
+			curSelected = charList.indexOf(PlayState.SONG.player2);
+		}
+		else
+		{
+			curSelected = charList.indexOf(PlayState.SONG.player1);
 		}
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
@@ -151,13 +183,17 @@ class CharacterSelectState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].dispName, true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
 
 			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
 			icon.sprTracker = songText;
+			if (!songs[i].unlocked)
+			{
+				icon.shader = hiddenColor.shader;
+			}
 
 			// using a FlxGroup is too much fuss!
 			iconArray.push(icon);
@@ -192,29 +228,12 @@ class CharacterSelectState extends MusicBeatState
 
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
 
-		// JUST DOIN THIS SHIT FOR TESTING!!!
-		/* 
-			var md:String = Markdown.markdownToHtml(Assets.getText('CHANGELOG.md'));
-
-			var texFel:TextField = new TextField();
-			texFel.width = FlxG.width;
-			texFel.height = FlxG.height;
-			// texFel.
-			texFel.htmlText = md;
-
-			FlxG.stage.addChild(texFel);
-
-			// scoreText.textField.htmlText = md;
-
-			trace(md);
-		 */
-
 		super.create();
 	}
 
 	public function addSong(songName:String, weekNum:Int, songCharacter:String)
 	{
-		songs.push(new FreeplayState.SongMetadata(songName, weekNum, songCharacter));
+		songs.push(new CharMetadata(songName, weekNum, songCharacter));
 	}
 
 	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
@@ -265,6 +284,7 @@ class CharacterSelectState extends MusicBeatState
 
 		if (controls.BACK)
 		{
+			FlxG.sound.playMusic(Paths.inst(FlxG.save.data.menuSong));
 			if(PlayState.isStoryMode)
 				FlxG.switchState(new StoryMenuState());
 			else
@@ -273,27 +293,38 @@ class CharacterSelectState extends MusicBeatState
 
 		if (accepted)
 		{
-			var diffic = "";
+			if (songs[curSelected].unlocked)
+			{
+				var diffic = "";
 
-			switch (curDifficulty)
-			{
-				case 0:
-					diffic = '-easy';
-				case 2:
-					diffic = '-hard';
+				switch (curDifficulty)
+				{
+					case 0:
+						diffic = '-easy';
+					case 2:
+						diffic = '-hard';
+				}
+				chosenChar = songs[curSelected].songName.toLowerCase();
+				if (chosenChar == 'random')
+				{
+					//random time im sorry
+					randChar = FlxG.random.int(0, (songs.length - 2));
+					while (unlockedList[randChar] == false)
+					{
+						randChar = FlxG.random.int(0, (songs.length - 2));
+					}
+					chosenChar = songs[randChar].songName.toLowerCase();
+				}
+				else if (chosenChar.startsWith('kazuki') && PlayState.SONG.song == 'Senpai' && !(FlxG.save.data.sideSwap && !PlayState.isStoryMode))
+				{
+					PlayState.SONG = Song.loadFromJson('senpairella' + diffic, 'senpairella');
+				}
+				trace('CUR WEEK' + PlayState.storyWeek);
+				FlxG.save.data.curChar = chosenChar;
+				PlayState.activatedDebug = false;
+				FlxG.save.data.storyBalls = 0;
+				LoadingState.loadAndSwitchState(new PlayState());
 			}
-			chosenChar = songs[curSelected].songName.toLowerCase();
-			if (chosenChar == 'random')
-			{
-				//random time im sorry
-				var randChar:Int = FlxG.random.int(0, (songs.length - 2));
-				chosenChar = songs[randChar].songName.toLowerCase();
-			}
-			trace('CUR WEEK' + PlayState.storyWeek);
-			FlxG.save.data.curChar = chosenChar;
-			PlayState.activatedDebug = false;
-			FlxG.save.data.storyBalls = 0;
-			LoadingState.loadAndSwitchState(new PlayState());
 		}
 	}
 
@@ -363,6 +394,33 @@ class CharacterSelectState extends MusicBeatState
 				item.alpha = 1;
 				// item.setGraphicSize(Std.int(item.width));
 			}
+		}
+	}
+}
+
+class CharMetadata
+{
+	public var songName:String = "";
+	public var week:Int = 0;
+	public var songCharacter:String = "";
+	public var unlocked:Bool = true;
+	public var unlockCondition:String = "";
+	public var dispName:String = "";
+
+	public function new(song:String, week:Int, songCharacter:String, ?unlocked:Bool = true, ?unlockCondition:String)
+	{
+		this.songName = song;
+		this.week = week;
+		this.songCharacter = songCharacter;
+		this.unlocked = unlocked;
+		this.unlockCondition = unlockCondition;
+		if (unlocked)
+		{
+			dispName = song;
+		}
+		else
+		{
+			dispName = '???';
 		}
 	}
 }

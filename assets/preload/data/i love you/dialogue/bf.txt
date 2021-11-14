@@ -1,0 +1,24 @@
+happy:dad:Oh!
+smile:dad:Well look who it is, Mackenzie!
+easygoing:dad:This is that second cousin I keep telling you about!
+:bf:Beep! Baboopbopbep.
+:dad:Hm?
+happy:dad:...you two know each other already?
+event:swapLeft:macy
+:dad:Yeah... it's a long story.
+:bf:Bep bopbopbembedubibidy bap.
+event:swapLeft:kazuki
+easygoing:dad:You "smoked her"? Good job!
+event:swapLeft:macy
+event:autoClick
+:dad:BAE-
+event:swapLeft:kazuki
+happy:dad:BF! Since you're here, can you help me with something?
+:bf:Bep?
+pensive:dad:Well, it's simple... all I want is one thing.
+wink:dad:For you to sing your heart out!!
+:bf:Beep!
+smile:dad:Mackenzie, why don't you come over here and choose a song for us!
+event:swapLeft:macy
+:dad:Oh, uh ok!
+:none:*click*

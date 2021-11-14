@@ -59,6 +59,8 @@ class WiggleEffect
 	}
 }
 
+//
+
 class WiggleShader extends FlxShader
 {
 	@:glFragmentSource('

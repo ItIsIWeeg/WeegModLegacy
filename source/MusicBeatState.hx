@@ -17,9 +17,13 @@ class MusicBeatState extends FlxUIState
 {
 	private var lastBeat:Float = 0;
 	private var lastStep:Float = 0;
+	private var lastSect:Float = 0;
+
+	private var beatHitAlready:Bool = true;
 
 	private var curStep:Int = 0;
 	private var curBeat:Int = 0;
+	private var curSect:Int = 0;
 	private var controls(get, never):Controls;
 
 	inline function get_controls():Controls
@@ -55,6 +59,7 @@ class MusicBeatState extends FlxUIState
 
 		updateCurStep();
 		updateBeat();
+		updateSect();
 
 		if (oldStep != curStep && curStep > 0)
 			stepHit();
@@ -82,6 +87,12 @@ class MusicBeatState extends FlxUIState
 		curBeat = Math.floor(curStep / 4);
 	}
 
+	private function updateSect():Void
+	{
+		lastSect = curBeat;
+		curSect = Math.floor(curBeat / 4);
+	}
+
 	public static var currentColor = 0;
 
 	private function updateCurStep():Void
@@ -104,12 +115,21 @@ class MusicBeatState extends FlxUIState
 	{
 
 		if (curStep % 4 == 0)
+		{
 			beatHit();
+		}
 	}
 
 	public function beatHit():Void
 	{
 		//do literally nothing dumbass
+		if (curBeat % 4 == 0)
+			sectionHit();
+	}
+
+	public function sectionHit():Void
+	{
+		//also do nothing dumbass
 	}
 	
 	public function fancyOpenURL(schmancy:String)

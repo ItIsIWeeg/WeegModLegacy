@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="kazuki-idol.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="asleep" x="1" y="1" width="356" height="397"/>
+	<SubTexture name="bored" x="358" y="1" width="301" height="397"/>
+	<SubTexture name="content" x="660" y="1" width="301" height="397"/>
+	<SubTexture name="default" x="1" y="399" width="301" height="397"/>
+	<SubTexture name="easygoing" x="303" y="399" width="301" height="397"/>
+	<SubTexture name="happy" x="605" y="399" width="301" height="397"/>
+	<SubTexture name="pensive" x="1" y="797" width="301" height="397"/>
+	<SubTexture name="smile" x="303" y="797" width="301" height="397"/>
+	<SubTexture name="smug" x="605" y="797" width="301" height="397"/>
+	<SubTexture name="unamused" x="1" y="1195" width="301" height="397"/>
+	<SubTexture name="wink" x="303" y="1195" width="301" height="397"/>
+	<SubTexture name="worried" x="605" y="1195" width="301" height="397"/>
+</TextureAtlas>

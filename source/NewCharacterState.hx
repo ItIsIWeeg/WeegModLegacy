@@ -33,7 +33,7 @@ class NewCharacterState extends MusicBeatState
 
 	var weekDisplay:Array<Dynamic> = [
 		['Tutorial'],
-		['Bopeebo', 'Fresh', 'Dadbattle'],
+		['Bopeebo', 'Fresh', 'Dad Battle'],
 		['Spookeez', 'South'],
 		['Pico', 'Philly', "Blammed"],
 		['Satin Panties', "High", "Milf"],
@@ -121,6 +121,8 @@ class NewCharacterState extends MusicBeatState
 	var leftModeArrow:FlxSprite;
 	var rightModeArrow:FlxSprite;
 
+	public static var unlockingChar:String = 'senpai';
+
 		var bgOne:FlxSprite;
 		var bgTwo:FlxSprite;
 
@@ -131,6 +133,7 @@ class NewCharacterState extends MusicBeatState
 
 	override function create()
 	{
+		FlxG.save.data.sideSwap = false;
 		FlxG.save.data.isUnlocking = true;
 		FlxG.sound.music.stop();
 		FlxG.save.data.showedScene = false;
@@ -160,24 +163,29 @@ class NewCharacterState extends MusicBeatState
 
 		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets_with_shitty_encore');
 
-		bgOne = new FlxSprite(600, 56).makeGraphic((FlxG.width - 650), 600, 0xFF0066CC);
-		bgTwo = new FlxSprite(600, 56).makeGraphic((FlxG.width - 650), 600, 0xFF0066CC);
+		character = new Character(0, 0, unlockingChar, true, true);
+		character.animation.play('idle');
+		character.color = FlxColor.BLACK;
+
+		bgOne = new FlxSprite(600, 56).makeGraphic((FlxG.width - 650), 600, FlxColor.fromString(Character.getColor(character.curCharacter)));
+		bgTwo = new FlxSprite(600, 56).makeGraphic((FlxG.width - 650), 600, FlxColor.fromString(Character.getColor(character.curCharacter)));
 
 		bgOneColor = bgOne.color;
 		bgTwoColor = bgTwo.color;
 
-		character = new Character(0, 0, FlxG.save.data.unlockingChar, true, true);
-		character.dance();
-		character.color = FlxColor.BLACK;
+		character.x = (bgOne.getGraphicMidpoint().x - (character.width / 2));
+		character.y = (600 - character.height);
 
-		character.x = (bgOne.getGraphicMidpoint().x - character.getGraphicMidpoint().x) + 20;
-		character.y = (bgOne.getGraphicMidpoint().y - character.getGraphicMidpoint().y);
-
-		switch(FlxG.save.data.unlockingChar)
+		switch (character.curCharacter)
 		{
-			case 'sonic':
-				character.y += 210;
+			case 'gumi':
+				character.y += 25;
+			case 'kerol':
+				character.x -= 100;
+				character.y -= 50;
 		}
+
+		PlayState.unlockSong = true;
 
 		descText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		// scoreText.autoSize = false;
@@ -206,7 +214,7 @@ class NewCharacterState extends MusicBeatState
 			grpWeekText.add(weekThing);
 
 			weekThing.screenCenter(X);
-			weekThing.antialiasing = true;
+			weekThing.antialiasing = !FlxG.save.data.lowEnd;
 			// weekThing.updateHitbox();
 
 			// Needs an offset thingie
@@ -217,7 +225,7 @@ class NewCharacterState extends MusicBeatState
 				lock.animation.addByPrefix('lock', 'lock');
 				lock.animation.play('lock');
 				lock.ID = i;
-				lock.antialiasing = true;
+				lock.antialiasing = !FlxG.save.data.lowEnd;
 				grpLocks.add(lock);
 			}
 		}
@@ -285,18 +293,28 @@ class NewCharacterState extends MusicBeatState
 
 		trace("Line 165");
 
-		switch(FlxG.save.data.unlockingChar){
+		switch(unlockingChar){
 			case 'sonic':
 				unlockSong = 'Sonic Heroes';
 			case 'kazuki':
 				unlockSong = 'I Love You';
 			case 'tankman':
 				unlockSong = 'Ugh';
-			case 'athena-goddess':
+			case 'princess-athena':
 				unlockSong = 'Forest World';
+			case 'philip':
+				unlockSong = 'Squeak!';
+			case 'weegee':
+				unlockSong = 'Toasters';
+			case 'adeleine':
+				unlockSong = 'Neo Star';
+			case 'kerol':
+				unlockSong = "Hoppin'";
+			case 'gumi':
+				unlockSong = 'Space Love';
 		}
 
-		if (FlxG.save.data.unlockingChar == 'sonic')
+		if (unlockingChar == 'sonic')
 		{
 			FlxG.sound.playMusic(Paths.music('SonicApproaching'), 0.8);
 		}
@@ -411,8 +429,10 @@ class NewCharacterState extends MusicBeatState
 
 			PlayState.SONG = Song.loadFromJson(unlockSong.toLowerCase() + diffic, unlockSong.toLowerCase());
 			CharacterSelectState.curDifficulty = curDifficulty;
-			PlayState.storyWeek = 100;
-			PlayState.campaignScore = 0;
+			if (!PlayState.isStoryMode)
+			{
+				PlayState.storyWeek = 100;
+			}
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				LoadingState.loadAndSwitchState(new PlayState(), true);

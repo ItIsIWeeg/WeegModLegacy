@@ -1,0 +1,10 @@
+:dad:Squeak!
+event:swapLeft:macy
+happy:dad:PHILIP!!!
+happy:dad:Where've you been?!
+confused:dad:And uh... why do you have my mic...?
+happy:dad:Eh, who cares I'm just happy to see ya lil buddy!
+blush:dad:Come on, we're gonna have soft tacos later!
+event:swapLeft:philip
+:dad:Squeak!
+:bf:...Beep?

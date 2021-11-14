@@ -1,0 +1,4 @@
+event:windowGen:Error:Null Object Reference
+event:windowGen:Error?:Well, this certainly isn't what I expected.
+event:windowGen:FATAL EXCEPTION OCCURED AT assets/songs/keygen.txt:It's a pleasure to meet you.
+event:windowGen:QXRoZW5hJ3MgbmFtZSBpcyBtYWdpYy4=:Now, why don't we get started.

@@ -4,3 +4,5 @@ gf-car
 gf-christmas
 gf-pixel
 gf-clock
+gf-atari
+gf-booth

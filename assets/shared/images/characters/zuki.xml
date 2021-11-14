@@ -2,155 +2,364 @@
 <TextureAtlas imagePath="zuki.png">
 	<!-- Created with Adobe Animate version 18.0.1.115 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Kazuki UP sing0000" x="1" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0001" x="1" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0002" x="349" y="1" width="334" height="718" frameX="-1" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0003" x="349" y="1" width="334" height="718" frameX="-1" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0004" x="684" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0005" x="684" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0006" x="684" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0007" x="684" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0008" x="684" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing0009" x="684" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0000" x="1" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0001" x="1" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0002" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0003" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0004" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0005" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0006" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0007" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0008" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0009" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0010" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0011" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0012" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0013" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0014" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0015" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0016" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0017" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0018" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0019" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0020" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0021" x="1342" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0022" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki UP sing MISS0023" x="1013" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
-	<SubTexture name="Kazuki idle bop0000" x="1671" y="1" width="388" height="733"/>
-	<SubTexture name="Kazuki idle bop0001" x="1671" y="1" width="388" height="733"/>
-	<SubTexture name="Kazuki idle bop0002" x="2060" y="1" width="347" height="711" frameX="-31" frameY="-22" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0003" x="2060" y="1" width="347" height="711" frameX="-31" frameY="-22" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0004" x="2408" y="1" width="304" height="694" frameX="-57" frameY="-38" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0005" x="2408" y="1" width="304" height="694" frameX="-57" frameY="-38" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0006" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0007" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0008" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0009" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0010" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0011" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0012" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki idle bop0013" x="2713" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
-	<SubTexture name="Kazuki left SING0000" x="3016" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0001" x="3016" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0002" x="3420" y="1" width="392" height="689" frameX="-24" frameY="-7" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0003" x="3420" y="1" width="392" height="689" frameX="-24" frameY="-7" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0004" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0005" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0006" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0007" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0008" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING0009" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0000" x="3016" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0001" x="3016" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0002" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0003" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0004" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0005" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0006" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0007" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0008" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0009" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0010" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0011" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0012" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0013" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0014" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0015" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0016" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0017" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0018" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0019" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0020" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0021" x="739" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0022" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki left SING MISS0023" x="370" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
-	<SubTexture name="Kazuki sing DOWN0000" x="1108" y="735" width="400" height="694"/>
-	<SubTexture name="Kazuki sing DOWN0001" x="1108" y="735" width="400" height="694"/>
-	<SubTexture name="Kazuki sing DOWN0002" x="1509" y="735" width="348" height="690" frameX="-21" frameY="-3" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN0003" x="1858" y="735" width="300" height="661" frameX="-69" frameY="-32" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN0004" x="2159" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN0005" x="2159" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN0006" x="2159" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN0007" x="2159" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN0008" x="2159" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN0009" x="2159" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0000" x="1108" y="735" width="400" height="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0001" x="1108" y="735" width="400" height="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0002" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0003" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0004" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0005" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0006" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0007" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0008" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0009" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0010" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0011" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0012" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0013" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0014" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0015" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0016" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0017" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0018" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0019" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0020" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0021" x="2749" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0022" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing DOWN miss0023" x="2454" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
-	<SubTexture name="Kazuki sing right0000" x="3044" y="735" width="326" height="700" frameX="-35" frameY="-4" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0001" x="3044" y="735" width="326" height="700" frameX="-35" frameY="-4" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0002" x="3371" y="735" width="353" height="704" frameX="0" frameY="0" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0003" x="3371" y="735" width="353" height="704" frameX="0" frameY="0" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0004" x="3725" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0005" x="3725" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0006" x="3725" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0007" x="3725" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0008" x="3725" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0009" x="3725" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right0010" x="3725" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
-	<SubTexture name="Kazuki sing right MISS0000" x="1" y="1440" width="326" height="700" frameX="-19" frameY="0" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0001" x="1" y="1440" width="326" height="700" frameX="-19" frameY="0" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0002" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0003" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0004" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0005" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0006" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0007" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0008" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0009" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0010" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0011" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0012" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0013" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0014" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0015" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0016" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0017" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0018" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0019" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0020" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0021" x="666" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0022" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
-	<SubTexture name="Kazuki sing right MISS0023" x="328" y="1440" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki FEAR0000" x="1" y="1" width="319" height="667" frameX="-2" frameY="0" frameWidth="325" frameHeight="667"/>
+	<SubTexture name="Kazuki FEAR0001" x="321" y="1" width="319" height="667" frameX="-6" frameY="0" frameWidth="325" frameHeight="667"/>
+	<SubTexture name="Kazuki FEAR0002" x="641" y="1" width="319" height="667" frameX="0" frameY="0" frameWidth="325" frameHeight="667"/>
+	<SubTexture name="Kazuki FEAR0003" x="321" y="1" width="319" height="667" frameX="-6" frameY="0" frameWidth="325" frameHeight="667"/>
+	<SubTexture name="Kazuki UP sing0000" x="961" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0001" x="961" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0002" x="1309" y="1" width="334" height="718" frameX="-1" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0003" x="1309" y="1" width="334" height="718" frameX="-1" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0004" x="1644" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0005" x="1644" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0006" x="1644" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0007" x="1644" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0008" x="1644" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing0009" x="1644" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0000" x="1973" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0001" x="1973" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0002" x="2321" y="1" width="334" height="718" frameX="-1" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0003" x="2321" y="1" width="334" height="718" frameX="-1" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0004" x="2656" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0005" x="2656" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0006" x="2656" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0007" x="2656" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0008" x="2656" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing HAPPY0009" x="2656" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0000" x="961" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0001" x="961" y="1" width="347" height="723" frameX="0" frameY="0" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0002" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0003" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0004" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0005" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0006" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0007" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0008" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0009" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0010" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0011" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0012" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0013" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0014" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0015" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0016" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0017" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0018" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0019" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0020" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0021" x="3314" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0022" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki UP sing MISS0023" x="2985" y="1" width="328" height="718" frameX="-7" frameY="-6" frameWidth="347" frameHeight="724"/>
+	<SubTexture name="Kazuki idle bop0000" x="3643" y="1" width="388" height="733"/>
+	<SubTexture name="Kazuki idle bop0001" x="3643" y="1" width="388" height="733"/>
+	<SubTexture name="Kazuki idle bop0002" x="4032" y="1" width="347" height="711" frameX="-31" frameY="-22" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0003" x="4032" y="1" width="347" height="711" frameX="-31" frameY="-22" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0004" x="4380" y="1" width="304" height="694" frameX="-57" frameY="-38" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0005" x="4380" y="1" width="304" height="694" frameX="-57" frameY="-38" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0006" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0007" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0008" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0009" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0010" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0011" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0012" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop0013" x="4685" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0000" x="4988" y="1" width="388" height="733"/>
+	<SubTexture name="Kazuki idle bop happy0001" x="4988" y="1" width="388" height="733"/>
+	<SubTexture name="Kazuki idle bop happy0002" x="5377" y="1" width="347" height="711" frameX="-31" frameY="-22" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0003" x="5377" y="1" width="347" height="711" frameX="-31" frameY="-22" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0004" x="5725" y="1" width="304" height="694" frameX="-57" frameY="-38" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0005" x="5725" y="1" width="304" height="694" frameX="-57" frameY="-38" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0006" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0007" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0008" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0009" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0010" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0011" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0012" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki idle bop happy0013" x="6030" y="1" width="302" height="690" frameX="-59" frameY="-42" frameWidth="388" frameHeight="733"/>
+	<SubTexture name="Kazuki left SING0000" x="6333" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0001" x="6333" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0002" x="6737" y="1" width="392" height="689" frameX="-24" frameY="-7" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0003" x="6737" y="1" width="392" height="689" frameX="-24" frameY="-7" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0004" x="7130" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0005" x="7130" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0006" x="7130" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0007" x="7130" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0008" x="7130" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING0009" x="7130" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0000" x="6333" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0001" x="6333" y="1" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0002" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0003" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0004" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0005" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0006" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0007" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0008" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0009" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0010" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0011" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0012" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0013" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0014" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0015" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0016" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0017" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0018" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0019" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0020" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0021" x="1" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0022" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING MISS0023" x="7499" y="1" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0000" x="370" y="735" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0001" x="370" y="735" width="403" height="696" frameX="0" frameY="0" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0002" x="774" y="735" width="392" height="689" frameX="-24" frameY="-7" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0003" x="774" y="735" width="392" height="689" frameX="-24" frameY="-7" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0004" x="1167" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0005" x="1167" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0006" x="1167" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0007" x="1167" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0008" x="1167" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki left SING happy0009" x="1167" y="735" width="368" height="678" frameX="-48" frameY="-18" frameWidth="416" frameHeight="696"/>
+	<SubTexture name="Kazuki sing DOWN0000" x="3827" y="735" width="400" height="694"/>
+	<SubTexture name="Kazuki sing DOWN0001" x="3827" y="735" width="400" height="694"/>
+	<SubTexture name="Kazuki sing DOWN0002" x="1536" y="735" width="348" height="690" frameX="-21" frameY="-3" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN0003" x="1885" y="735" width="300" height="661" frameX="-69" frameY="-32" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN0004" x="2186" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN0005" x="2186" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN0006" x="2186" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN0007" x="2186" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN0008" x="2186" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN0009" x="2186" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0000" x="2481" y="735" width="400" height="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0001" x="2481" y="735" width="400" height="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0002" x="2882" y="735" width="348" height="690" frameX="-21" frameY="-3" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0003" x="3231" y="735" width="300" height="661" frameX="-69" frameY="-32" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0004" x="3532" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0005" x="3532" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0006" x="3532" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0007" x="3532" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0008" x="3532" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN HAPPY0009" x="3532" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0000" x="3827" y="735" width="400" height="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0001" x="3827" y="735" width="400" height="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0002" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0003" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0004" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0005" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0006" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0007" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0008" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0009" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0010" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0011" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0012" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0013" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0014" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0015" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0016" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0017" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0018" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0019" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0020" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0021" x="4523" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0022" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing DOWN miss0023" x="4228" y="735" width="294" height="655" frameX="-75" frameY="-38" frameWidth="400" frameHeight="694"/>
+	<SubTexture name="Kazuki sing right0000" x="4818" y="735" width="326" height="700" frameX="-35" frameY="-4" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0001" x="4818" y="735" width="326" height="700" frameX="-35" frameY="-4" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0002" x="5145" y="735" width="353" height="704" frameX="0" frameY="0" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0003" x="5145" y="735" width="353" height="704" frameX="0" frameY="0" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0004" x="5499" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0005" x="5499" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0006" x="5499" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0007" x="5499" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0008" x="5499" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0009" x="5499" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right0010" x="5499" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0000" x="5837" y="735" width="326" height="700" frameX="-35" frameY="-4" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0001" x="5837" y="735" width="326" height="700" frameX="-35" frameY="-4" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0002" x="6164" y="735" width="353" height="704" frameX="0" frameY="0" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0003" x="6164" y="735" width="353" height="704" frameX="0" frameY="0" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0004" x="6518" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0005" x="6518" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0006" x="6518" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0007" x="6518" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0008" x="6518" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0009" x="6518" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right HAPPY0010" x="6518" y="735" width="337" height="695" frameX="-16" frameY="-9" frameWidth="361" frameHeight="704"/>
+	<SubTexture name="Kazuki sing right MISS0000" x="6856" y="735" width="326" height="700" frameX="-19" frameY="0" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0001" x="6856" y="735" width="326" height="700" frameX="-19" frameY="0" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0002" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0003" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0004" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0005" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0006" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0007" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0008" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0009" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0010" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0011" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0012" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0013" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0014" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0015" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0016" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0017" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0018" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0019" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0020" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0021" x="7521" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0022" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Kazuki sing right MISS0023" x="7183" y="735" width="337" height="695" frameX="0" frameY="-5" frameWidth="345" frameHeight="700"/>
+	<SubTexture name="Zuki DIES0000" x="7859" y="735" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0001" x="1" y="1440" width="367" height="679" frameX="-18" frameY="0" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0002" x="369" y="1440" width="367" height="679" frameX="-18" frameY="0" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0003" x="737" y="1440" width="390" height="667" frameX="0" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0004" x="737" y="1440" width="390" height="667" frameX="0" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0005" x="1128" y="1440" width="390" height="667" frameX="0" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0006" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0007" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0008" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0009" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0010" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0011" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0012" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0013" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0014" x="1519" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0015" x="1845" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0016" x="1845" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0017" x="1845" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0018" x="2171" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0019" x="2171" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0020" x="2497" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0021" x="2497" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0022" x="2823" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0023" x="2823" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0024" x="3149" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0025" x="3475" y="1440" width="325" height="680" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0026" x="3475" y="1440" width="325" height="680" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0027" x="3801" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0028" x="4127" y="1440" width="325" height="667" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0029" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0030" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0031" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0032" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0033" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0034" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0035" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0036" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0037" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0038" x="4453" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0039" x="4779" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0040" x="5105" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0041" x="5431" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0042" x="5757" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0043" x="6083" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0044" x="6409" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0045" x="6735" y="1440" width="325" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0046" x="7061" y="1440" width="335" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0047" x="7397" y="1440" width="348" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0048" x="7746" y="1440" width="360" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0049" x="1" y="2123" width="370" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0050" x="372" y="2123" width="379" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0051" x="752" y="2123" width="386" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0052" x="1139" y="2123" width="391" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0053" x="1531" y="2123" width="395" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0054" x="1927" y="2123" width="398" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0055" x="2326" y="2123" width="398" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0056" x="2326" y="2123" width="398" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="Zuki DIES0057" x="2326" y="2123" width="398" height="682" frameX="-34" frameY="-12" frameWidth="432" frameHeight="694"/>
+	<SubTexture name="zuki death CONFIRM0000" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0001" x="3124" y="2123" width="408" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0002" x="3533" y="2123" width="415" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0003" x="3949" y="2123" width="417" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0004" x="4367" y="2123" width="417" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0005" x="4785" y="2123" width="419" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0006" x="5205" y="2123" width="419" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0007" x="5625" y="2123" width="420" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0008" x="6046" y="2123" width="421" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0009" x="6468" y="2123" width="422" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0010" x="6891" y="2123" width="423" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0011" x="7315" y="2123" width="424" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0012" x="7740" y="2123" width="425" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0013" x="1" y="2806" width="426" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0014" x="428" y="2806" width="427" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0015" x="856" y="2806" width="428" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0016" x="1285" y="2806" width="428" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0017" x="1714" y="2806" width="429" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0018" x="2144" y="2806" width="429" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0019" x="2574" y="2806" width="430" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0020" x="3005" y="2806" width="430" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0021" x="3436" y="2806" width="431" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0022" x="3868" y="2806" width="431" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0023" x="4300" y="2806" width="432" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0024" x="4733" y="2806" width="432" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0025" x="5166" y="2806" width="432" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0026" x="5599" y="2806" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0027" x="6033" y="2806" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0028" x="6467" y="2806" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0029" x="6901" y="2806" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0030" x="7335" y="2806" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0031" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0032" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0033" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0034" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0035" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0036" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0037" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0038" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0039" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0040" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0041" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0042" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0043" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0044" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0045" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0046" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0047" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0048" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0049" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0050" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0051" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0052" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0053" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0054" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0055" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0056" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0057" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0058" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0059" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0060" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0061" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0062" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0063" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0064" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0065" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0066" x="435" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0067" x="869" y="3489" width="434" height="682"/>
+	<SubTexture name="zuki death CONFIRM0068" x="1304" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+	<SubTexture name="zuki death CONFIRM0069" x="1" y="3489" width="433" height="682" frameX="0" frameY="0" frameWidth="434" frameHeight="682"/>
+
+	<SubTexture name="zuki death loop0000" x="1738" y="3489" width="409" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0001" x="2148" y="3489" width="419" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0002" x="2568" y="3489" width="420" height="682"/>
+	<SubTexture name="zuki death loop0003" x="2989" y="3489" width="419" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0004" x="2989" y="3489" width="419" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0005" x="3409" y="3489" width="410" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0006" x="3820" y="3489" width="419" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0007" x="4240" y="3489" width="409" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0008" x="4650" y="3489" width="419" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0009" x="5070" y="3489" width="416" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0010" x="5070" y="3489" width="416" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0011" x="5487" y="3489" width="406" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0012" x="5894" y="3489" width="409" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0013" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0014" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0015" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0016" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0017" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0018" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0019" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
+	<SubTexture name="zuki death loop0020" x="2725" y="2123" width="398" height="682" frameX="0" frameY="0" frameWidth="420" frameHeight="682"/>
 </TextureAtlas>

@@ -1,0 +1,19 @@
+:dad:...
+event:swapRight:macy
+smug:bf:Hehe...
+:dad:...Mackenzie, wasn't that the song I wrote for you?
+:bf:Yeah... never get tired of it...
+precious:dad:That's sweet!
+:dad:However, how can I say this...
+pensive:dad:It's a bit too slow to truly test the limits of the jukebox.
+event:autoClick
+confused:bf:Wait wha-
+smile:dad:Oh! I know!
+happy:dad:BF!
+event:swapRight:bf
+:bf:Beep?
+smile:dad:I'll let you choose! Just make sure it has a higher average NPS.
+:bf:...beep... bep!
+happy:dad:...Sunnyside Up? Okie dokie!
+:dad:Though... I would have thought you'd go for something silly, like Squeak, but this works too!
+smile:dad:Don't dissapoint me!

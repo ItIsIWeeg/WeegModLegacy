@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="kazuki.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="asleep" x="1" y="1" width="397" height="346"/>
+	<SubTexture name="blush" x="399" y="1" width="342" height="346"/>
+	<SubTexture name="bored" x="742" y="1" width="342" height="346"/>
+	<SubTexture name="closedblush" x="1085" y="1" width="342" height="346"/>
+	<SubTexture name="default" x="1428" y="1" width="342" height="346"/>
+	<SubTexture name="easygoing" x="1" y="348" width="342" height="346"/>
+	<SubTexture name="happy" x="344" y="348" width="342" height="346"/>
+	<SubTexture name="pensive" x="687" y="348" width="342" height="346"/>
+	<SubTexture name="precious" x="1030" y="348" width="342" height="346"/>
+	<SubTexture name="smile" x="1373" y="348" width="342" height="346"/>
+	<SubTexture name="lovely" x="1" y="695" width="342" height="346"/>
+	<SubTexture name="smug" x="344" y="695" width="342" height="346"/>
+	<SubTexture name="unamused" x="687" y="695" width="342" height="346"/>
+	<SubTexture name="wink" x="1030" y="695" width="342" height="346"/>
+	<SubTexture name="worried" x="1373" y="695" width="342" height="346"/>
+</TextureAtlas>

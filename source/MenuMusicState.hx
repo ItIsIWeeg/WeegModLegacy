@@ -11,7 +11,9 @@ import flixel.util.FlxColor;
 import lime.utils.Assets;
 import sys.FileSystem;
 import flash.media.Sound;
+#if desktop
 import sys.io.File;
+#end
 
 
 #if desktop
@@ -104,7 +106,7 @@ class MenuMusicState extends MusicBeatState
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = true;
+		bg.antialiasing = !FlxG.save.data.lowEnd;
 		add(bg);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();

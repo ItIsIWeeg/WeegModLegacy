@@ -1,0 +1,8 @@
+happy:dad:I must admit, your talents are impressive!
+:dad:Though...
+shocked:dad:Do you really need to carry that gun?!
+:bf:Yes.
+shocked:dad:Could you... please put it down for now?
+:bf:No.
+mad:dad:Please?
+:bf:NO.

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="idolZuki.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Idol Down0000" x="1" y="1" width="411" height="654" frameX="0" frameY="-22" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0001" x="1" y="1" width="411" height="654" frameX="0" frameY="-22" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0002" x="413" y="1" width="360" height="676" frameX="-22" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0003" x="774" y="1" width="388" height="676" frameX="-12" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0004" x="774" y="1" width="388" height="676" frameX="-12" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0005" x="774" y="1" width="388" height="676" frameX="-12" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0006" x="774" y="1" width="388" height="676" frameX="-12" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0007" x="774" y="1" width="388" height="676" frameX="-12" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0008" x="774" y="1" width="388" height="676" frameX="-12" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Down0009" x="774" y="1" width="388" height="676" frameX="-12" frameY="0" frameWidth="411" frameHeight="676"/>
+	<SubTexture name="Idol Idle0000" x="1163" y="1" width="299" height="703" frameX="0" frameY="-21" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0001" x="1163" y="1" width="299" height="703" frameX="0" frameY="-21" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0002" x="1463" y="1" width="295" height="717" frameX="0" frameY="-7" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0003" x="1463" y="1" width="295" height="717" frameX="0" frameY="-7" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0004" x="1" y="719" width="291" height="717" frameX="0" frameY="-7" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0005" x="293" y="719" width="291" height="720" frameX="0" frameY="-4" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0006" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0007" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0008" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0009" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0010" x="877" y="719" width="299" height="697" frameX="0" frameY="-27" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0011" x="877" y="719" width="299" height="697" frameX="0" frameY="-27" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0012" x="1177" y="719" width="295" height="713" frameX="0" frameY="-11" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0013" x="1177" y="719" width="295" height="713" frameX="0" frameY="-11" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0014" x="1473" y="719" width="291" height="724" frameX="0" frameY="0" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0015" x="1" y="1444" width="291" height="724" frameX="0" frameY="0" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0016" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0017" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0018" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Idle0019" x="585" y="719" width="291" height="723" frameX="0" frameY="-1" frameWidth="299" frameHeight="724"/>
+	<SubTexture name="Idol Left0000" x="293" y="1444" width="317" height="720" frameX="0" frameY="-4" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0001" x="293" y="1444" width="317" height="720" frameX="0" frameY="-4" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0002" x="611" y="1444" width="305" height="724" frameX="-14" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0003" x="917" y="1444" width="311" height="724" frameX="-8" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0004" x="917" y="1444" width="311" height="724" frameX="-8" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0005" x="917" y="1444" width="311" height="724" frameX="-8" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0006" x="917" y="1444" width="311" height="724" frameX="-8" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0007" x="917" y="1444" width="311" height="724" frameX="-8" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0008" x="917" y="1444" width="311" height="724" frameX="-8" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Left0009" x="917" y="1444" width="311" height="724" frameX="-8" frameY="0" frameWidth="319" frameHeight="724"/>
+	<SubTexture name="Idol Right0000" x="1229" y="1444" width="370" height="724" frameX="0" frameY="-3" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0001" x="1229" y="1444" width="370" height="724" frameX="0" frameY="-3" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0002" x="1600" y="1444" width="325" height="726" frameX="-26" frameY="-1" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0003" x="1" y="2171" width="347" height="727" frameX="-8" frameY="0" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0004" x="1" y="2171" width="347" height="727" frameX="-8" frameY="0" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0005" x="1" y="2171" width="347" height="727" frameX="-8" frameY="0" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0006" x="1" y="2171" width="347" height="727" frameX="-8" frameY="0" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0007" x="1" y="2171" width="347" height="727" frameX="-8" frameY="0" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0008" x="1" y="2171" width="347" height="727" frameX="-8" frameY="0" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Right0009" x="1" y="2171" width="347" height="727" frameX="-8" frameY="0" frameWidth="370" frameHeight="727"/>
+	<SubTexture name="Idol Up0000" x="349" y="2171" width="301" height="751"/>
+	<SubTexture name="Idol Up0001" x="349" y="2171" width="301" height="751"/>
+	<SubTexture name="Idol Up0002" x="651" y="2171" width="284" height="734" frameX="-9" frameY="-17" frameWidth="301" frameHeight="751"/>
+	<SubTexture name="Idol Up0003" x="936" y="2171" width="292" height="733" frameX="-5" frameY="-18" frameWidth="301" frameHeight="751"/>
+	<SubTexture name="Idol Up0004" x="936" y="2171" width="292" height="733" frameX="-5" frameY="-18" frameWidth="301" frameHeight="751"/>
+	<SubTexture name="Idol Up0005" x="936" y="2171" width="292" height="733" frameX="-5" frameY="-18" frameWidth="301" frameHeight="751"/>
+	<SubTexture name="Idol Up0006" x="936" y="2171" width="292" height="733" frameX="-5" frameY="-18" frameWidth="301" frameHeight="751"/>
+	<SubTexture name="Idol Up0007" x="936" y="2171" width="292" height="733" frameX="-5" frameY="-18" frameWidth="301" frameHeight="751"/>
+	<SubTexture name="Idol Up0008" x="936" y="2171" width="292" height="733" frameX="-5" frameY="-18" frameWidth="301" frameHeight="751"/>
+	<SubTexture name="Idol Up0009" x="936" y="2171" width="292" height="733" frameX="-5" frameY="-18" frameWidth="301" frameHeight="751"/>
+</TextureAtlas>

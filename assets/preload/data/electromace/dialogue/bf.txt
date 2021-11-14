@@ -2,10 +2,13 @@ content:dad:So... uhh...
 smug:dad:...how was that?
 :bf:Baboopbabeep.
 confused:dad:M-
+event:fadeOut
 unamused:dad:Mediocre?
 unamused:dad:...
+event:fadeIn
 pensive:dad:(He's only 2 feet tall he can't hurt you.)
 :bf:B)
 confused:dad:(...okay, maybe his smug aura can.)
 happy:dad:Fine then, let's... pick up the pace! Ahaha...
+event:fadeOut
 unamused:dad:You're so going down.

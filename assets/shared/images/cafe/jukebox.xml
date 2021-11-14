@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="jukebox.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="jukebox0000" x="1" y="1" width="380" height="609"/>
+	<SubTexture name="jukebox0001" x="1" y="1" width="380" height="609"/>
+	<SubTexture name="jukebox0002" x="1" y="611" width="365" height="595" frameX="-8" frameY="-14" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0003" x="1" y="611" width="365" height="595" frameX="-8" frameY="-14" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0004" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0005" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0006" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0007" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0008" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0009" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0010" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0011" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0012" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+	<SubTexture name="jukebox0013" x="1" y="1207" width="367" height="582" frameX="-7" frameY="-26" frameWidth="380" frameHeight="609"/>
+</TextureAtlas>

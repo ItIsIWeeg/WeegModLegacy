@@ -53,6 +53,7 @@ class Song
 	{
 		trace(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase()).trim());
 		var rawJson:String = "";
+		#if desktop
 		if (isCustom)
 			rawJson = File.getContent("mods/songs/"+folder.toLowerCase()+"/"+ jsonInput.toLowerCase() +".json").trim();
 		else 
@@ -72,6 +73,9 @@ class Song
 				}
 		}
 		custom = isCustom;
+		#else
+		rawJson = Assets.getText('assets/data/' + folder.toLowerCase() + '/' + jsonInput.toLowerCase() + '.json').trim();
+		#end
 
 		while (!rawJson.endsWith("}"))
 		{

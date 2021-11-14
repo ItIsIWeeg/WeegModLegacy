@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="comically-large-png.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="NORMAL macy0000" x="1" y="1" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0001" x="1" y="1" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0002" x="2822" y="1" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0003" x="2822" y="1" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0004" x="1" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0005" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0006" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0007" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0008" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0009" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0010" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0011" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0012" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="NORMAL macy0013" x="2822" y="1601" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0000" x="1" y="3201" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0001" x="1" y="3201" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0002" x="2822" y="3201" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0003" x="2822" y="3201" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0004" x="1" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0005" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0006" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0007" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0008" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0009" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0010" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0011" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0012" x="2822" y="4801" width="2820" height="1599"/>
+	<SubTexture name="macyCafe0013" x="2822" y="4801" width="2820" height="1599"/>
+</TextureAtlas>

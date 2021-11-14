@@ -7,7 +7,7 @@ import openfl.utils.Assets as OpenFlAssets;
 
 class Paths
 {
-	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
+	inline public static var SOUND_EXT = "ogg";
 
 	static var currentLevel:String;
 
@@ -90,19 +90,56 @@ class Paths
 		return sound(key + FlxG.random.int(min, max), library);
 	}
 
+	inline static public function video(key:String, ?library:String)
+	{
+		trace('assets/videos/$key.mp4');
+		return getPath('videos/$key.mp4', BINARY, library);
+	}
+
 	inline static public function music(key:String, ?library:String)
 	{
 		return getPath('music/$key.$SOUND_EXT', MUSIC, library);
 	}
 
-	inline static public function voices(song:String)
+	inline static public function voices(song:String, ?extension:String = '')
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}/Voices.$SOUND_EXT';
+		if (extension != '')
+		{
+			return 'songs:assets/songs/${song.toLowerCase()}/Voices-$extension.$SOUND_EXT';
+		}
+		else
+		{
+			return 'songs:assets/songs/${song.toLowerCase()}/Voices.$SOUND_EXT';
+		}
 	}
 
-	inline static public function inst(song:String)
+	inline static public function voicesEncore(song:String, ?extension:String = '')
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}/Inst.$SOUND_EXT';
+		if (extension != '')
+		{
+			return 'songs:assets/songs/${song.toLowerCase()}/Voices-En-$extension.$SOUND_EXT';
+		}
+		else
+		{
+			return 'songs:assets/songs/${song.toLowerCase()}/Voices-En.$SOUND_EXT';
+		}
+	}
+
+	inline static public function inst(song:String, ?extension:String = '')
+	{
+		if (extension != '')
+		{
+			return 'songs:assets/songs/${song.toLowerCase()}/Inst-$extension.$SOUND_EXT';
+		}
+		else
+		{
+			return 'songs:assets/songs/${song.toLowerCase()}/Inst.$SOUND_EXT';
+		}
+	}
+
+	inline static public function instEncore(song:String)
+	{
+		return 'songs:assets/songs/${song.toLowerCase()}/Inst-En.$SOUND_EXT';
 	}
 
 	inline static public function image(key:String, ?library:String)

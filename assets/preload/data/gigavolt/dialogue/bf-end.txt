@@ -1,19 +1,23 @@
 pissed:dad:...
 :bf:...
+event:playMusic:macy-breeze
 pensive:dad:...sorry about that.
 happy:dad:I sometimes forget just how competitive I can be.
 :bf:Yeah, no kidding.
 confused:dad:Huh? You talk?
 confused:dad:You don't just go "beep" and "boop"?
 :bf:...beep?
+event:fadeOut
 unamused:dad:...
 unamused:dad:ANYWAY...
-:dad:I've still got a couple of hours before my train leaves.
-confused:dad:Wait, why did I even come here a few hours early?
-:dad:Eh, whatever.
-:dad:I happen to run a cafe with my girlfriend. Want a drink or two?
-happy:dad:It's on the house! Because uh...
-confused:dad:I think I owe ya an apology for calling you "shortie".
-:bf:Beep!
-happy:dad:Sweet! I'll go ahead, you guys take your time.
-happy:dad:See ya!
+event:fadeIn
+:dad:You guys seem like you're in a rush, what's the hurry?
+:bf:Bop bep!
+confused:dad:A concert?
+:bf:Bop babeepbah!
+happy:dad:That's... actually kind of funny, I didn't know you were a fan of Athena's as well!
+happy:dad:Me and my girlfriend Kazuki are going as well!
+:dad:So uh...
+happy:dad:See ya there!
+:none:...
+:bf:...Baboopbeep?

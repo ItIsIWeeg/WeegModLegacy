@@ -4,5 +4,6 @@ pensive:dad:...
 :bf:...Ba beep?
 unamused:dad:...You know what shortie?
 unamused:dad:I'm not gonna hold back anymore.
+event:playMusic:short circuit
 pissed:dad:YOU'RE GOIN' DOWN, YA HEAR ME?
 :bf: Beep badaboobeep!

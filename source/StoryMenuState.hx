@@ -25,27 +25,30 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Bopeebo', 'Fresh', 'Dadbattle'],
-		['Spookeez', 'South', "Monster"],
-		['Pico', 'Philly', "Blammed"],
-		['Satin-Panties', "High", "Milf"],
-		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
+		['Bopeebo', 'Fresh', 'Dad Battle'],
+		['Spookeez', 'South', "Mad House"],
+		['Pico', 'Philly Nice', "Blammed"],
+		['Satin Panties', "High", "Milf"],
+		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
 		['Coffee Date', 'Electromace', 'GIGAVOLT'],
-		['Psycho Soldier Theme', 'Will', 'Kizudarake no BLUEMOON']
+		['Psycho Soldier Theme', 'Will', 'Kizudarake no BLUEMOON'],
+		['Carbon Copy'],
+		['I Love You', 'Sunnyside Up', 'Achievable Fantasy']
 	];
 
 	var weekDisp:Array<Dynamic> = [
 		['Tutorial'],
 		['Bopeebo', 'Fresh', 'Dad Battle'],
-		['Spookeez', 'South'],
+		['Spookeez', 'South', 'Mad House'],
 		['Pico', 'Philly Nice', 'Blammed'],
 		['Satin Panties', 'High', 'M.I.L.F.'],
 		['Cocoa', 'Eggnog', 'Winter Wonderland'],
 		['Senpai', 'Roses', 'Thorns'],
 		['Coffee Date', 'Electromace', 'GIGAVOLT'],
 		['Psycho Soldier Theme', 'Will', 'Kizudarake no BLUEMOON'],
-		['Monster', 'Winter-Horrorland']
+		['Carbon Copy'],
+		['I Love You', 'Sunnyside Up', 'Achievable Fantasy']
 	];
 
 	private var bgColors:Array<String> = [
@@ -58,12 +61,13 @@ class StoryMenuState extends MusicBeatState
 		'#FFAA6F',
 		'#7FFFBF',
 		'#FF91A4',
-		'#FFEA80'
+		'#FFFFFF',
+		'#7FBFFF'
 	];
 
 	var curDifficulty:Int = 1;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true, true];
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
@@ -74,7 +78,9 @@ class StoryMenuState extends MusicBeatState
 		['parents-christmas', 'bf', 'gf'],
 		['senpai', 'bf', 'gf'],
 		['macy', 'bf', 'gf'],
-		['athena', 'bf', 'gf']
+		['athena', 'bf', 'gf'],
+		['bf', 'bf', 'gf'],
+		['kazuki', 'bf', 'gf']
 	];
 
 	var weekNames:Array<String> = [
@@ -87,7 +93,8 @@ class StoryMenuState extends MusicBeatState
 		"Hating Simulator ft. Moawling",
 		"Grand Central Symphony",
 		"Athena on Stage",
-		"The Monster Mash"
+		"Funkin.exe",
+		"Call me Zuki!"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -110,6 +117,7 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
+		PlayState.utauMode = false;
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Story Mode Menu", null);
@@ -118,10 +126,9 @@ class StoryMenuState extends MusicBeatState
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
-		if (FlxG.sound.music != null)
+		if (!FlxG.sound.music.playing && !SoundTestState.playingSong)
 		{
-			if (!FlxG.sound.music.playing)
-				FlxG.sound.playMusic(Paths.inst(FlxG.save.data.menuSong));
+			FlxG.sound.playMusic(Paths.inst(FlxG.save.data.menuSong));
 		}
 
 		persistentUpdate = persistentDraw = true;
@@ -165,7 +172,7 @@ class StoryMenuState extends MusicBeatState
 			grpWeekText.add(weekThing);
 
 			weekThing.screenCenter(X);
-			weekThing.antialiasing = true;
+			weekThing.antialiasing = !FlxG.save.data.lowEnd;
 			// weekThing.updateHitbox();
 
 			// Needs an offset thingie
@@ -176,7 +183,7 @@ class StoryMenuState extends MusicBeatState
 				lock.animation.addByPrefix('lock', 'lock');
 				lock.animation.play('lock');
 				lock.ID = i;
-				lock.antialiasing = true;
+				lock.antialiasing = !FlxG.save.data.lowEnd;
 				grpLocks.add(lock);
 			}
 		}
@@ -242,6 +249,11 @@ class StoryMenuState extends MusicBeatState
 	{
 		// scoreText.setFormat('VCR OSD Mono', 32);
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));
+
+		if (FlxG.sound.music.volume < 0.7)
+		{
+			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
+		}
 
 		scoreText.text = "WEEK SCORE:" + lerpScore;
 
@@ -343,15 +355,7 @@ class StoryMenuState extends MusicBeatState
 			PlayState.campaignScore = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				if (Highscore.getWeekScore(curWeek, 0) == 0 && Highscore.getWeekScore(curWeek, 1) == 0 && Highscore.getWeekScore(curWeek, 2) == 0)
-				{
-					FlxG.save.data.curChar = null;
-					LoadingState.loadAndSwitchState(new PlayState());
-				}
-				else
-				{
-					LoadingState.loadAndSwitchState(new CharacterSelectState(), true);
-				}
+				LoadingState.loadAndSwitchState(new CharacterSelectState(), true);
 			});
 		}
 	}

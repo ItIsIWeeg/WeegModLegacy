@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="philip.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Philip Down0000" x="1" y="1" width="271" height="91"/>
+	<SubTexture name="Philip Down0001" x="273" y="1" width="271" height="91"/>
+	<SubTexture name="Philip Down0002" x="545" y="1" width="271" height="91"/>
+	<SubTexture name="Philip Down0003" x="817" y="1" width="271" height="91"/>
+	<SubTexture name="Philip Down0004" x="1089" y="1" width="271" height="91"/>
+	<SubTexture name="Philip Down0005" x="1361" y="1" width="271" height="91"/>
+	<SubTexture name="Philip Down0006" x="1633" y="1" width="271" height="91"/>
+	<SubTexture name="Philip Down0007" x="1" y="93" width="271" height="91"/>
+	<SubTexture name="Philip Down0008" x="273" y="93" width="271" height="91"/>
+	<SubTexture name="Philip Down0009" x="545" y="93" width="271" height="91"/>
+	<SubTexture name="Philip Down0010" x="817" y="93" width="271" height="91"/>
+	<SubTexture name="Philip Down0011" x="1089" y="93" width="271" height="91"/>
+	<SubTexture name="Philip Down0012" x="1361" y="93" width="271" height="91"/>
+	<SubTexture name="Philip Down0013" x="1633" y="93" width="271" height="91"/>
+	<SubTexture name="Philip Idle0000" x="1" y="185" width="271" height="94"/>
+	<SubTexture name="Philip Idle0001" x="273" y="185" width="271" height="94"/>
+	<SubTexture name="Philip Idle0002" x="545" y="185" width="271" height="94"/>
+	<SubTexture name="Philip Idle0003" x="817" y="185" width="271" height="94"/>
+	<SubTexture name="Philip Idle0004" x="1089" y="185" width="271" height="94"/>
+	<SubTexture name="Philip Idle0005" x="1361" y="185" width="271" height="94"/>
+	<SubTexture name="Philip Idle0006" x="1633" y="185" width="271" height="94"/>
+	<SubTexture name="Philip Idle0007" x="1" y="280" width="271" height="94"/>
+	<SubTexture name="Philip Idle0008" x="273" y="280" width="271" height="94"/>
+	<SubTexture name="Philip Idle0009" x="545" y="280" width="271" height="94"/>
+	<SubTexture name="Philip Idle0010" x="817" y="280" width="271" height="94"/>
+	<SubTexture name="Philip Idle0011" x="1089" y="280" width="271" height="94"/>
+	<SubTexture name="Philip Idle0012" x="1361" y="280" width="271" height="94"/>
+	<SubTexture name="Philip Idle0013" x="1633" y="280" width="271" height="94"/>
+	<SubTexture name="Philip Left0000" x="1" y="375" width="290" height="91"/>
+	<SubTexture name="Philip Left0001" x="292" y="375" width="290" height="91"/>
+	<SubTexture name="Philip Left0002" x="583" y="375" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0003" x="865" y="375" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0004" x="1147" y="375" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0005" x="1429" y="375" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0006" x="1711" y="375" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0007" x="1" y="467" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0008" x="283" y="467" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0009" x="565" y="467" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0010" x="847" y="467" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0011" x="1129" y="467" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0012" x="1411" y="467" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Left0013" x="1693" y="467" width="281" height="91" frameX="-9" frameY="0" frameWidth="290" frameHeight="91"/>
+	<SubTexture name="Philip Right0000" x="1" y="559" width="271" height="91"/>
+	<SubTexture name="Philip Right0001" x="273" y="559" width="271" height="91"/>
+	<SubTexture name="Philip Right0002" x="545" y="559" width="271" height="91"/>
+	<SubTexture name="Philip Right0003" x="817" y="559" width="271" height="91"/>
+	<SubTexture name="Philip Right0004" x="1089" y="559" width="271" height="91"/>
+	<SubTexture name="Philip Right0005" x="1361" y="559" width="271" height="91"/>
+	<SubTexture name="Philip Right0006" x="1633" y="559" width="271" height="91"/>
+	<SubTexture name="Philip Right0007" x="1" y="651" width="271" height="91"/>
+	<SubTexture name="Philip Right0008" x="273" y="651" width="271" height="91"/>
+	<SubTexture name="Philip Right0009" x="545" y="651" width="271" height="91"/>
+	<SubTexture name="Philip Right0010" x="817" y="651" width="271" height="91"/>
+	<SubTexture name="Philip Right0011" x="1089" y="651" width="271" height="91"/>
+	<SubTexture name="Philip Right0012" x="1361" y="651" width="271" height="91"/>
+	<SubTexture name="Philip Right0013" x="1633" y="651" width="271" height="91"/>
+	<SubTexture name="Philip Up0000" x="1" y="743" width="274" height="125"/>
+	<SubTexture name="Philip Up0001" x="276" y="743" width="274" height="125"/>
+	<SubTexture name="Philip Up0002" x="551" y="743" width="274" height="125"/>
+	<SubTexture name="Philip Up0003" x="826" y="743" width="274" height="125"/>
+	<SubTexture name="Philip Up0004" x="1101" y="743" width="274" height="125"/>
+	<SubTexture name="Philip Up0005" x="1376" y="743" width="274" height="125"/>
+	<SubTexture name="Philip Up0006" x="1651" y="743" width="274" height="125"/>
+	<SubTexture name="Philip Up0007" x="1" y="869" width="274" height="125"/>
+	<SubTexture name="Philip Up0008" x="276" y="869" width="274" height="125"/>
+	<SubTexture name="Philip Up0009" x="551" y="869" width="274" height="125"/>
+	<SubTexture name="Philip Up0010" x="826" y="869" width="274" height="125"/>
+	<SubTexture name="Philip Up0011" x="1101" y="869" width="274" height="125"/>
+	<SubTexture name="Philip Up0012" x="1376" y="869" width="274" height="125"/>
+	<SubTexture name="Philip Up0013" x="1651" y="869" width="274" height="125"/>
+</TextureAtlas>

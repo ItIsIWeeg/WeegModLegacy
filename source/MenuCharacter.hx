@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
+import flixel.FlxG;
 
 class CharacterSetting
 {
@@ -31,7 +32,8 @@ class MenuCharacter extends FlxSprite
 		'parents-christmas' => new CharacterSetting(100, 130, 1.8),
 		'senpai' => new CharacterSetting(-40, -45, 1.4),
 		'macy' => new CharacterSetting(30, 130, 0.9),
-		'athena' => new CharacterSetting(-15, 109, 0.85)
+		'athena' => new CharacterSetting(-15, 109, 0.85),
+		'kazuki' => new CharacterSetting(-15, 130),
 	];
 
 	private var flipped:Bool = false;
@@ -41,7 +43,7 @@ class MenuCharacter extends FlxSprite
 		super(x, y);
 		this.flipped = flipped;
 
-		antialiasing = true;
+		antialiasing = !FlxG.save.data.lowEnd;
 
 		frames = Paths.getSparrowAtlas('campaign_menu_UI_characters');
 
@@ -56,6 +58,7 @@ class MenuCharacter extends FlxSprite
 		animation.addByPrefix('senpai', "SENPAI idle Black Lines", 24);
 		animation.addByPrefix('macy', "macyIdle", 24);
 		animation.addByPrefix('athena', "Athena Idle", 24);
+		animation.addByPrefix('kazuki', 'Kazuki idle bop', 24);
 
 		setGraphicSize(Std.int(width * scale));
 		updateHitbox();

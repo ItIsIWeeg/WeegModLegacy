@@ -27,6 +27,13 @@ class BackgroundGirls extends FlxSprite
 		dance();
 	}
 
+	public function getLustful():Void
+	{
+		animation.addByIndices('danceLeft', 'BG girls group', CoolUtil.numberArray(14), "", 24, false);
+		animation.addByIndices('danceRight', 'BG girls group', CoolUtil.numberArray(30, 15), "", 24, false);
+		dance();
+	}
+
 	public function dance():Void
 	{
 		danceDir = !danceDir;

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="athena.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="default" x="1" y="1" width="245" height="355"/>
+	<SubTexture name="happy" x="247" y="1" width="245" height="355"/>
+	<SubTexture name="mad" x="1" y="357" width="245" height="355"/>
+	<SubTexture name="shocked" x="247" y="357" width="245" height="355"/>
+</TextureAtlas>

@@ -14,11 +14,52 @@ class Highscore
 	public static var songKCs:Map<String, Int> = new Map<String, Int>();
 	#end
 
+	public static function formatSave(song:String, newSong:String):Void
+	{
+		for (i in 0...4)
+		{
+			var daSong:String = formatSong(song, i);
+			var daNewSong:String = formatSong(newSong, i);
+			load();
+			var prevScore:Int = getScore(song, i);
+			if (prevScore <= 0)
+			{
+				trace ('whoops, ' + daSong + " doesn't have a score. Skipping...");
+				continue;
+			}
+			else
+			{
+				var prevScore:Int = getScore(song, i);
+				trace (daSong + ' has a score of ' + prevScore + '. Updating to new score...');
+				saveScore(newSong, prevScore, i);
+				songScores.remove(daSong);
+				FlxG.save.data.songScores = songScores;
+				FlxG.save.flush();
+				trace ('successfully removed ' + daSong + "'s score and replaced it with " + daNewSong + '.');
+			}
+
+			if (!songRanks.exists(daSong))
+			{
+				trace ('whoops, ' + daSong + " doesn't have a rank. Skipping...");
+				continue;
+			}
+			else
+			{
+				var prevRank:Int = getSaveRank(song, i);
+				trace (daSong + ' has a rank of ' + prevRank + '. Updating to new rank...');
+				saveRank(newSong, prevRank, i);
+				songRanks.remove(daSong);
+				FlxG.save.data.songRanks = songRanks;
+				FlxG.save.flush();
+				trace ('successfully removed ' + daSong + "'s rank.");
+			}
+		}
+	}
 
 	public static function saveScore(song:String, score:Int = 0, ?diff:Int = 0):Void
 	{
 		var daSong:String = formatSong(song, diff);
-
+		trace('saving to ' + daSong);
 
 		#if !switch
 		NGio.postScore(score, song);
@@ -47,6 +88,17 @@ class Highscore
 		}
 		else
 			setRank(daSong, freeplayRank);
+	}
+	public static function importRank(song:String, freeplayRank:Int = 0):Void
+	{
+
+		if (songRanks.exists(song))
+		{
+			if (songRanks.get(song) < freeplayRank)
+				setRank(song, freeplayRank);
+		}
+		else
+			setRank(song, freeplayRank);
 	}
 	//KC stuff
 	public static function getSaveRank(song:String, diff:Int):Int
@@ -93,6 +145,11 @@ class Highscore
 			if (songKCs.exists("HARD"))
 				return songKCs.get("HARD");
 			else 
+				return 0;
+			case 3:
+			if (songKCs.exists("ENCORE"))
+				return songKCs.get("ENCORE");
+			else
 				return 0;
 			default: 
 				return 0;
@@ -144,10 +201,15 @@ class Highscore
 	{
 		var daSong:String = song;
 
-		if (diff == 0)
-			daSong += '-easy';
-		else if (diff == 2)
-			daSong += '-hard';
+		switch(diff)
+		{
+			case 0:
+				daSong += '-easy';
+			case 2:
+				daSong += '-hard';
+			case 3:
+				daSong += '-encore';
+		}
 
 		return daSong;
 	}

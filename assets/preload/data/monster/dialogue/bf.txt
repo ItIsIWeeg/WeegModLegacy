@@ -1,0 +1,5 @@
+:dad:Hey bf.
+:bf:What.
+event:playMusic:thorns
+:dad: 
+:bf:I hate you.

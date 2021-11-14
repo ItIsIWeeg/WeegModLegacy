@@ -1,0 +1,23 @@
+precious:dad:Hehe... you're doing juuuuuust great! I could go on for houuuuurs.
+:bf:B-bap?
+closedblush:dad:Ohhhh those lil... spinny gold ones? They won't hurt ya TOO bad.
+:bf:Bep??????
+event:swapLeft:macy
+confused:dad:??? Don't ask me what's going on with her, she doesn't excert herself like this all the time!
+confused:dad:Wait.
+:dad:I guess you can say that she has...
+event:autoClick
+smug:dad:A couple screws loose
+event:playSound:micHit
+:dad:Ow!
+:bf:No.
+:dad:Ok ok, fine I'll go get her bed ready.
+:dad:Stupid... smug BF...
+:bf:B)
+event:swapRight:pico
+event:autoClick
+:bf:COME ON I JUST WANT TO ORDER-
+event:swapLeft:kazuki
+blush:dad:Come on come onnnn let's do one more I wanna go allllll out
+event:swapRight:bf
+:bf:...bep!

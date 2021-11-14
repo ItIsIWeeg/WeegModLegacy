@@ -1,0 +1,926 @@
+{
+	"categories":
+	[
+		{
+			"name": "Menu Songs",
+			"tracks":
+			[
+				{
+					"name": "Psycho Soldier (Funky Remix)",
+					"composer": "K-Man",
+					"icon": "athena",
+					"year": 1987,
+					"origin": "Psycho Soldier"
+				},
+				{
+					"name": "Blue Underground Lake",
+					"composer": "Corvus Bebop",
+					"icon": "athena",
+					"year": 1987,
+					"origin": "Psycho Soldier"
+				},
+				{
+					"name": "Bloody Tears",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 1987,
+					"origin": "Castlevania II: Simon's Quest"
+				},
+				{
+					"name": "Mute City",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 1990,
+					"origin": "F-ZERO"
+				},
+				{
+					"name": "Big Blue",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 1990,
+					"origin": "F-ZERO"
+				},
+				{
+					"name": "Ken's Theme",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 1991,
+					"origin": "Street Fighter II"
+				},
+				{
+					"name": "Green Hill Zone",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 1991,
+					"origin": "Sonic the Hedgehog",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Labyrinth Zone",
+					"composer": "Techpack",
+					"icon": "sonic",
+					"year": 1991,
+					"origin": "Sonic the Hedgehog",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Tarkun and Kitapy",
+					"composer": "K-Man",
+					"icon": "princess-athena",
+					"year": 1992,
+					"origin": "FATAL FURY 2"
+				},
+				{
+					"name": "Go Straight",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 1992,
+					"origin": "Streets of Rage 2",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Dreamer",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 1992,
+					"origin": "Streets of Rage 2",
+					"unlock": "sonic"
+                },
+				{
+					"name": "Beach",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 1993,
+					"origin": "Plok!",
+					"unlock": "philip"
+				},
+				{
+					"name": "Stardust Speedway",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 1993,
+					"origin": "Sonic CD",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Soy Sauce for Geese",
+					"composer": "K-Man",
+					"icon": "princess-athena",
+					"year": 1993,
+					"origin": "FATAL FURY SPECIAL",
+					"unlock": "princess-athena"
+				},
+				{
+					"name": "Adon's Theme",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 1995,
+					"origin": "Street Fighter Alpha"
+				},
+				{
+					"name": "Viridian City",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 1996,
+					"origin": "Pokemon Red and Blue"
+				},
+				{
+					"name": "Stormy Saxophone 2",
+					"composer": "K-Man",
+					"icon": "princess-athena",
+					"year": 1996,
+					"origin": "The King of Fighters '96",
+					"unlock": "princess-athena"
+				},
+				{
+					"name": "Bloody",
+					"composer": "K-Man",
+					"icon": "princess-athena",
+					"year": 1997,
+					"origin": "The King of Fighters '97",
+					"unlock": "princess-athena"
+				},
+				{
+					"name": "To a Distant Place",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 1997,
+					"origin": "Breath of Fire 3"
+				},
+				{
+					"name": "Greenflower Zone",
+					"composer": "Techpack",
+					"icon": "sonic",
+					"year": 1998,
+					"origin": "Sonic Robo Blast 2",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Ogre",
+					"composer": "K-Man",
+					"icon": "monster",
+					"year": 1999,
+					"origin": "Tekken Tag Tournament"
+				},
+				{
+					"name": "So Kawaii",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2000,
+					"origin": "Mario Artist: Talent Studio"
+				},
+				{
+					"name": "Catwalk",
+					"composer": "K-Man",
+					"icon": "adeleine",
+					"year": 2000,
+					"origin": "Mario Artist: Talent Studio",
+					"unlock": "adeleine"
+				},
+				{
+					"name": "Electric Toothbrush",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 2000,
+					"origin": "Jet Set Radio",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Inner Shade",
+					"composer": "K-Man",
+					"icon": "athena",
+					"year": 2000,
+					"origin": "The King of Fighters 2000"
+				},
+				{
+					"name": "True Love we Makin'",
+					"composer": "K-Man",
+					"icon": "athena",
+					"year": 2001,
+					"origin": "Capcom vs. SNK 2: Mark of the Millennium 2001"
+				},
+				{
+					"name": "Toasty Buns",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2001,
+					"origin": "PaRappa the Rapper 2"
+				},
+				{
+					"name": "Pride and Glory",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2002,
+					"origin": "Guilty Gear X2"
+				},
+				{
+					"name": "Petty Theft Homer",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 2003,
+					"origin": "The Simpsons Hit and Run",
+					"unlock": "philip"
+				},
+				{
+					"name": "FC Field",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2004,
+					"origin": "Yume Nikki"
+				},
+				{
+					"name": "Moonlit Wilderness",
+					"composer": "K-Man",
+					"icon": "monster",
+					"year": 2004,
+					"origin": "Tekken 5"
+				},
+				{
+					"name": "Joker",
+					"composer": "K-Man",
+					"icon": "athena",
+					"year": 2005,
+					"origin": "The King of Fighters XI"
+				},
+				{
+					"name": "Waluigi Pinball",
+					"composer": "K-Man",
+					"icon": "adeleine",
+					"year": 2005,
+					"origin": "Mario Kart DS",
+					"unlock": "adeleine"
+                },
+				{
+					"name": "What U Need",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 2005,
+					"origin": "Sonic Rush",
+					"unlock": "sonic"
+                },
+				{
+					"name": "1st Floor Mushroom Mayhem",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 2006,
+					"origin": "Mario Vs Donkey Kong 2: March of the Minis",
+					"unlock": "philip"
+				},
+				{
+					"name": "Iwatodai Dorm",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2006,
+					"origin": "Persona 3"
+				},
+				{
+					"name": "Paulownia Mall",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2006,
+					"origin": "Persona 3"
+				},
+				{
+					"name": "Coconut Mall",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2008,
+					"origin": "Mario Kart Wii"
+				},
+				{
+					"name": "Heartbeat, Heartbreak",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2008,
+					"origin": "Persona 4"
+				},
+				{
+					"name": "Who's There?",
+					"composer": "K-Man",
+					"icon": "monster",
+					"year": 2008,
+					"origin": "Persona 4"
+                },
+                {
+					"name": "Arid Canyon Zone",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 2009,
+					"origin": "Sonic Robo Blast 2",
+					"unlock": "sonic"
+				},
+				{
+					"name": "GCV2005",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 2011,
+					"origin": "Melty Blood: Actress Again Current Code",
+					"unlock": "philip"
+				},
+				{
+					"name": "Rhythmical Bustle",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2011,
+					"origin": "Melty Blood: Actress Again Current Code"
+                                },
+				{
+					"name": "Rocket Raccoon's Theme",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 2011,
+					"origin": "Ultimate Marvel Vs Capcom 3",
+					"unlock": "philip"
+				},
+				{
+					"name": "Groose's Theme",
+					"composer": "K-Man",
+					"icon": "adeleine",
+					"year": 2011,
+					"origin": "The Legend of Zelda: Skyward Sword",
+					"unlock": "adeleine"
+				},
+				{
+					"name": "Baka Mitai",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 2015,
+					"origin": "Yakuza 0",
+					"unlock": "sonic"
+                },
+                {
+					"name": "Specialist",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2015,
+					"origin": "Persona 4: Dancing all Night"
+                },
+				{
+					"name": "Dummy!",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 2015,
+					"origin": "Undertale",
+					"unlock": "philip"
+				},
+				{
+					"name": "It's Raining Somewhere Else",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2015,
+					"origin": "Undertale"
+				},
+				{
+					"name": "Welcome to VA-11 Hall-A",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2016,
+					"origin": "VA-11 Hall-A"
+                                },
+				{
+					"name": "Murine Corps",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 2017,
+					"origin": "Cuphead",
+					"unlock": "philip"
+				},
+				{
+					"name": "Rogues Gallery",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 2017,
+					"origin": "Sonic Mania",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Checker Dance",
+					"composer": "K-Man",
+					"icon": "philip",
+					"year": 2018,
+					"origin": "Deltarune",
+					"unlock": "philip"
+				},
+				{
+					"name": "Night Walker",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2020,
+					"origin": "Under Night In-Birth Exe:Late[cl-r]"
+				},
+				{
+					"name": "Unseen Entities",
+					"composer": "K-Man",
+					"icon": "monster",
+					"year": 2020,
+					"origin": "Under Night In-Birth Exe:Late[cl-r]"
+				},
+				{
+					"name": "Red Streamer Battle",
+					"composer": "K-Man",
+					"icon": "adeleine",
+					"year": 2020,
+					"origin": "Paper Mario: The Origami King",
+					"unlock": "adeleine"
+				},
+				{
+					"name": "Night Sky",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2020,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Disaster of Passion",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2021,
+					"origin": "Guilty Gear STRIVE"
+				}
+			]
+		},
+		{
+			"name": "Vanilla Tracks",
+			"tracks":
+			[
+				{
+					"name": "Gettin' Freaky",
+					"composer": "kawaisprite",
+					"icon": "gf",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Tutorial",
+					"composer": "kawaisprite",
+					"icon": "gf",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Bopeebo",
+					"composer": "kawaisprite",
+					"icon": "dad",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Fresh",
+					"composer": "kawaisprite",
+					"icon": "dad",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Dad Battle",
+					"composer": "kawaisprite",
+					"icon": "dad",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Spookeez",
+					"composer": "kawaisprite",
+					"icon": "spooky",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "South",
+					"composer": "kawaisprite",
+					"icon": "spooky",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Monster",
+					"composer": "Bassetfilms",
+					"icon": "monster",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Pico",
+					"composer": "kawaisprite",
+					"icon": "pico",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Philly Nice",
+					"composer": "kawaisprite",
+					"icon": "pico",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Blammed",
+					"composer": "kawaisprite",
+					"icon": "pico",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Satin Panties",
+					"composer": "kawaisprite",
+					"icon": "mom",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "High",
+					"composer": "kawaisprite",
+					"icon": "mom",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "MILF",
+					"composer": "kawaisprite",
+					"icon": "mom",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Cocoa",
+					"composer": "kawaisprite",
+					"icon": "parents-christmas",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Eggnog",
+					"composer": "kawaisprite",
+					"icon": "parents-christmas",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Winter Horrorland",
+					"composer": "Bassetfilms",
+					"icon": "monster",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Lunchbox",
+					"composer": "kawaisprite",
+					"icon": "senpai",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Senpai",
+					"composer": "kawaisprite",
+					"icon": "senpai",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Roses",
+					"composer": "kawaisprite",
+					"icon": "senpai-angry",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Lunchbox (Scary)",
+					"composer": "kawaisprite",
+					"icon": "spirit",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Thorns",
+					"composer": "kawaisprite",
+					"icon": "spirit",
+					"year": 2021,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Game Over",
+					"composer": "kawaisprite",
+					"icon": "bf",
+					"year": 2020,
+					"origin": "Friday Night Funkin'",
+					"death": true
+				},
+				{
+					"name": "Game Over Pixel",
+					"composer": "kawaisprite",
+					"icon": "bf-pixel",
+					"year": 2020,
+					"origin": "Friday Night Funkin'",
+					"death": true
+				},
+				{
+					"name": "Breakfast",
+					"composer": "kawaisprite",
+					"icon": "bf",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				},
+				{
+					"name": "Title",
+					"composer": "kawaisprite",
+					"icon": "bf-old",
+					"year": 2020,
+					"origin": "Friday Night Funkin'"
+				}
+			]
+		},
+		{
+			"name": "Vanilla Tracks (Encore)",
+			"tracks":
+			[
+				{
+					"name": "Tutorial",
+					"composer": "bould",
+					"icon": "gf",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"encore": true
+				},
+				{
+					"name": "Dad Battle",
+					"composer": "bould",
+					"icon": "dad",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"encore": true
+				},
+				{
+					"name": "Roses",
+					"composer": "K-Man",
+					"icon": "senpai-angry",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"encore": true
+				},
+				{
+					"name": "Thorns",
+					"composer": "Weeg",
+					"icon": "spirit",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"encore": true
+				}
+			]
+		},
+		{
+			"name": "Weeg Mod Tracks",
+			"tracks":
+			[
+				{
+					"name": "Choose Your Funkin' Character",
+					"composer": "K-Man",
+					"icon": "bf",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Mad House",
+					"composer": "K-Man",
+					"icon": "spooky",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Macy-Breeze",
+					"composer": "Corvus Bebop",
+					"icon": "macy",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Coffee Date",
+					"composer": "Corvus Bebop",
+					"icon": "macy",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Electromace",
+					"composer": "Corvus Bebop",
+					"icon": "macy",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Short Circuit",
+					"composer": "Corvus Bebop",
+					"icon": "macy",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "GIGAVOLT",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Psycho Soldier Theme",
+					"composer": "SNK Playmore",
+					"icon": "athena",
+					"year": 1987,
+					"origin": "Psycho Soldier"
+				},
+				{
+					"name": "Will",
+					"composer": "K-Man",
+					"icon": "athena",
+					"year": 2000,
+					"origin": "The King of Fighters 2000"
+				},
+				{
+					"name": "Kizudarake no BLUEMOON",
+					"composer": "SNK Playmore",
+					"icon": "athena",
+					"year": 1987,
+					"origin": "Psycho Soldier"
+				},
+				{
+					"name": "Carbon Copy",
+					"composer": "K-Man",
+					"icon": "joshua",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "I Like You",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "I Love You",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "I Love You (UTAU Version)",
+					"composer": "GenoX, K-Man",
+					"icon": "kazuki",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Sunnyside Up",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Achievable Fantasy",
+					"composer": "K-Man",
+					"icon": "kazuki-happy",
+					"year": 2021,
+					"origin": "The Weeg Mod"
+				},
+				{
+					"name": "Squeak!",
+					"composer": "bould",
+					"icon": "philip",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"unlock": "philip"
+				},
+				{
+					"name": "Forest World",
+					"composer": "Techpack",
+					"icon": "princess-athena",
+					"year": 1986,
+					"origin": "Athena",
+					"unlock": "princess-athena"
+				},
+				{
+					"name": "Toasters",
+					"composer": "Stash Club",
+					"icon": "weegee",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"unlock": "weegee"
+				},
+				{
+					"name": "Neo Star",
+					"composer": "Techpack",
+					"icon": "adeleine",
+					"year": 2000,
+					"origin": "Kirby 64: The Crystal Shards",
+					"unlock": "adeleine"
+				},
+				{
+					"name": "Sonic Heroes",
+					"composer": "K-Man",
+					"icon": "sonic",
+					"year": 2003,
+					"origin": "Sonic Heroes",
+					"unlock": "sonic"
+				},
+				{
+					"name": "Hoppin'",
+					"composer": "MaxOKE",
+					"icon": "kerol",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"unlock": "kerol"
+				},
+				{
+					"name": "Space Love",
+					"composer": "K-Man",
+					"icon": "gumi",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"unlock": "gumi"
+				},
+				{
+					"name": "Unplugged",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2020,
+					"origin": "The Weeg Mod",
+					"death": true
+				},
+				{
+					"name": "Continue?",
+					"composer": "K-Man",
+					"icon": "athena",
+					"year": 2002,
+					"origin": "The King of Fighters 2002",
+					"death": true
+				},
+				{
+					"name": "I Miss You",
+					"composer": "K-Man",
+					"icon": "kazuki",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"death": true
+				},
+				{
+					"name": "Boss - Athena",
+					"composer": "K-Man",
+					"icon": "princess-athena",
+					"year": 1986,
+					"origin": "Athena",
+					"death": true,
+					"unlock": "princess-athena"
+				}
+			]
+		},
+		{
+			"name": "Weeg Mod Tracks (Encore)",
+			"tracks":
+			[
+				{
+					"name": "GIGAVOLT",
+					"composer": "K-Man",
+					"icon": "macy",
+					"year": 2021,
+					"origin": "The Weeg Mod",
+					"encore": true
+				}
+			]
+		},
+		{
+			"name": "Bonus Tracks",
+			"tracks":
+			[
+				{
+					"name": "Ridge",
+					"composer": "Namco",
+					"icon": "mom",
+					"year": 1998,
+					"origin": "Ridge Racer Type 4"
+				},
+				{
+					"name": "Smash",
+					"composer": "Nintendo",
+					"icon": "dad",
+					"year": 2001,
+					"origin": "Super Smash Bros. Melee"
+				},
+				{
+					"name": "Senpairella",
+					"composer": "ZENTA",
+					"icon": "senpai",
+					"year": 2015,
+					"origin": "Yakuza 0"
+				},
+				{
+					"name": "Psycho Soldier Classic",
+					"composer": "SNK Playmore",
+					"icon": "athena",
+					"year": 1987,
+					"origin": "Psycho Soldier"
+				}
+			]
+		}
+	]
+}

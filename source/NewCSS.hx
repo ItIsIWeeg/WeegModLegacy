@@ -33,6 +33,7 @@ class NewCSS extends MusicBeatState
 	public static var chosenChar:String = "";
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
+	var selectChar:SimpleCharacter;
 	private var curPlaying:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
@@ -76,14 +77,14 @@ class NewCSS extends MusicBeatState
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = true;
+		bg.antialiasing = !FlxG.save.data.lowEnd;
 		add(bg);
 
 		switch(PlayState.SONG.song.toLowerCase())
 		{
-			case 'satin-panties' | 'high' | 'milf':
+			case 'satin panties' | 'high' | 'milf':
 				curSelected = 1;
-			case 'cocoa' | 'eggnog' | 'winter-horrorland':
+			case 'cocoa' | 'eggnog' | 'winter horrorland':
 				curSelected = 2;
 			case 'senpai' | 'roses' | 'thorns':
 				curSelected = 3;
@@ -101,7 +102,10 @@ class NewCSS extends MusicBeatState
 			songText.targetY = i;
 			grpSongs.add(songText);
 
-			var icon:HealthIcon = new HealthIcon(chars[i].songCharacter);
+			var character:SimpleCharacter = new SimpleCharacter(i * 50, 70, chars[i].songName);
+			add(character);
+
+			var icon:HealthIcon = new HealthIcon(chars[i].songName);
 			icon.sprTracker = songText;
 
 			// using a FlxGroup is too much fuss!
@@ -185,6 +189,12 @@ class NewCSS extends MusicBeatState
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
+
+		grpChars.forEach(function(char:SimpleCharacter)
+		{
+			if (char.animation.finished)
+				char.dance();
+		});
 
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.4));
 

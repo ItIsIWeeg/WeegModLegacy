@@ -15,6 +15,7 @@ import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
+import haxe.Json;
 
 class OptionsMenu extends MusicBeatState
 {
@@ -26,6 +27,7 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
+			new LowEndOption("Greatly change performance"),
 			new DownscrollOption("Change the layout of the strumline."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
@@ -39,33 +41,44 @@ class OptionsMenu extends MusicBeatState
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
 			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
 		]),
+		new OptionCategory("Gamejolt", [
+			new GameJolt("Do Gamejolt Things!"),
+			new GameJoltAchievements("Check The Weeg Mod's Achievements!")
+		]),
 		new OptionCategory("Appearance", [
 			#if desktop
+			new AtariSenpai("Toggle the look of Week 6! (Doesn't affect your character.)"),
 			new CensoredBooba("Toggle whether or not you see a bikini or something."),
-			new CustArrows("Toggle between using vanilla arrow colors and custom arrow colors."),
+			new CustArrows("Change your arrow colors! (Doesn't affect your opponent."),
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			new RainbowFPSOption("Make the FPS Counter Rainbow"),
 			new AccuracyOption("Display accuracy information."),
 			new ComboOption("Toggle whether your combo shows up"),
-			new NPSDisplayOption("Shows your current Notes Per Second."),
 			new SongPositionOption("Show the songs current position (as a bar)"),
+			new FullScreenOption("Toggle Fullscreen Mode"),
+			new DefaultFull("Toggle whether the game starts up in windowed or fullscreen mode.")
 			#else
-			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay.")
+			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			#end
 		]),
+		#if desktop
 		new OptionCategory("Sound", [
-			new MenuMusicOption("Change the menu music."),
-			new SoundTestOption("Listen to the entire OST, including upcoming songs!")
+			new SoundTestOption("Listen to the entire OST!"),
+			new HitSoundOption("Enable hitsounds!!"),
 		]),
-		
+		#end
 		new OptionCategory("Title Screen", [
 			new LyricsOption("Change the lyrics that appear on the title screen.")
 		]),
-		
+		#if desktop
+		new OptionCategory("Save Settings", [
+			new BackupSave('Backup your Save Data.'),
+			new RestoreSave("Restore Previous Data")
+		]),
+		#end
 		new OptionCategory("Misc", [
 			#if desktop
 			new FPSOption("Toggle the FPS Counter"),
-			new ReplayOption("View replays"),
 			#end
 			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
@@ -85,13 +98,13 @@ class OptionsMenu extends MusicBeatState
 	override function create()
 	{
 		instance = this;
-		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
+		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuMacyDesat"));
 
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
-		menuBG.antialiasing = true;
+		menuBG.antialiasing = !FlxG.save.data.lowEnd;
 		add(menuBG);
 
 		grpControls = new FlxTypedGroup<Alphabet>();
@@ -99,7 +112,7 @@ class OptionsMenu extends MusicBeatState
 
 		for (i in 0...options.length)
 		{
-			var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false, true);
+			var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false);
 			controlLabel.isMenuItem = true;
 			controlLabel.targetY = i;
 			grpControls.add(controlLabel);

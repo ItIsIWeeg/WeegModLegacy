@@ -1,14 +1,30 @@
 package;
 
 import lime.utils.Assets;
+#if desktop
 import Sys;
 import sys.FileSystem;
+#end
 
 using StringTools;
 
 class CoolUtil
 {
+	public static var difficultyStuff:Array<Dynamic> = [
+		['Easy', '-easy'],
+		['Normal', ''],
+		['Hard', '-hard'],
+		['Encore', '-encore']
+	];
+
 	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD", "ENCORE"];
+
+	public static function boundTo(value:Float, min:Float, max:Float):Float {
+		var newValue:Float = value;
+		if(newValue < min) newValue = min;
+		else if(newValue > max) newValue = max;
+		return newValue;
+	}
 
 	public static function difficultyString():String
 	{
@@ -17,7 +33,7 @@ class CoolUtil
 
 	public static function coolTextFile(path:String):Array<String>
 	{
-		var daList:Array<String> = sys.io.File.getContent(path).trim().split('\n');
+		var daList:Array<String> = Assets.getText(path).trim().split('\n');
 
 		for (i in 0...daList.length)
 		{

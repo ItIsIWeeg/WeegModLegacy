@@ -1,10 +1,15 @@
 :bf:Beep boop
 :dad:Hm?
 happy:dad:Oh! It's you! Zuki's little rapper cousin dude!
-happy:dad:She's always telling me stories about who you go up against!
+:bf:...bop?
+happy:dad:Whoops, got ahead of myself there. The name's Macy.
+:bf:Bopbee?
+unamused:dad:Marcy? Nah, Macy man.
+:dad:But enough about me, look at YOU!
+happy:dad:I've heard stories about all your insane encounters, and the types of people you go up against!
 :dad:Like that Norwegian dude... oh, and my old boxing coach Matt too!
 happy:dad:You know, he called me his best student?
-confused:dad:Wait, I'm getting sidetracked here.
+confused:dad:Wait... if you're approaching ME that means ya want something.
 happy:dad:What's up?
 :bf: Badaboopbeep babup
 confused:dad:...you want ME to be your next opponent?

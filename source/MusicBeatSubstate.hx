@@ -3,6 +3,7 @@ package;
 import Conductor.BPMChangeEvent;
 import flixel.FlxG;
 import flixel.FlxSubState;
+import flixel.addons.api.FlxGameJolt;
 
 class MusicBeatSubstate extends FlxSubState
 {

@@ -5,8 +5,26 @@ class KadeEngineData
 {
     public static function initSave()
     {
+    	if (FlxG.save.data.defaultFull == null)
+    		FlxG.save.data.defaultFull = false;
+
+    	if (FlxG.save.data.totalSicks == null)
+    		FlxG.save.data.totalSicks = 0;
+
+    	if (FlxG.save.data.soundTestList == null)
+    		FlxG.save.data.soundTestList = [];
+
+    	if (FlxG.save.data.lowEnd == null)
+    		FlxG.save.data.lowEnd = false;
+
+    	if (FlxG.save.data.arrowSkin == null)
+    		FlxG.save.data.arrowSkin = 'default';
+
     	if (FlxG.save.data.blueBalls == null)
     		FlxG.save.data.blueBalls = 0;
+
+    	if (FlxG.save.data.arrowHSV == null)
+    		FlxG.save.data.arrowHSV = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]];
 
     	if (FlxG.save.data.goPerfect == null)
     		FlxG.save.data.goPerfect = false;
@@ -14,14 +32,32 @@ class KadeEngineData
     	if (FlxG.save.data.unlockedBooba == null)
     		FlxG.save.data.unlockedBooba = false;
 
+    	if (FlxG.save.data.unlockedWeegee == null)
+    		FlxG.save.data.unlockedWeegee = false;
+
+    	if (FlxG.save.data.unlockedMouse == null)
+    		FlxG.save.data.unlockedMouse = false;
+
+    	if (FlxG.save.data.unlockedAdo == null)
+    		FlxG.save.data.unlockedAdo = false;
+
+    	if (FlxG.save.data.unlockedFrog == null)
+    		FlxG.save.data.unlockedFrog = false;
+
+    	if (FlxG.save.data.unlockedGumi == null)
+    		FlxG.save.data.unlockedGumi = false;
+
+    	if (FlxG.save.data.idolZuki == null)
+    		FlxG.save.data.idolZuki = false;
+
     	if (FlxG.save.data.bfDie == null)
     		FlxG.save.data.bfDie = false;
 
     	if (FlxG.save.data.invisArrows == null)
     		FlxG.save.data.invisArrows = false;
 
-    	if (FlxG.save.data.customArrows == null)
-    		FlxG.save.data.customArrows = true;
+    	if (FlxG.save.data.sideSwap == null)
+    		FlxG.save.data.sideSwap = false;
 
     	if (FlxG.save.data.showedScene == null)
     		FlxG.save.data.showedScene = false;
@@ -32,17 +68,14 @@ class KadeEngineData
     	if (FlxG.save.data.songsBeaten == null)
     		FlxG.save.data.songsBeaten = 0;
 
-    	if (FlxG.save.data.scoreScreen == null)
-			FlxG.save.data.scoreScreen = true;
+    	if (FlxG.save.data.hitsounds == null)
+			FlxG.save.data.hitsounds = false;
 
     	if (FlxG.save.data.unlockedZuki == null)
     		FlxG.save.data.unlockedZuki = false;
 
     	if (FlxG.save.data.unlockedSonic == null)
     		FlxG.save.data.unlockedSonic = false;
-    	
-    	if (FlxG.save.data.unlockingChar == null)
-    		FlxG.save.data.unlockingChar = 'bf';
 
     	if (FlxG.save.data.showCombo == null)
     		FlxG.save.data.showCombo = true;
@@ -57,7 +90,7 @@ class KadeEngineData
 			FlxG.save.data.lyricString = 'Japanese Romanji';
     	
     	if (FlxG.save.data.menuSong == null)
-    		FlxG.save.data.menuSong == 'psycho soldier (funky remix)';
+    		FlxG.save.data.menuSong = 'psycho soldier (funky remix)';
 
     	if (FlxG.save.data.menuNum == null)
     		FlxG.save.data.menuNum = 4;
@@ -109,7 +142,7 @@ class KadeEngineData
 			FlxG.save.data.frames = 10;
 
 		if (FlxG.save.data.accuracyMod == null)
-			FlxG.save.data.accuracyMod = 1;
+			FlxG.save.data.accuracyMod = 0;
 
 		if (FlxG.save.data.watermark == null)
 			FlxG.save.data.watermark = true;

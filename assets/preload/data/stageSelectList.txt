@@ -5,6 +5,8 @@ limo:mom
 mall:parents-christmas
 mallEvil:monster-christmas
 school:senpai
+school-atari:senpai-atari
 schoolEvil:spirit
+schoolEvil-atari:spirit-atari
 grand-central:macy
 concert:athena

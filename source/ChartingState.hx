@@ -53,9 +53,10 @@ class ChartingState extends MusicBeatState
 	public static var lastSection:Int = 0;
 
 	var bpmTxt:FlxText;
-
+	public static var encoreSong:Bool;
+	var encoreSuf:String = "";
 	var strumLine:FlxSprite;
-	var curSong:String = 'Dadbattle';
+	var curSong:String = 'Dad Battle';
 	var amountSteps:Int = 0;
 	var bullshitUI:FlxGroup;
 	var writingNotesText:FlxText;
@@ -93,6 +94,11 @@ class ChartingState extends MusicBeatState
 	override function create()
 	{
 		curSection = lastSection;
+
+		if (encoreSong)
+		{
+			encoreSuf = '-En';
+		}
 
 		gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 8, GRID_SIZE * 16);
 		add(gridBG);
@@ -137,7 +143,7 @@ class ChartingState extends MusicBeatState
 		rightIcon.setPosition(gridBG.width / 2, -100);
 
 		FlxG.mouse.visible = true;
-		FlxG.save.bind('weegMod', 'ItIsIWeeg');
+		FlxG.save.bind(TitleState.saveFileName, 'ItIsIWeeg');
 
 		tempBpm = _song.bpm;
 
@@ -315,7 +321,7 @@ class ChartingState extends MusicBeatState
 		stepperLength.value = _song.notes[curSection].lengthInSteps;
 		stepperLength.name = "section_length";
 
-		stepperSectionBPM = new FlxUINumericStepper(10, 80, 1, Conductor.bpm, 0, 999, 0);
+		stepperSectionBPM = new FlxUINumericStepper(10, 80, 0.1, Conductor.bpm, 0, 999, 1);
 		stepperSectionBPM.value = Conductor.bpm;
 		stepperSectionBPM.name = 'section_bpm';
 
@@ -401,21 +407,21 @@ class ChartingState extends MusicBeatState
 		}
 		if (Song.custom)
 		{
-			FlxG.sound.playMusic(Sound.fromFile("mods/songs/" + daSong + "/Inst.ogg"), 0.6);
+			FlxG.sound.playMusic(Sound.fromFile("mods/songs/" + daSong + "/Inst" + encoreSuf + ".ogg"), 0.6);
 		}
 		else
 		{
-			FlxG.sound.playMusic(Paths.inst(daSong), 0.6);
+			FlxG.sound.playMusic(Sound.fromFile("assets/songs/" + daSong + "/" + "Inst" + encoreSuf + ".ogg"), 0.6);
 		}
 
 		// WONT WORK FOR TUTORIAL OR TEST SONG!!! REDO LATER
 		if (Song.custom)
 		{
-			vocals = new FlxSound().loadEmbedded(Sound.fromFile("mods/songs/" + daSong + "/Voices.ogg"));
+			vocals = new FlxSound().loadEmbedded(Sound.fromFile("mods/songs/" + daSong + "/Voices" + encoreSuf + ".ogg"));
 		}
 		else
 		{
-			vocals = new FlxSound().loadEmbedded(Paths.voices(daSong));
+			vocals = new FlxSound().loadEmbedded(Sound.fromFile("assets/songs/" + daSong + "/Voices" + encoreSuf + ".ogg"));
 		}
 		FlxG.sound.list.add(vocals);
 
@@ -493,9 +499,9 @@ class ChartingState extends MusicBeatState
 			{
 				if (nums.value <= 0)
 					nums.value = 1;
-				tempBpm = Std.int(nums.value);
+				tempBpm = nums.value;
 				Conductor.mapBPMChanges(_song);
-				Conductor.changeBPM(Std.int(nums.value));
+				Conductor.changeBPM(nums.value);
 			}
 			else if (wname == 'note_susLength')
 			{
@@ -511,7 +517,7 @@ class ChartingState extends MusicBeatState
 			{
 				if (nums.value <= 0.1)
 					nums.value = 0.1;
-				_song.notes[curSection].bpm = Std.int(nums.value);
+				_song.notes[curSection].bpm = nums.value;
 				updateGrid();
 			}
 		}
@@ -1096,12 +1102,18 @@ class ChartingState extends MusicBeatState
 	{
 		var noteStrum = getStrumTime(dummyArrow.y) + sectionStartTime();
 		var noteData = Math.floor(FlxG.mouse.x / GRID_SIZE);
+		var evilNote = 0;
 		var noteSus = 0;
+
+		if (FlxG.keys.pressed.ALT)
+		{
+			evilNote = 8;
+		}
 
 		if (n != null)
 			_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength]);
 		else
-			_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus]);
+			_song.notes[curSection].sectionNotes.push([noteStrum, noteData + evilNote, noteSus]);
 		var thingy = _song.notes[curSection].sectionNotes[_song.notes[curSection].sectionNotes.length - 1];
 		curSelectedNote = thingy;
 
@@ -1165,6 +1177,7 @@ class ChartingState extends MusicBeatState
 
 	function loadJson(song:String):Void
 	{
+		#if desktop
 		if (!sys.FileSystem.exists('assets/data/' + song.toLowerCase()))
 		{
 			PlayState.SONG = Song.loadFromJson(song.toLowerCase(), song.toLowerCase(), true, 'dad');
@@ -1176,6 +1189,10 @@ class ChartingState extends MusicBeatState
 			PlayState.storyWeek = 69;
 			//nice
 		}
+		#else
+		PlayState.SONG = Song.loadFromJson(song.toLowerCase(), song.toLowerCase());
+		PlayState.storyWeek = 69;
+		#end
 		FlxG.resetState();
 	}
 

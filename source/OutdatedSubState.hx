@@ -87,12 +87,14 @@ class OutdatedSubState extends MusicBeatState
 		{
 			leftState = true;
 			FlxG.save.data.censored = false;
+			FlxG.sound.playMusic(Paths.inst(FlxG.save.data.menuSong));
 			FlxG.switchState(new MainMenuState());
 		}
 		if (FlxG.keys.justPressed.BACKSPACE)
 		{
 			leftState = true;
 			FlxG.save.data.censored = true;
+			FlxG.sound.playMusic(Paths.inst(FlxG.save.data.menuSong));
 			FlxG.switchState(new MainMenuState());
 		}
 		super.update(elapsed);

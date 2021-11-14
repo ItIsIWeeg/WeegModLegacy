@@ -2,11 +2,18 @@ package;
 
 #if desktop
 import Discord.DiscordClient;
+import sys.io.File;
 #end
 import flash.text.TextField;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import flixel.FlxCamera;
 import Song.SwagSong;
+import haxe.Json;
+import haxe.format.JsonParser;
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.ui.FlxBar;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
@@ -15,73 +22,101 @@ import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.system.FlxSound;
 import flash.media.Sound;
-import sys.io.File;
+
 
 using StringTools;
 
+typedef SoundTest =
+{
+	var categories:Array<SoundTestCatagory>;
+}
+
+typedef SoundTestCatagory =
+{
+	var name:String;
+	var tracks:Array<SoundTestTrack>;
+	var icon:String;
+}
+
+typedef SoundTestTrack =
+{
+	var name:String;
+	var composer:String;
+	var icon:String;
+	var year:Int;
+	var origin:String;
+	var unlock:String;
+	var death:Bool;
+}
+
 class SoundTestState extends MusicBeatState
 {
-	var songs:Array<FreeplayState.SongMetadata> = [];
-
+	var categories:Array<SoundTestCatagory>;
+	var inCatagory:Bool = false;
+	var currentSelectedCat:SoundTestCatagory;
 	var selector:FlxText;
+	var soundTestNames:Array<String> = [];
 	var curSelected:Int = 0;
-	var curDifficulty:Int = 1;
-	public static var SONG:SwagSong;
-	var scoreText:FlxText;
-	var diffText:FlxText;
-	var originText:FlxText;
-	var lengthText:FlxText;
 	var detailsText:String = "Listening to:";
-	var lerpScore:Int = 0;
-	var intendedScore:Int = 0;
-	var songPlaying:String = "";
-	var composer:String = "";
-	var songLength:Float = 0;
-	var songTime:Float = 0;
-	var songOrigin:String = "";
 
+	var curSongArray:Array<String> = [];
+
+	var soundCam:FlxCamera;
+	var uiCam:FlxCamera;
+
+	var uiBG:FlxSprite;
+	var nowPlaying:FlxText;
+	var setMenu:FlxText;
+	var muteInst:FlxText;
+	var muteVoices:FlxText;
+	var canMenu:Bool = false;
+	var canVoice:Bool = false;
+	var curSong:String;
+	var songFilePath:String;
+	var paused:Bool = false;
+	var lengthBarBG:FlxSprite;
+	var songLengthBar:FlxBar;
+	var songArtist:FlxText;
+	var songPosText:FlxText;
+	var songPositionBar:Float = 0;
+	var songOriginText:FlxText;
+
+	var curMins:Int;
+	var curSecs:Int;
+	var totalMins:Int;
+	var totalSecs:Int;
+
+	var dispMins:String;
+	var dispSecs:String;
+	var dispFullMins:String;
+	var dispFullSecs:String;
+
+	public static var playingSong:Bool;
 	private var grpSongs:FlxTypedGroup<Alphabet>;
+	private var itemNames:Array<String> = [];
+	private var grpIcons:FlxTypedGroup<HealthIcon>;
 	private var curPlaying:Bool = false;
 	private var vocals:FlxSound;
 	private var inst:FlxSound;
 
-	private var iconArray:Array<HealthIcon> = [];
-
 	override function create()
 	{
-		vocals = new FlxSound().loadEmbedded(Paths.music('silence'));
-		inst = new FlxSound().loadEmbedded(Paths.music('silence'));
-		var initSonglist = CoolUtil.coolTextFile(Paths.txt('soundtestSonglist'));
+		soundCam = new FlxCamera();
+		uiCam = new FlxCamera();
+		uiCam.bgColor.alpha = 0;
+		FlxG.cameras.reset(soundCam);
+		FlxG.cameras.add(uiCam);
 
-		for (i in 0...initSonglist.length)
-		{
-			var data:Array<String> = initSonglist[i].split(':');
-			songs.push(new FreeplayState.SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
-		}
+		FlxCamera.defaultCameras = [soundCam];
 
-		if (FlxG.save.data.unlockedBooba == true)
-		{
-			songs.push(new FreeplayState.SongMetadata('Forest World', 0, 'athena-goddess'));
-		}
-		if (FlxG.save.data.unlockedZuki == true)
-		{
-			songs.push(new FreeplayState.SongMetadata('I Love You', 0, 'kazuki'));
-		}
-		if (FlxG.save.data.unlockedSonic == true)
-		{
-			songs.push(new FreeplayState.SongMetadata('Sonic Heroes', 0, 'sonic'));
-		}
+		FlxG.sound.defaultSoundGroup.pause();
 
-		songs.push(new FreeplayState.SongMetadata('Ridge', 0, 'macy'));
-		songs.push(new FreeplayState.SongMetadata('Smash', 0, 'dad'));
-
-		/* 
-			if (FlxG.sound.music != null)
-			{
-				if (!FlxG.sound.music.playing)
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
-			}
-		 */
+		var rawJson:String = Assets.getText("assets/data/soundTest.json").trim();
+		trace (cast Json.parse(rawJson).categories);
+		categories = cast Json.parse(rawJson).categories;
+		
+		inst = new FlxSound();
+		vocals = new FlxSound();
 
 		#if desktop
 		// Updating Discord Rich Presence
@@ -100,52 +135,103 @@ class SoundTestState extends MusicBeatState
 		// LOAD CHARACTERS
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGPink'));
+		bg.setGraphicSize(Std.int(bg.width * 1.1));
+		bg.screenCenter();
 		add(bg);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
+		grpIcons = new FlxTypedGroup<HealthIcon>();
+		add(grpIcons);
 		add(grpSongs);
 
-		for (i in 0...songs.length)
+		uiBG = new FlxSprite(-10, -10).makeGraphic(Std.int(FlxG.width + 20), 160, 0xFF000000);
+		uiBG.cameras = [uiCam];
+		add(uiBG);
+
+		FlxG.autoPause = false;
+
+		nowPlaying = new FlxText(5, 5, FlxG.width, "Now Playing: ", 30);
+		nowPlaying.setFormat(Paths.font("vcr.ttf"), 30, FlxColor.WHITE, CENTER);
+		nowPlaying.cameras = [uiCam];
+		add(nowPlaying);
+
+		lengthBarBG = new FlxSprite(0, 97).loadGraphic(Paths.image('healthBar', 'shared'));
+		lengthBarBG.screenCenter(X);
+		lengthBarBG.cameras = [uiCam];
+		lengthBarBG.visible = false;
+		add(lengthBarBG);
+
+		setMenu = new FlxText(lengthBarBG.x + lengthBarBG.width + 5, 50, FlxG.width - (lengthBarBG.x + lengthBarBG.width), "", 20);
+		setMenu.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER);
+		setMenu.cameras = [uiCam];
+		add(setMenu);
+
+		muteInst = new FlxText(lengthBarBG.x + lengthBarBG.width + 5, setMenu.y + 20, FlxG.width - (lengthBarBG.x + lengthBarBG.width), "", 20);
+		muteInst.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER);
+		muteInst.cameras = [uiCam];
+		add(muteInst);
+
+		muteVoices = new FlxText(lengthBarBG.x + lengthBarBG.width + 5, muteInst.y + 20, FlxG.width - (lengthBarBG.x + lengthBarBG.width), "", 20);
+		muteVoices.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER);
+		muteVoices.cameras = [uiCam];
+		add(muteVoices);
+
+		songOriginText = new FlxText(0, lengthBarBG.y - 29, FlxG.width, "", 20);
+		songOriginText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER);
+		songOriginText.cameras = [uiCam];
+		add(songOriginText);
+
+		songArtist = new FlxText(0, songOriginText.y - 34, FlxG.width, "", 20);
+		songArtist.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER);
+		songArtist.cameras = [uiCam];
+		add(songArtist);
+
+		songPosText = new FlxText(0, lengthBarBG.y + 24, FlxG.width, "", 20);
+		songPosText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER);
+		songPosText.cameras = [uiCam];
+		add(songPosText);
+
+		songLengthBar = new FlxBar(lengthBarBG.x + 4, lengthBarBG.y + 4, LEFT_TO_RIGHT, Std.int(lengthBarBG.width - 8), Std.int(lengthBarBG.height - 8), this,
+		'songPositionBar', 0, 90000);
+		songLengthBar.numDivisions = 1000;
+		songLengthBar.cameras = [uiCam];
+		songLengthBar.scrollFactor.set();
+		songLengthBar.createFilledBar(FlxColor.GRAY, FlxColor.LIME);
+		songLengthBar.visible = false;
+		add(songLengthBar);
+
+		uiCam.y = -200;
+
+		trace(categories[0].name);
+
+		for (i in 0...categories.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
+			trace(categories[i].name);
+			soundTestNames.push(categories[i].name);
+		}
+
+		soundTestNames.push('Back to Menu');
+
+		for (i in 0...soundTestNames.length)
+		{
+			var songText:Alphabet;
+			if (soundTestNames[i].length >= 25)
+			{
+				songText = new Alphabet(0, (70 * i) + 30, soundTestNames[i], true, false, 0.05, 0.5);
+			}
+			else
+			{
+				songText = new Alphabet(0, (70 * i) + 30, soundTestNames[i], true, false);
+			}
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
-
-			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter, false);
-			icon.sprTracker = songText;
-
-			// using a FlxGroup is too much fuss!
-			iconArray.push(icon);
-			add(icon);
+			itemNames.push(soundTestNames[i]);
 
 			// songText.x += 40;
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 			// songText.screenCenter(X);
 		}
-
-		scoreText = new FlxText(FlxG.width * 0.6, 5, 0, "", 30);
-		// scoreText.autoSize = false;
-		scoreText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, RIGHT);
-		// scoreText.alignment = RIGHT;
-
-		var scoreBG:FlxSprite = new FlxSprite(scoreText.x - 6, 0).makeGraphic(Std.int(FlxG.width * 0.45), 150, 0xFF000000);
-		scoreBG.alpha = 0.6;
-		add(scoreBG);
-
-		diffText = new FlxText(scoreText.x, scoreText.y + 30, 0, "", 24);
-		diffText.font = scoreText.font;
-		add(diffText);
-
-		originText = new FlxText(diffText.x, diffText.y + 30, 0, "", 24);
-		originText.font = diffText.font;
-		add(originText);
-
-		lengthText = new FlxText(diffText.x, originText.y + 30, 0, "", 30);
-		lengthText.font = diffText.font;
-		add(lengthText);
-
-		add(scoreText);
 
 		changeSelection();
 
@@ -177,41 +263,29 @@ class SoundTestState extends MusicBeatState
 		super.create();
 	}
 
-	public function addSong(songName:String, weekNum:Int, songCharacter:String)
-	{
-		songs.push(new FreeplayState.SongMetadata(songName, weekNum, songCharacter));
-	}
-
-	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
-	{
-		if (songCharacters == null)
-			songCharacters = ['bf'];
-
-		var num:Int = 0;
-		for (song in songs)
-		{
-			addSong(song, weekNum, songCharacters[num]);
-
-			if (songCharacters.length != 1)
-				num++;
-		}
-	}
-
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 
-		if (FlxG.sound.music.volume < 0.7)
+		if (inst != null && inst.playing)
 		{
-			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
+			songPositionBar = inst.time;
+
+			curSecs = Std.int(inst.time / 1000) % 60;
+			curMins = Std.int(inst.time / 60000);
+
+			dispMins = "" + curMins;
+			if (("" + curSecs).length < 2)
+			{
+				dispSecs = "0" + curSecs;
+			}
+			else
+			{
+				dispSecs = "" + curSecs;
+			}
+
+			songPosText.text = dispMins + ":" + dispSecs + " / " + dispFullMins + ":" + dispFullSecs;
 		}
-
-		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.4));
-
-		if (Math.abs(lerpScore - intendedScore) <= 10)
-			lerpScore = intendedScore;
-
-		scoreText.text = "NOW PLAYING: " + songPlaying;
 
 		var upP = controls.UP_P;
 		var downP = controls.DOWN_P;
@@ -232,127 +306,364 @@ class SoundTestState extends MusicBeatState
 				changeSelection(1);
 		}
 
-
-		if (controls.BACK)
+		if (FlxG.keys.justPressed.M && canMenu)
 		{
-			vocals.stop();
-			inst.stop();
-			FlxG.sound.music.fadeOut(0.5, 0);
-			FlxG.sound.music.stop();
-			FlxG.switchState(new MainMenuState());
+			FlxG.save.data.menuSong = songFilePath;
+			setMenu.text = 'SET CURRENT TRACK AS MENU MUSIC';
+		}
+
+		if (FlxG.keys.justPressed.I && inst.playing)
+		{
+			inst.volume = (inst.volume == 1) ? 0 : 1;
+			muteInst.text = 'I - ' + ((inst.volume == 1) ? 'Mute' : 'Unmute') + ' Instrumental';
+		}
+
+		if (FlxG.keys.justPressed.V && vocals.playing && canVoice)
+		{
+			vocals.volume = (vocals.volume == 1) ? 0 : 1;
+			muteVoices.text = 'V - ' + ((vocals.volume == 1) ? 'Mute' : 'Unmute') + ' Vocals';
 		}
 
 		if (accepted)
 		{
-			vocals.stop();
+			selectThing(itemNames[curSelected]);
+		}
+
+		if (controls.BACK)
+		{
+			if (!inCatagory)
+			{
+				selectThing('Back to Menu');
+			}
+			else
+			{
+				selectThing('Back');
+			}
+		}
+
+		if (inCatagory)
+		{
+			for (i in 0...grpIcons.members.length)
+			{
+				grpIcons.members[i].alpha = 0.6;
+				grpIcons.members[i].animation.curAnim.curFrame = 0;
+			}
+			if (grpIcons.members[curSelected] != null)
+			{
+				grpIcons.members[curSelected].alpha = 1;
+				var happyIcon:Int = 2;
+				switch (grpIcons.members[curSelected].animation.name)
+				{
+					case 'kazuki':
+						happyIcon = 1;
+				}
+				if (currentSelectedCat.tracks[curSelected].death == true)
+				{
+					switch (grpIcons.members[curSelected].animation.name)
+					{
+						case 'kazuki':
+							happyIcon = 2;
+						default:
+							happyIcon = 1;
+					}
+				}
+				grpIcons.members[curSelected].animation.curAnim.curFrame = happyIcon;
+			}
+		}
+	}
+
+	function loadSong(song:String)
+	{
+		var fullSong:String;
+		var songIndex:Int = curSelected;
+		var trueIndex:Int;
+		var songEnd:String = "";
+		var encore:String = "";
+		var encoreBool:Bool = false;
+		var songFile:String;
+
+		if (currentSelectedCat.name.contains('(Encore)'))
+		{
+			encore = "-En";
+			songEnd = " (Encore)";
+			encoreBool = true;
+		}
+
+		if (currentSelectedCat.name.contains('(Encore)'))
+		{
+			setMenu.text = "Can't Select an Encore Track";
+			canMenu = false;
+		}
+		else
+		{
+			setMenu.text = "M - Set as Menu Music";
+			canMenu = true;
+		}
+
+		inst.volume = 1;
+		muteInst.text = 'I - Mute Instrumental';
+
+		fullSong = itemNames[songIndex] + songEnd;
+
+		if (!FlxG.save.data.soundTestList.contains(fullSong))
+		{
+			FlxG.save.data.soundTestList.push(fullSong);
+			trace('new song ' + fullSong + ' added to song list ' + FlxG.save.data.soundTestList + ' (' + FlxG.save.data.soundTestList.length + ') total');
+		}
+
+		trueIndex = curSongArray.indexOf(itemNames[songIndex]);
+
+		if (fullSong != curSong)
+		{
 			inst.stop();
+			vocals.stop();
+
+			songFilePath = StringTools.replace(itemNames[songIndex], "?", "").toLowerCase();
+
+			songArtist.text = 'Arranged by: ' + currentSelectedCat.tracks[trueIndex].composer;
+
+			songOriginText.text = currentSelectedCat.tracks[trueIndex].origin + ' (' + currentSelectedCat.tracks[trueIndex].year + ')';
+
+			if (!encoreBool)
+			{
+				inst = FlxG.sound.load(Paths.inst(StringTools.replace(itemNames[songIndex], "?", "").toLowerCase()));
+
+				#if desktop
+				if (sys.FileSystem.exists('assets/songs/' + itemNames[songIndex] + '/Voices.ogg'))
+				{
+					vocals = FlxG.sound.load(Paths.voices(itemNames[songIndex].toLowerCase()));
+					canVoice = true;
+				}
+				else
+				{
+					canVoice = false;
+				}
+				#else
+				vocals = FlxG.sound.load(Paths.voices(itemNames[songIndex].toLowerCase()));
+				#end
+			}
+			else
+			{
+				inst = FlxG.sound.load(Paths.instEncore(StringTools.replace(itemNames[songIndex], "?", "").toLowerCase()));
+				canVoice = false;
+				#if desktop
+				if (sys.FileSystem.exists('assets/songs/' + itemNames[songIndex] + '/Voices-En.ogg'))
+				{
+					vocals = FlxG.sound.load(Paths.voicesEncore(itemNames[songIndex].toLowerCase()));
+					canVoice = true;
+				}
+				#else
+				vocals = FlxG.sound.load(Paths.voicesEncore(itemNames[songIndex].toLowerCase()));
+				#end
+			}
+
+			nowPlaying.text = "Now Playing: " + itemNames[songIndex] + songEnd;
+
+			inst.play();
+			inst.persist = true;
+			inst.looped = true;
+			trace('playing ' + itemNames[songIndex] + ' instrumental');
+
+			playingSong = true;
+
+			muteVoices.text = canVoice ? 'V - Mute Voices' : ' ';
+
+			#if desktop
+			if (sys.FileSystem.exists('assets/songs/' + itemNames[songIndex] + '/Voices' + encore + '.ogg'))
+			{
+				vocals.play();
+				vocals.persist = true;
+				vocals.looped = true;
+				trace('playing ' + itemNames[songIndex] + ' vocals');
+			}
+			else
+			{
+				vocals.volume = 0;
+			}
+			#else
+			vocals.play();
+			vocals.persist = true;
+			vocals.looped = true;
+			#end
+
+			resyncVocals();
+
+			regenBar();
+
 			FlxG.sound.music.stop();
-			vocals = new FlxSound().loadEmbedded(Paths.music('silence'));
-			inst = new FlxSound().loadEmbedded(Paths.music('silence'));
-			vocals.play();
-			inst.play();
-			var soundTestSong:String = songs[curSelected].songName;
-			trace(soundTestSong);
-			trace(soundTestSong.toLowerCase());
-
-			vocals = new FlxSound().loadEmbedded(Sound.fromFile("assets/songs/"+ songs[curSelected].songName +"/Inst.ogg"), true);
-
-			inst = new FlxSound().loadEmbedded(Sound.fromFile("assets/songs/"+ songs[curSelected].songName +"/Voices.ogg"), true);
-			
-			vocals.play();
-			inst.play();
-			songPlaying = soundTestSong.replace('-', ' ');
-			DiscordClient.changePresence(detailsText, soundTestSong);
-			switch (soundTestSong) {
-				case 'Coffee Date' | 'Electromace' | 'Macy-Breeze' | 'Short Circuit':
-					composer = 'Corvus Bebop';
-				case 'GIGAVOLT' | 'Night Sky' | 'Choose Your Character' | 'I Love You':
-					composer = 'K-Man';
-				case 'Monster' | 'Winter-Horrorland':
-					composer = 'Bassetfilms';
-				case 'Ridge':
-					composer = 'Namco';
-				case 'Smash' | 'Ripple Star Select':
-					composer = 'Nintendo';
-				case 'Psycho Soldier Theme' | 'Kizudarake no BLUEMOON' | 'Forest World':
-					composer = 'SNK PLAYMORE';
-				case 'What U Need is Remix':
-					composer = 'Hideki Naganuma';
-				case 'Blue Underground Lake':
-					composer = 'Corvus Bebop (Remix)';
-				case 'Will' | 'Psycho Soldier (Funky Remix)' | "True Love we Makin'" | 'Stormy Saxophone Two' | 'Bloody' | 'Soy Sauce for Geese' | 'Joker' | 'Inner Shade' | 'Toasty Buns' | 'Viridian City' | 'FC Field' | 'Sonic Heroes':
-					composer = 'K-Man (Remix)';
-				default:
-					composer = 'kawaisprite';
-			}
-			switch (soundTestSong) {
-				case 'Psycho Soldier Theme' | 'Blue Underground Lake' | 'Kizudarake no BLUEMOON' | 'Psycho Soldier (Funky Remix)':
-					songOrigin = 'Psycho Soldier (1987)';
-				case 'Will' | 'Inner Shade':
-					songOrigin = 'KOF 2000 (2000)';
-				case 'Sonic Heroes':
-					songOrigin = 'Sonic Heroes (2003)';
-				case 'Forest World':
-					songOrigin = 'Athena (1986)';
-				case 'Toasty Buns':
-					songOrigin = 'PaRappa the Rapper 2 (2001)';
-				case 'Soy Sauce for Geese':
-					songOrigin = 'Fatal Fury Special (1993)';
-				case 'Ridge':
-					songOrigin = 'Ridge Racer Type 4 (1998)';
-				case 'Bloody':
-					songOrigin = "KOF '97 (1997)";
-				case "True Love we Makin'":
-					songOrigin = "Capcom vs. SNK 2 (2001)";
-				case 'Stormy Saxophone Two':
-					songOrigin = "KOF '96 (1996)";
-				case 'What U Need is Remix':
-					songOrigin = 'Sonic Rush (2005)';
-				case 'Viridian City':
-					songOrigin = "Pokemon Red and Blue (1996)";
-				case 'FC Field':
-					songOrigin = 'Yume Nikki (2004)';
-				case 'Ripple Star Select':
-					songOrigin = 'Kirby 64 (2000)';
-				case 'Joker':
-					songOrigin = "KOF 11 (2005)";
-				case 'Smash':
-					songOrigin = 'Super Smash Bros. Melee (2001)';
-				case 'Coffee Date' | 'Electromace' | 'Gigavolt' | 'Macy-Breeze' | 'Short Circuit' | 'Night Sky' | 'I Love You' | 'Choose Your Character':
-					songOrigin = 'The Weeg Mod (2021)';
-				case 'Cocoa' | 'Eggnog' | 'Winter-Horrorland' | 'Lunchbox' | 'Senpai' | 'Roses' | 'Lunchbox (Scary)' | 'Thorns' | 'Game Over Pixel' | 'Ugh' | 'Guns' | 'Stress':
-					songOrigin = "Friday Night Funkin' (2021)";
-				default:
-					songOrigin = "Friday Night Funkin' (2020)";
-				
-			}
-			songLength = inst.length;
-			inst.resume();
-			diffText.text = "Composer: " + composer;
-			originText.text = "Origin: " + songOrigin;
-			//lengthText.text = FlxG.sound.music.time + " / " + songLength;
+			curSong = fullSong;
+			paused = false;
+			#if desktop
+			detailsText = ('Listening to ' + itemNames[songIndex] + songEnd + ' by ' + currentSelectedCat.tracks[trueIndex].composer);
+			DiscordClient.changePresence(detailsText, 'From: ' + currentSelectedCat.tracks[trueIndex].origin + ' (' + currentSelectedCat.tracks[trueIndex].year + ')', currentSelectedCat.tracks[trueIndex].icon);
+			#end
 		}
-		songTime = inst.time;
-		//horrible code but i'll clean it up later if i remember
-		var lengthSeconds:Int = Math.floor(Math.floor(songLength / 1000)%60);
-		var lengthMinutes:Int = Math.floor(Math.floor(songLength / 1000)/60);
-		var timeSeconds:Int = Math.floor(Math.floor(inst.time / 1000)%60);
-		var timeMinutes:Int = Math.floor(Math.floor(inst.time / 1000)/60);
-		var realLengthSeconds:String = '';
-		var realTimeSeconds:String = '';
-		if (lengthSeconds <= 9)
-			realLengthSeconds = "0" + lengthSeconds;
-		else 
-			realLengthSeconds = '' + lengthSeconds;
-		if (timeSeconds <= 9)
-			realTimeSeconds = "0" + timeSeconds;
-		else 
-			realTimeSeconds = '' + timeSeconds;
-		if (FlxG.sound.music.time < songLength) {
-			//lengthText.text = timeMinutes + ":"  + realTimeSeconds + " / " + lengthMinutes + ":" + realLengthSeconds;
-			lengthText.text = "Song Length: " + lengthMinutes + ":" + realLengthSeconds;
-			remove(lengthText);
+		else
+		{
+			if (!paused)
+			{
+				inst.pause();
+				vocals.pause();
+				playingSong = false;
+				nowPlaying.text = "PAUSED: " + itemNames[songIndex] + songEnd;
+			}
+			else
+			{
+				resyncVocals();
+				playingSong = true;
+				nowPlaying.text = "Now Playing: " + itemNames[songIndex] + songEnd;
+			}
+			paused = !paused;
 		}
+	}
+
+	function resyncVocals():Void
+	{
+		vocals.pause();
+
+		inst.play();
+		vocals.time = inst.time;
+		vocals.play();
+	}
+
+	function regenBar()
+	{
+		songLengthBar.visible = true;
+		remove(songLengthBar);
+		songLengthBar = new FlxBar(lengthBarBG.x + 4, lengthBarBG.y + 4, LEFT_TO_RIGHT, Std.int(lengthBarBG.width - 8), Std.int(lengthBarBG.height - 8), this,
+		'songPositionBar', 0, inst.length);
+		trace('song length: ' + inst.length);
+		songLengthBar.numDivisions = 1000;
+		songLengthBar.cameras = [uiCam];
+		songLengthBar.scrollFactor.set();
+		songLengthBar.createFilledBar(FlxColor.GRAY, FlxColor.LIME);
+		songLengthBar.visible = true;
+		add(songLengthBar);
+
+		totalSecs = Std.int(inst.length / 1000) % 60;
+		totalMins = Std.int(inst.length / 60000);
+
+		dispFullMins = "" + totalMins;
+		if (("" + totalSecs).length < 2)
+		{
+			dispFullSecs = "0" + totalSecs;
+		}
+		else
+		{
+			dispFullSecs = "" + totalSecs;
+		}
+
+		trace('total time: ' + dispFullMins + ":" + dispFullSecs);
+	}
+
+	function selectThing(thing:String)
+	{
+		switch (thing)
+			{
+				case 'Back to Menu':
+					FlxG.switchState(new MainMenuState());
+				case 'Back':
+				{
+					FlxTween.tween(uiCam, {y: -200}, 1, {ease: FlxEase.quadInOut});
+					inCatagory = false;
+					trace('exiting now...');
+					regenOptions(false);
+				}
+				default:
+					if (!inCatagory)
+					{
+						inCatagory = true;
+						FlxTween.tween(uiCam, {y: 0}, 1, {ease: FlxEase.quadInOut});
+						trace('entering catagory ' + soundTestNames[curSelected]);
+						regenOptions(true);
+					}
+					else
+					{
+						loadSong(soundTestNames[curSelected]);
+					}
+			}
+	}
+
+	function regenOptions(isCatagory:Bool)
+	{
+		for (i in 0...grpSongs.members.length)
+		{
+			this.grpSongs.remove(this.grpSongs.members[0], true);
+			itemNames.remove(itemNames[0]);
+		}
+		if (grpIcons != null)
+		{
+			for (i in 0...grpIcons.members.length)
+			{
+				this.grpIcons.remove(this.grpIcons.members[0], true);
+			}
+		}
+		var menuItems:Array<String> = [];
+		var hasIcon:Array<Bool> = [];
+
+		if (isCatagory)
+		{
+			currentSelectedCat = categories[curSelected];
+			for (i in 0...currentSelectedCat.tracks.length)
+			{
+				trace('adding ' + currentSelectedCat.tracks[i].name + ' to track list.');
+				menuItems.push(currentSelectedCat.tracks[i].name);
+				hasIcon.push(true);
+			}
+
+			menuItems.push('Back');
+			hasIcon.push(false);
+		}
+		else
+		{
+			for (i in 0...categories.length)
+			{
+				trace(categories[i].name);
+				menuItems.push(categories[i].name);
+				hasIcon.push(false);
+			}
+
+			menuItems.push('Back to Menu');
+			hasIcon.push(false);
+		}
+
+		curSongArray = [];
+
+		for (i in 0...menuItems.length)
+		{
+			curSongArray.push(menuItems[i]);
+			var addItem:Bool = true;
+			if (hasIcon[i] && currentSelectedCat.tracks[i].unlock != null)
+			{
+				addItem = unlockCheck(currentSelectedCat.tracks[i].unlock);
+			}
+			if (addItem)
+			{
+				var item:Alphabet;
+				if (menuItems[i].length >= 20 && hasIcon[i])
+				{
+					item = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false, 0.05, 0.8);
+				}
+				else
+				{
+					item = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
+				}
+
+				item.isMenuItem = true;
+				item.targetY = i;
+				if (hasIcon[i])
+				{
+					var newIcon:HealthIcon = new HealthIcon(currentSelectedCat.tracks[i].icon, false, false);
+					newIcon.sprTracker = item;
+					grpIcons.add(newIcon);
+				}
+				grpSongs.add(item);
+				itemNames.push(menuItems[i]);
+			}
+		}
+		curSelected = 0;
+		changeSelection();
+		trace('ok try to select now?');
 	}
 
 	function changeSelection(change:Int = 0)
@@ -364,28 +675,16 @@ class SoundTestState extends MusicBeatState
 		curSelected += change;
 
 		if (curSelected < 0)
-			curSelected = songs.length - 1;
-		if (curSelected >= songs.length)
+			curSelected = grpSongs.length - 1;
+		if (curSelected >= grpSongs.length)
 			curSelected = 0;
 
 		// selector.y = (70 * curSelected) + 30;
-
-		#if !switch
-		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-		// lerpScore = 0;
-		#end
 
 		#if PRELOAD_ALL
 		#end
 
 		var bullShit:Int = 0;
-
-		for (i in 0...iconArray.length)
-		{
-			iconArray[i].alpha = 0.6;
-		}
-
-		iconArray[curSelected].alpha = 1;
 
 		for (item in grpSongs.members)
 		{
@@ -401,5 +700,32 @@ class SoundTestState extends MusicBeatState
 				// item.setGraphicSize(Std.int(item.width));
 			}
 		}
+	}
+
+	function unlockCheck(char:String)
+	{
+		#if debug
+		return true;
+		#else
+		switch (char)
+		{
+			case 'philip':
+				return FlxG.save.data.unlockedMouse;
+			case 'sonic':
+				return FlxG.save.data.unlockedSonic;
+			case 'princess-athena':
+				return FlxG.save.data.unlockedBooba;
+			case 'weegee':
+				return FlxG.save.data.unlockedWeegee;
+			case 'kerol':
+				return FlxG.save.data.unlockedFrog;
+			case 'adeleine':
+				return FlxG.save.data.unlockedAdo;
+			case 'gumi':
+				return FlxG.save.data.unlockedGumi;
+			default:
+				return false;
+		}
+		#end
 	}
 }

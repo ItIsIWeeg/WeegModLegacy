@@ -1,5 +1,7 @@
 package;
 
+import GameJolt.GameJoltLogin;
+import GameJolt.GameJoltAPI;
 import lime.app.Application;
 import lime.system.DisplayMode;
 import flixel.util.FlxColor;
@@ -7,6 +9,18 @@ import Controls.KeyboardScheme;
 import flixel.FlxG;
 import openfl.display.FPS;
 import openfl.Lib;
+import haxe.Json;
+import openfl.net.FileReference;
+import openfl.net.FileFilter;
+import lime.ui.FileDialog;
+import lime.ui.FileDialogType;
+#if desktop
+import Sys;
+import sys.FileSystem;
+import sys.io.File;
+#end
+
+using StringTools;
 
 class OptionCategory
 {
@@ -96,6 +110,240 @@ class DFJKOption extends Option
 	}
 }
 
+class GameJolt extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		trace("switch");
+		FlxG.switchState(new GameJoltLogin());
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return ("Log in to GameJolt");
+	}
+
+}
+class GameJoltAchievements extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		trace("switch");
+		FlxG.openURL("https://gamejolt.com/games/weeg-mod/643454/trophies");
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return ("Check Gamejolt Achievements");
+	}
+
+}
+#if desktop
+class BackupSave extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		var json = {
+			"save": FlxG.save.data
+		};
+
+		var _file:FileReference;
+		_file = new FileReference();
+
+		var data:String = Json.stringify(json);
+
+		if ((data != null) && (data.length > 0))
+		{
+			_file.save(data.trim(), "weegSave.json");
+		}
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return ("Backup Save Data");
+	}
+
+}
+
+class RestoreSave extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+
+		var _file:FileDialog;
+		_file = new FileDialog();
+
+		var tempData:String = '';
+
+		_file.browse(FileDialogType.OPEN);
+		_file.onSelect.add(function (path:String):Void {
+			tempData = path;
+			trace(path);
+		});
+		var rawData = File.getContent(tempData).trim();
+		var json = cast Json.parse(rawData);
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return ("Restore Save Data");
+	}
+
+}
+#end
+class FullScreenOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.fullscreen = !FlxG.fullscreen;
+		
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return  FlxG.fullscreen ? "Fullscreen Mode" : "Windowed Mode";
+	}
+
+}
+
+class HitSoundOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.hitsounds = !FlxG.save.data.hitsounds;
+		
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return  FlxG.save.data.hitsounds ? "Hitsounds" : "No Hitsounds";
+	}
+
+}
+
+class LowEndOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.lowEnd = !FlxG.save.data.lowEnd;
+		
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return  FlxG.save.data.lowEnd ? "Low-End Mode" : "High-End Mode";
+	}
+
+}
+
+class ArrowSkinOption extends Option
+{
+	var option:String;
+
+	public function new(option:String)
+	{
+		this.option = option;
+		super();
+		description = '';
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.arrowSkin = option;
+		
+		FlxG.switchState(new OptionsMenu());
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		if (FlxG.save.data.arrowSkin == option)
+		{
+			return (option + ' (selected)');
+		}
+		else
+		{
+			return (option);
+		}
+	}
+
+}
+
+class DefaultFull extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.defaultFull = !FlxG.save.data.defaultFull;
+		
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return  FlxG.save.data.defaultFull ? "Default to Fullscreen" : "Default to Windowed";
+	}
+
+}
+
 class CensoredBooba extends Option
 {
 	public function new(desc:String)
@@ -119,6 +367,29 @@ class CensoredBooba extends Option
 
 }
 
+class AtariSenpai extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.atariWeek = !FlxG.save.data.atariWeek;
+		
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return  FlxG.save.data.atariWeek ? "Atari Week 6" : "Vanilla Week 6";
+	}
+
+}
+
 class CustArrows extends Option
 {
 	public function new(desc:String)
@@ -129,15 +400,13 @@ class CustArrows extends Option
 
 	public override function press():Bool
 	{
-		FlxG.save.data.customArrows = !FlxG.save.data.customArrows;
-		
-		display = updateDisplay();
+		OptionsMenu.instance.openSubState(new NotesSubstate());
 		return true;
 	}
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.customArrows ? "Custom Arrow Colors" : "Vanilla Arrow Colors";
+		return  "Change Arrow Colors";
 	}
 
 }
@@ -159,7 +428,7 @@ class CutsceneOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return FlxG.save.data.alwaysShow ? "Cutscenes in Freeplay" : "No Freeplay Cutscenes";
+		return FlxG.save.data.alwaysShow ? "Cutscenes Disabled" : "Cutscenes Enabled";
 	}
 }
 
@@ -547,27 +816,6 @@ class NPSDisplayOption extends Option
 	}
 }
 
-class ReplayOption extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-	
-	public override function press():Bool
-	{
-		trace("switch");
-		FlxG.switchState(new LoadReplayState());
-		return false;
-	}
-
-	private override function updateDisplay():String
-	{
-		return "Load replays";
-	}
-}
-
 class AccuracyDOption extends Option
 {
 	public function new(desc:String)
@@ -585,7 +833,7 @@ class AccuracyDOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Accuracy Mode: " + (FlxG.save.data.accuracyMod == 0 ? "Accurate" : "Complex");
+		return "Accuracy Mode " + (FlxG.save.data.accuracyMod == 0 ? "Accurate" : "Complex");
 	}
 }
 
@@ -680,6 +928,7 @@ class BotPlay extends Option
 		return "BotPlay " + (FlxG.save.data.botplay ? "on" : "off");
 }
 
+#if desktop
 class MenuMusicOption extends Option
 {
 	public function new(desc:String)
@@ -700,6 +949,7 @@ class MenuMusicOption extends Option
 		return "Change Menu Music";
 	}
 }
+#end
 
 class SoundTestOption extends Option
 {
